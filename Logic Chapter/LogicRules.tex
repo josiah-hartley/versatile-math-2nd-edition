@@ -1,0 +1,405 @@
+\setcounter{ExampleCounter}{1}
+In this section, we'll review some of the logical equivalencies that we've already seen, and we'll encounter some new ones.  We'll show how each equivalency can be proven with a truth table by finding columns that are identical, but we'll also want to have an intuitive grasp of them as well.  After all, since we're studying logic, the results we find should be sensible.
+
+Each of the equivalencies in this section essentially give an alternate way of phrasing a logical statement.  Since we use many alternate constructions when we build an argument, it can be a very rewarding and enlightening study to break different forms down and find which are logically equivalent.
+
+\subsection{Reviewing Equivalent Conditional Statements}
+We'll start with some review, pointing out again the four common conditional structures.
+\begin{center}
+\begin{tabular}{l l l}
+Name & In words & In symbols\\
+\hline
+& & \\
+Conditional & If $p$, then $q$. & $p \to q$\\
+Converse & If $q$, then $p$. & $q \to p$\\
+Inverse & If not $p$, then not $q$. & $\sim p \to\ \sim q$\\
+Contrapositive & If not $q$, then not $p$. & $\sim q \to\ \sim p$
+\end{tabular}
+\end{center}
+
+\begin{formula}{Equivalent Conditional Statements}
+A conditional statement and its contrapositive are equivalent:
+\begin{align*}
+p \to q\ &\equiv\ \sim q \to\ \sim p\\
+q \to p\ &\equiv\ \sim p \to\ \sim q
+\end{align*}
+\end{formula}
+
+\begin{example}[https://www.youtube.com/watch?v=qH5e6xtc9_0]{Equivalent Conditional Statements}
+Write a statement that is equivalent to the following:
+\begin{center}
+If you don't have the new security update,\\ you are vulnerable to viruses and other attacks.
+\end{center}
+
+\sol
+The contrapositive of this statement is equivalent to it.  Remember that to construct the contrapositive of a conditional statement, we reverse the direction and negate both pieces.  Thus, the contrapositive of this statement is
+\begin{center}
+If you are not vulnerable to viruses and other attacks,\\ you have the new security update.
+\end{center}
+\end{example}
+
+\begin{try}
+Write a statement that is equivalent to the following:
+\begin{center}
+If you take violin lessons, you can't take guitar lessons.
+\end{center}
+\end{try}
+
+Again, note that we have many different ways of saying the same thing in words.  In that example, the original statement could also have been written
+\begin{center}
+If you don't have the new security update,\\
+you are not safe from viruses and other attacks.
+\end{center}
+In that case, the contrapositive would be
+\begin{center}
+If you are safe from viruses and other attacks,\\
+you have the new security update.
+\end{center}
+
+Notice that this result is the same as the result in the example, but these are just two of the many ways that someone could phrase this conditional statement.  Being able to break a statement like this down to its logical structure is therefore a powerful analytic tool.
+
+\subsection{Negating a Conditional Statement}
+Consider the following conditional statement:
+\begin{center}
+If Aaron Rodgers has a good game, the Packers will win.
+\end{center}
+What if we wanted to negate this statement, that is, to write its opposite?  Think back to how we defined when a conditional statement is true: this is true if whenever the condition occurs, the result occurs as well.  Thus, the only case in which it is false is when the condition occurs but the result does NOT occur:
+\begin{center}
+Aaron Rodgers has a good game, but the Packers do NOT win.
+\end{center}
+This gives us an idea what the negation of a conditional statement should be; we can verify this with a truth table.
+
+\begin{example}[https://www.youtube.com/watch?v=b-JLKalp9Pg]{Negating a Conditional Statement}
+Show that \[\sim (p \to q)\ \equiv\ p\ \wedge \sim q.\]
+
+\sol
+We can set up a truth table to prove this; we'll include a column for $p \to q$ and one for $p\ \wedge \sim q$ and note that they are opposites to show that the negation of each is the other.
+\begin{center}
+\begin{tabular}{|c c c c c|}
+\hline
+$p$ & $q$ & $\sim q$ & $p\ \wedge \sim q$ & $p \to q$\\
+\hline
+& & & & \\
+T & T & F & F & T\\
+T & F & T & T & F\\
+F & T & F & F & T\\
+F & F & T & F & T\\
+\hline
+\end{tabular}
+\end{center}
+Since the columns for $p \to q$ and $p\ \wedge \sim q$ are exactly opposite,
+\[\sim (p \to q)\ \equiv\ p\ \wedge \sim q.\]
+\end{example}
+
+\begin{formula}{Negating a Conditional Statement}
+The\marginnote{Note that this is not the same as the \textit{inverse} of the conditional statement:\\
+$\sim (p \to q)\ \ \cancel{\equiv}\ \ \sim p \to\ \sim q$} negation of $p \to q$ is when $p$ occurs and $q$ does not occur:
+\[\sim (p \to q)\ \equiv\ p\ \wedge \sim q\]
+\end{formula}
+
+\begin{example}[https://www.youtube.com/watch?v=2ONWTRbmBME]{Negating a Conditional Statement}
+Write the negation of each of the following conditional statements.
+\begin{enumerate}[(a)]
+\item If the door is unlocked, the alarm sounds.
+\begin{center}
+The door is unlocked and the alarm doesn't sound.
+\end{center}
+\item If you don't drive carefully, you won't get better gas mileage.
+\begin{center}
+You don't drive carefully and you get better gas mileage.
+\end{center}
+\item If you buy the Juicer 5000, you won't regret it!
+\begin{center}
+You bought the Juicer 5000 and regretted it.
+\end{center}
+\end{enumerate}
+\end{example}
+
+\begin{try}
+Write the negation of the following statement.
+\begin{center}
+If you fail this test, you'll fail the course.
+\end{center}
+\end{try}
+\vfill
+\pagebreak
+
+\subsection{Distributive Rules}
+Recall from algebra that \textit{distributing} means taking something like 
+\[2(x+4)\] and writing it as \[2 \cdot x + 2 \cdot 4 = 2x+8,\] applying the multiplication to each of the terms in parentheses.  There are similar distribution laws when it comes to logical operations; we'll state them first, then prove them.
+
+\begin{formula}{Distributive Rules}
+\begin{align*}
+p \wedge (q \vee r)\ &\equiv\ (p \wedge q) \vee (p \wedge r)\\
+p \vee (q \wedge r)\ &\equiv\ (p \vee q) \wedge (p \vee r)
+\end{align*}
+\end{formula}
+
+\begin{example}[https://www.youtube.com/watch?v=JkLEijOCfjg]{Distributive Rules}
+Prove that \[p \wedge (q \vee r)\ \equiv\ (p \wedge q) \vee (p \wedge r).\]
+
+\sol
+To prove this, we'll set up a truth table with a column for each side and note that these columns are identical.
+\begin{center}
+\begin{tabular}{|c c c c c c c c|}
+\hline
+$p$ & $q$ & $r$ & $q \vee r$ & $p \wedge q$ & $p \wedge r$ & $p \wedge (q \vee r)$ & $(p \wedge q) \vee (p \wedge r)$\\
+\hline
+& & & & & & & \\
+T & T & T & T & T & T & T & T \\
+T & F & T & T & F & T & T & T \\
+F & T & T & T & F & F & F & F \\
+F & F & T & T & F & F & F & F \\
+T & T & F & T & T & F & T & T \\
+T & F & F & F & F & F & F & F \\
+F & T & F & T & F & F & F & F \\
+F & F & F & F & F & F & F & F \\
+\hline
+\end{tabular}
+\end{center}
+Based on the fact that the last two columns are identical, we have proven that \[p \wedge (q \vee r)\ \equiv\ (p \wedge q) \vee (p \wedge r).\]
+\end{example}
+
+\begin{try}
+Fill in the missing values of the truth table below to prove that 
+\[p \vee (q \wedge r)\ \equiv\ (p \vee q) \wedge (p \vee r).\]
+\begin{center}
+\begin{tabular}{|c c c c c c c c|}
+\hline
+$p$ & $q$ & $r$ & $q \wedge r$ & $p \vee q$ & $p \vee r$ & $p \vee (q \wedge r)$ & $(p \vee q) \wedge (p \vee r)$\\
+\hline
+& & & & & & & \\
+T & T & T & & & & & \\
+T & F & T & & & & & \\
+F & T & T & & & & & \\
+F & F & T & & & & & \\
+T & T & F & & & & & \\
+T & F & F & & & & & \\
+F & T & F & & & & & \\
+F & F & F & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+\end{try}
+\vfill
+\pagebreak
+
+\begin{example}[https://www.youtube.com/watch?v=-OWBz6l9ZzQ]{Using Distributive Rules}
+Write statements that are logically equivalent to the ones below.
+\begin{enumerate}[(a)]
+\item The suspect has blue eyes, and either he has a visible scar on his cheek or he has a beard.
+\item Either we invest in basic research and train engineers, or our space program will fail.
+\end{enumerate}
+
+\sol
+We will begin each example by defining the components of the statement, then looking for the appropriate distributive law above.
+\begin{enumerate}[(a)]
+\item Let $p$ represent ``the suspect has blue eyes,'' $q$ represent ``the suspect has a visible scar on his cheek,'' and $r$ represent ``the suspect has a beard.''
+
+Then the full statement can be written symbolically as
+\[p \wedge (q \vee r)\]
+This is equivalent to \[(p \wedge q) \vee (p \wedge r).\]
+In words, this equivalent statement is 
+\begin{center}
+Either the suspect has blue eyes and a scar on his cheek,\\ or the suspect has blue eyes and a beard.
+\end{center}
+\item Let $p$ represent ``we invest in basic research,'' $q$ represent ``we train engineers,'' and $r$ represent ``our space program will fail.''
+
+Then the full statement can be written symbolically as
+\[(p \wedge q) \vee r\]
+Now we know that this is equivalent to \[(p \vee r) \wedge (q \vee r).\]
+In words, this equivalent statement is 
+\begin{center}
+We will either invest in basic research or our space program will fail,\\ and we will either train engineers or our space program will fail.
+\end{center}
+\end{enumerate}
+\end{example}
+
+\begin{try}
+Write a statement that is logically equivalent to the following:
+\begin{center}
+You will either pass or fail this course, and your grade is based on your work.
+\end{center}
+\end{try}
+
+Depending on the situation, these distributive rules may or may not be intuitive.  Again, the power of studying logic like this is that we can find absolute rules that hold even when they refer to statements that are hard to understand in words.
+\vfill
+\pagebreak
+
+\subsection{De Morgan's Laws}
+Augustus\marginnote{De Morgan's Laws are used in computer science to rewrite Boolean expressions so that a circuit can be built using only one kind of logic gate (a NAND gate or a NOR gate).  This makes the circuit cheaper to build, since there are fewer types of hardware needed.} De Morgan, a 19th-century British mathematician and logician, formalized a pair of laws that describe how to negate an AND or an OR.  Although these principles were known before De Morgan, his name is attached to them because he introduced them to logic in their current form.\\
+
+Let's think about how to negate $p \wedge q$ first.  For example, consider the statement
+\begin{center}
+Julie watched \textit{Braveheart} and \textit{A Beautiful Mind}.
+\end{center}
+This statement claims that she watched both movies; if she didn't watch either of them, the statement is false.  If she EITHER didn't watch \textit{Braveheart} OR didn't watch \textit{A Beautiful Mind}, then this claim is disproven.
+
+This gives us an idea of how to negate $p \wedge q$.  Since $p$ AND $q$ is true when $p$ and $q$ are both true, and false otherwise, to negate $p \wedge q$, we just need one of them to be negated.
+\[\sim (p \wedge q)\ \equiv\ \sim p\ \vee \sim q\]
+This is one of De Morgan's laws, which states that the negation of $p$ AND $q$ is the negation of $p$ OR the negation of $q$.\\
+
+The other law is very similar.  If we want to negate $p \vee q$, we need to negate both of them, so we negate $p$ AND negate $q$:
+\[\sim (p \vee q)\ \equiv\ \sim p\ \wedge \sim q\] 
+
+\begin{formula}{De Morgan's Laws}
+\begin{align*}
+\sim (p \wedge q)\ &\equiv\ \sim p\ \vee \sim q\\
+\sim (p \vee q)\ &\equiv\ \sim p\ \wedge \sim q
+\end{align*}
+\end{formula}
+
+\begin{example}[https://www.youtube.com/watch?v=FvBhN-V3nRg]{Proving De Morgan's Laws}
+Prove that $\sim (p \wedge q)\ \equiv\ \sim p\ \vee \sim q$.
+
+\sol
+Recall: to prove that two statements are equivalent, we build a truth table that includes a column for each, then show that those two columns are identical.
+\begin{center}
+\begin{tabular}{|c c c c c c c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim q$ & $p \wedge q$ & $\sim (p \wedge q)$ & $\sim p\ \vee \sim q$\\
+\hline
+& & & & & & \\
+T & T & F & F & T & F & F\\
+T & F & F & T & F & T & T\\
+F & T & T & F & F & T & T\\
+F & F & T & T & F & T & T\\
+\hline
+\end{tabular}
+\end{center}
+
+Since the last two columns are identical, this truth table provides proof that \[\sim (p \wedge q)\ \equiv\ \sim p\ \vee \sim q.\]
+\end{example}
+
+\begin{try}
+Fill in the truth table below to prove that $\sim (p \vee q)\ \equiv\ \sim p\ \wedge \sim q$.
+\begin{center}
+\begin{tabular}{|c c c c c c c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim q$ & $p \vee q$ & $\sim (p \vee q)$ & $\sim p\ \wedge \sim q$\\
+\hline
+& & & & & & \\
+T & T & & & & & \\
+T & F & & & & & \\
+F & T & & & & & \\
+F & F & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+\end{try}
+\vfill
+\pagebreak
+
+\begin{example}[https://www.youtube.com/watch?v=98MouQeY1BQ]{Using De Morgan's Laws}
+Use De Morgan's Laws to write a statement that is equivalent to
+\begin{center}
+It is not true that jeans and tuxedo jackets fit the dress code for a wedding.
+\end{center}
+
+\sol
+We'll begin by defining simple statements $p$ and $q$ as\\
+$p$: Jeans fit the dress code for a wedding.\\
+$q$: Tuxedo jackets fit the dress code for a wedding.\\
+
+Then the original statement is \[\sim (p \wedge q).\]
+Using De Morgan's Laws, we know that \[\sim (p \wedge q)\ \equiv\ \sim p\ \vee \sim q.\]
+Finally, we can rewrite $\sim p\ \vee \sim q$ in words as
+\begin{center}
+Either jeans do not fit the dress code for a wedding,\\ or tuxedo jackets do not fit the dress code for a wedding.
+\end{center}
+\end{example}
+
+\begin{try}
+Use De Morgan's Laws to write a statement that is equivalent to 
+\begin{center}
+It is not true that the Bears or the Falcons won on Sunday.
+\end{center}
+\end{try}
+
+\begin{example}[https://www.youtube.com/watch?v=3ldKuAfCEfw]{Using De Morgan's Laws}
+Write the negation of the following statement.
+\begin{center}
+I will buy either this sweater or these pants.
+\end{center}
+
+\sol
+Define $p$ and $q$:\\
+$p$: I will buy this sweater.\\
+$q$: I will buy these pants.\\
+
+The original statement is \[p \vee q\] so its negation is 
+\[\sim (p \vee q)\ \equiv\ \sim p\ \wedge \sim q.\]
+In words, the negation is
+\begin{center}
+I won't buy this sweater and I won't buy these pants.
+\end{center}
+\end{example}
+
+\begin{try}
+Write the negation of the following statement.
+\begin{center}
+It is Tuesday and it's raining.
+\end{center}
+\end{try}
+\vfill
+\pagebreak
+
+\begin{example}[https://www.youtube.com/watch?v=182w7AGeUao]{Using De Morgan's Laws}
+Write the negation of the following statement.
+\begin{center}
+Volvo makes trucks, and doesn't make train engines.
+\end{center}
+
+\sol
+Define $p$ and $q$:\\
+$p$: Volvo makes trucks.\\
+$q$: Volvo makes train engines.\\
+
+The original statement is \[p\ \wedge \sim q\] so its negation is 
+\[\sim (p\ \wedge \sim q)\ \equiv\ \sim p \vee q.\]
+In words, the negation is
+\begin{center}
+Either Volvo doesn't make trucks, or they make train engines.
+\end{center}
+
+Notice that we could have also defined $q$ to be ``Volvo doesn't make train engines,'' but either way, when we negated it, the second half becomes ``they make train engines.''
+\end{example}
+
+\begin{try}
+Write the negation of the following statement.
+\begin{center}
+Either you don't do your homework or you fail this course.
+\end{center}
+\end{try}
+
+\begin{example}[https://www.youtube.com/watch?v=VAPnT_9vxds]{Using De Morgan's Laws}
+Write the contrapositive of the following statement.
+\begin{center}
+If it is not windy, we can swim and we cannot sail.
+\end{center}
+
+\sol
+Again, we begin by defining simple statements.  This time there are three pieces, so we define $p$, $q$, and $r$.\\
+$p$: It is windy.\\
+$q$: We can swim.\\
+$r$: We can sail.
+
+Notice that we defined each simple statement as a positive statement (without the word NOT in it).\\
+
+The original statement can then be written as \[\sim p \to (q\ \wedge \sim r).\]
+Recall that we form the contrapositive by reversing the arrow and negating both sides.  The contrapositive is thus
+\[\sim (q\ \wedge \sim r) \to\ \sim (\sim p).\]
+Now we can use De Morgan's Laws to rewrite the left-hand side.
+\[(\sim q \vee r) \to p\]
+In words, this is equivalent to the statement
+\begin{center}
+If we cannot swim or we can sail, then it is windy.
+\end{center}
+\end{example}
+
+\begin{try}
+Write the contrapositive of the following statement.
+\begin{center}
+If you call this number or go to the website, you will get a discount on your next visit.
+\end{center}
+\end{try}

@@ -1,0 +1,1243 @@
+\setcounter{ExampleCounter}{1}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{House3}
+\end{center}
+How can we predict the value of a home?  If someone wants to sell their house, they have to pick an asking price; where does that come from?
+
+The value of a home depends on many factors: location, size, amount of land, when it was built; the list goes on and on.  However, what if we isolate just \emph{one} of these factors and try to see how it impacts the price?
+
+Let's say we decide to focus on size, in square feet.  What we need, then, is a list of homes for which we can find the size and the price, so that we can compare them.  Here's a small (fictional) dataset:
+\begin{center}
+\begin{tabular}{c c}
+\textbf{Size (sq. ft.)} & \textbf{Selling Price (\$1000s)}\\
+\hline
+& \\
+2521 & 400\\
+2555 & 426\\
+2735 & 428\\
+2846 & 435\\
+3028 & 469\\
+3049 & 475\\
+3198 & 488\\
+3198 & 455\\
+\end{tabular}
+\end{center}
+Notice that the price is listed in thousands of dollars, so the price of the first home in the list is \$400,000.
+
+You may be able to scan down the list and recognize that as the size increases, the price increases as well; this seems natural enough.  However, we'd like to be more specific about this relationship--that's what we'll learn how to do in this section.
+
+When we're investigating a relationship between two variables--size and price here--it's always good to start with a scatterplot so that we can visualize the connection.
+
+\paragraph{Recall:} when we discussed scatterplots in the section on visualizing data, remember that the order of the variables is significant.  We need to decide which one \emph{determines} the other, and call it $x$ (the other will be $y$).  Since it makes more sense to say that the size of a house determines its price rather than the other way around, let's call the size $x$ and the price $y$.\\
+
+This will also be important later, when we start making predictions.  We'll want to predict the \emph{price} of a house with a given \emph{size}; in general terms, we'll always predict $y$ using a given value of $x$.
+\vfill
+\pagebreak
+
+Here's the scatterplot:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=2450, xmax=3300,
+    ymin=390, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.01cm,
+    y=0.036cm,
+    xtick={2500,2550,...,3300},
+    xticklabels={2500,,2600,,2700,,2800,,2900,,3000,,3100,,3200,,3300},
+    ytick={390,400,...,500},
+    yticklabels={390,400,...,500},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    xlabel={Size (sq. ft.)},
+    ylabel={Price (\$1000s)},
+    grid=major
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	2521 400
+	2555 426
+	2735 428
+	2846 435
+	3028 469
+	3049 475
+	3198 488
+	3198 455
+	};
+	%\addplot [blue, thick] table {
+	
+	%};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\marginnote{Although the trend is that larger houses cost more, notice the last two points on the right: clearly the price doesn't depend \emph{only} on the size, since the last two houses have the same square footage, but one is priced over \$30,000 higher.}
+First of all, notice that the trend we expected is visible: as you move to the right (as square footage increases), the points rise vertically (higher prices).  Second, notice how it looks like the points are more or less grouped around a straight line.
+
+\begin{formula}{Association}
+\begin{itemize}
+\item Two variables have a \textbf{linear association} if the scatter plot shows the data clustering around a straight line.
+\item Two variables have a \textbf{positive association} if larger values of one variable are linked with larger values of the other variable.
+\item Two variables have a \textbf{negative association} if larger values of one variable are linked with smaller values of the other variable.
+\end{itemize}
+\end{formula}
+
+%\def \agtiy {here}
+
+
+\begin{filecontents*}{table1.dat}
+110 150
+150 200
+250 220
+300 300
+150 180
+240 270
+310 360
+350 400
+400 475
+400 415
+450 488
+475 465
+\end{filecontents*}
+
+\begin{filecontents*}{table2.dat}
+140 365
+150 260
+150 488
+200 190
+200 210
+240 230
+300 220
+350 160
+350 150
+400 150
+400 180
+450 180
+450 160
+475 150
+\end{filecontents*}
+
+\marginnote{One way to visualize this is to think about using a pair of parallel lines to enclose all the points on the graph.  The closer you can draw these lines, the more tightly the points are clustered along a straight line, and thus the linear association is stronger.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+\addplot [blue,only marks,mark size=2] table {table1.dat};
+\draw[dashed] (axis cs:100,180) -- (axis cs:400,500);
+\draw[dashed] (axis cs:170,120) -- (axis cs:470,440);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+\addplot [blue,only marks,mark size=2] table {table2.dat};
+\draw[dashed] (axis cs:150,520) -- (axis cs:500,170);
+\draw[dashed] (axis cs:100,250) -- (axis cs:250,100);
+\end{axis}
+\end{tikzpicture}
+\end{center}}
+
+Here are a few examples of positive and negative association:
+\begin{center}
+\begin{tabular}{c c c}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	110 150
+	150 200
+	250 220
+	300 300
+	150 180
+	240 270
+	310 360
+	350 400
+	400 475
+	400 415
+	450 488
+	475 465
+	};
+	%\addplot [blue, thick] table {
+	
+	%};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	110 465
+	150 488
+	250 415
+	300 375
+	150 400
+	240 360
+	310 270
+	350 180
+	400 300
+	400 220
+	450 200
+	475 150
+	};
+	%\addplot [blue, thick] table {
+	
+	%};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	140 250
+	120 400
+	250 320
+	300 250
+	150 300
+	240 270
+	450 260
+	350 200
+	400 175
+	400 215
+	450 488
+	475 365
+	200 150
+	220 430
+	400 350
+	350 400
+	};
+	%\addplot [blue, thick] table {
+	
+	%};
+\end{axis}
+\end{tikzpicture}\\
+Positive linear & Negative linear & No association\\
+\\
+\\
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	140 150
+	150 160
+	200 180
+	350 250
+	150 180
+	240 150
+	450 260
+	350 200
+	400 275
+	400 215
+	450 488
+	475 365
+	200 150
+	300 200
+	400 350
+	350 220
+	};
+	%\addplot [blue, thick] table {
+	
+	%};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	140 365
+	150 260
+	150 488
+	200 190
+	200 210
+	240 230
+	300 220
+	350 160
+	350 150
+	400 150
+	400 180
+	450 180
+	450 160
+	475 150
+	};
+	%\addplot [blue, thick] table {
+	
+	%};
+\end{axis}
+\end{tikzpicture} &\\
+Positive nonlinear & Negative nonlinear
+\end{tabular}
+\end{center}
+
+At the moment, whether the association is linear or nonlinear seems like a subjective question; just by looking at the graphs, we can often convince ourselves one way or the other.  We need a specific way to measure how strong a linear association is; that's why we'll start by looking for \textbf{correlation}, we'll calculate a \emph{correlation coefficient} which will answer exactly this question.
+
+Once we're convinced that there is a strong linear relationship, the next question is, what exactly \emph{is} the relationship?  For this, we'll build a linear equation that we can use to make new predictions, like if we wanted to predict the value of a house, and we could measure its square footage.
+
+\subsection{Correlation}
+To measure the strength of a linear relationship (in other words, \emph{how linear is this relationship?}), we calculate a single number, called the correlation coefficient; we label it $r$.
+
+Before we see how to calculate it, let's look at a few examples.  Let's go back to those examples with different associations, and this time we'll show the value of $r$ for each dataset.
+\begin{center}
+\begin{tabular}{c c c}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	110 150
+	150 200
+	250 220
+	300 300
+	150 180
+	240 270
+	310 360
+	350 400
+	400 475
+	400 415
+	450 488
+	475 465
+	};
+	%r=0.97
+	\node at (axis cs:400,200) {\Large\bfseries\color{red}$r=0.97$};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	110 465
+	150 488
+	250 415
+	300 375
+	150 400
+	240 360
+	310 270
+	350 180
+	400 300
+	400 220
+	450 200
+	475 150
+	};
+	%r=-0.91
+	\node at (axis cs:225,150) {\Large\bfseries\color{red}$r=-0.91$};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	140 250
+	120 400
+	250 320
+	300 250
+	150 300
+	240 270
+	450 260
+	350 200
+	400 175
+	400 215
+	450 488
+	475 365
+	200 150
+	220 430
+	400 350
+	350 400
+	};
+	%r=0.07
+	\node at (axis cs:325,475) {\Large\bfseries\color{red}$r=0.07$};
+\end{axis}
+\end{tikzpicture}\\
+Positive linear & Negative linear & No association\\
+\\
+\\
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	140 150
+	150 160
+	200 180
+	350 250
+	150 180
+	240 150
+	450 260
+	350 200
+	400 275
+	400 215
+	450 488
+	475 365
+	200 150
+	300 200
+	400 350
+	350 220
+	};
+	%r=0.7
+	\node at (axis cs:250,400) {\Large\bfseries\color{red}$r=0.7$};
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=100, xmax=500,
+    ymin=100, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0075cm,
+    y=0.0075cm,
+    xtick={100,200,...,500},
+    xticklabels={},
+    ytick={100,200,...,500},
+    yticklabels={},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	140 365
+	150 260
+	150 488
+	200 190
+	200 210
+	240 230
+	300 220
+	350 160
+	350 150
+	400 150
+	400 180
+	450 180
+	450 160
+	475 150
+	};
+	%r=-0.7
+	\node at (axis cs:350,400) {\Large\bfseries\color{red}$r=-0.7$};
+\end{axis}
+\end{tikzpicture} &\\
+Positive nonlinear & Negative nonlinear
+\end{tabular}
+\end{center}
+
+From even this small set of examples, we can observe the following features of the correlation coefficient.
+
+\begin{formula}{Properties of the Correlation Coefficient}
+\begin{enumerate}
+\item The sign of $r$ describes the direction of the association (positive $r$, positive association, and vice versa).
+\item The closer $r$ is to 1 or $-1$, the more linear the association is.
+\item The closer $r$ is to 0, the less linear association there is.
+\end{enumerate}
+
+As a general rule of thumb, a value greater than $0.8$ or less than $-0.8$ ($r$ is always between $-1$ and $1$) corresponds to a strong linear relationship.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	xmin=-1, xmax=1,
+	ymin=-2.5, ymax=0.5,
+    axis lines=center,
+    axis on top=false,
+    %domain=0:1,
+    axis lines=middle,
+    axis y line=none,
+    x axis line style={-},
+    grid=none,
+	x=5cm,
+	y=1cm,
+	xtick={-1,-0.8,-0.6,-0.4,-0.2,0,0.2,0.4,0.6,0.8,1},
+    xticklabels={-1,-0.8,-0.6,-0.4,-0.2,0,0.2,0.4,0.6,0.8,1},
+    ytick={0},
+    yticklabels={},
+    ]
+    \draw[|<->|, color=red] (axis cs:-1,-1) -- (axis cs:-0.8,-1) node[midway, below, color=black] {Strong};
+    \draw[<->|, color=red] (axis cs:-0.8,-1) -- (axis cs:-0.6,-1) node[midway, below, color=black] {Moderate};
+    \draw[<->|, color=red] (axis cs:-0.6,-1) -- (axis cs:-0.3,-1) node[midway, below, color=black] {Weak};
+    \draw[<->|, color=black] (axis cs:-0.3,-1) -- (axis cs:0.3,-1) node[midway, below, color=black] {Negligible};
+    \draw[<->|, color=blue!80!black] (axis cs:0.3,-1) -- (axis cs:0.6,-1) node[midway, below, color=black] {Weak};
+    \draw[<->|, color=blue!80!black] (axis cs:0.6,-1) -- (axis cs:0.8,-1) node[midway, below, color=black] {Moderate};
+    \draw[<->|, color=blue!80!black] (axis cs:0.8,-1) -- (axis cs:1,-1) node[midway, below, color=black] {Strong};
+    
+    \draw[|<->|, color=red] (axis cs:-1,-2) -- (axis cs:0,-2) node[midway, below] {Negative Correlation};
+    \draw[<->|, color=blue!80!black] (axis cs:0,-2) -- (axis cs:1,-2) node[midway, below] {Positive Correlation};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{formula}
+
+There is nothing set in stone about the value of 0.8 marking the difference between strong and moderate linear correlation; these values are simply ones commonly agreed upon within the statistical community (and there is not a universal standard, either).  You may find others who use 0.7 as the breakpoint; for consistency in this book, however, we will use 0.8.  Of course, if we calculate $r$ to be something like 0.78, that's close enough to 0.8 to call it a strong linear relationship.
+\pagebreak
+
+\begin{example}{Interpreting a Correlation Coefficient}
+If a dataset comparing two variables yields an $r$-value of $-0.83$, what does that tell us?
+
+\sol
+First of all, since it is negative, the correlation is negative, meaning that as one variable increases, the other decreases.\\
+
+Second, since this value is close to $-1$, and in the range we defined as ``strong'' correlation, there is a strongly linear relationship between these two variables.
+\end{example}
+
+\paragraph{Calculating $r$} The formula for the correlation coefficient is quite complicated.  We will show it here simply to be thorough, but we will allow the calculator to handle the computation for us.
+
+%\begin{formula}{Correlation Coefficient}
+\[r=\dfrac{1}{n-1}\ \Large{\sum} \left(\dfrac{x-\overline{x}}{s_x}\right) \left(\dfrac{y-\overline{y}}{s_y}\right)\]
+
+\paragraph{Note:} It doesn't matter which variable is $x$ and which is $y$; the correlation coefficient is the same either way.
+%\end{formula}
+
+Again, we won't bother using this formula; it's tedious to use, and it doesn't add anything to our understanding.
+
+\subsection{Correlation Does Not Imply Causation}
+Just because two variables are highly correlated, that doesn't mean that one causes the other.  In the example of the house sizes and their price, there IS a causal link, but you can't assume that in every case where there's a strong correlation.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{xkcdCorrelation}\\
+\emph{\small ``Correlation doesn't imply causation, but it does waggle its eyebrows suggestively and gesture furtively while mouthing `look over there.' ''}\\
+\hfill \emph{\small xkcd.com}
+\end{center}
+
+For instance, the number of injuries sustained in a swimming pool is correlated with the sales of ice cream cones.  Do ice cream cones cause injuries, or vice versa?  Of course not; it's just that both of them are much more common in warmer weather.
+
+In that case, we call the weather a \textbf{confounder}, a third variable that is related to the two we're interested in.  If we don't consider this third variable, it can fool us into thinking that the other two cause each other.\\
+\pagebreak
+
+Even if there isn't a confounder, sometimes two variables can be related by coincidence.  There's a book and website by Tyler Vigen (\href{http://tylervigen.com/spurious-correlations}{tylervigen.com}) devoted to showing such correlations.  For example:
+\begin{center}
+\includegraphics[width=\textwidth]{SpuriousCorrelation}
+\end{center}
+
+\subsection{Regression}
+We now have the first part of the puzzle: we can measure \emph{correlation}, so we can tell whether or not there is a strong linear relationship.  Once we've decided that there is, we turn our attention to the problem of \textbf{regression}, finding a linear equation to describe this relationship.
+
+Let's go back to the data involving house sizes and prices:
+\begin{center}
+\begin{tabular}{c c}
+\textbf{Size (sq. ft.)} & \textbf{Selling Price (\$1000s)}\\
+\hline
+& \\
+2521 & 400\\
+2555 & 426\\
+2735 & 428\\
+2846 & 435\\
+3028 & 469\\
+3049 & 475\\
+3198 & 488\\
+3198 & 455\\
+\end{tabular}
+\end{center}
+We haven't shown this calculation yet (we'll see it when we start using the calculator in a bit), but for this dataset, \[r = 0.9.\]  Thus, we know that there is a strong \emph{positive} linear relationship, meaning that as one variable increases, so does the other; larger houses cost more, and vice versa.
+
+Okay, so there is a linear relationship here, but what is it, exactly?  We want to find a linear relationship of the form
+\[\hat{y} = ax + b\]
+using \emph{linear regression}.
+
+First, a note about notation: $\hat{y}$, which we read as ``$y$ hat,'' refers to \emph{predicted} $y$-values based on given $x$ values.  In other words, the first house, with 2521 square feet, is selling for \$400,000, so the $x$ value of 2521 corresponds to an \emph{actual} $y$ value in the dataset of \$400,000.
+
+However, once we define an equation, we can plug 2521 into that equation for $x$, and the equation will \emph{predict} a price that goes with that square footage.  That price will probably not be exactly \$400,000, but it will be close.  The difference between the \emph{actual} value $y$ and the \emph{predicted} value $\hat{y}$ is called the \textbf{error} or \textbf{residual} for that $x$ value:
+\[\textrm{Residual } = y - \hat{y}\]
+\pagebreak
+
+For any equation we define, we can calculate the residuals for all the points in our dataset.  Here's the key: \emph{\bfseries we want to minimize the residuals}, so we can keep trying different equations, moving the prediction line around, until we're satisfied:
+\begin{center}
+\begin{tabular}{c c}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=2450, xmax=3300,
+    ymin=390, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0065cm,
+    y=0.025cm,
+    xtick={2500,2550,...,3300},
+    xticklabels={2500,,2600,,2700,,2800,,2900,,3000,,3100,,3200,,3300},
+    ytick={390,400,...,500},
+    yticklabels={390,400,...,500},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	2521 400
+	2555 426
+	2735 428
+	2846 435
+	3028 469
+	3049 475
+	3198 488
+	3198 455
+	};
+	\addplot [blue, thick, domain=2500:3500, samples=10] {0.02*x+400};
+	\draw [red] (axis cs:2521,400) -- (axis cs:2521,450.42);
+	\draw [red] (axis cs:2555,426) -- (axis cs:2555,451.1);
+	\draw [red] (axis cs:2735,428) -- (axis cs:2735,454.7);
+	\draw [red] (axis cs:2846,435) -- (axis cs:2846,456.92);
+	\draw [red] (axis cs:3028,469) -- (axis cs:3028,460.56);
+	\draw [red] (axis cs:3049,475) -- (axis cs:3049,460.98);
+	\draw [red] (axis cs:3198,488) -- (axis cs:3198,463.96);
+	\draw [red] (axis cs:3198,455) -- (axis cs:3198,463.96);
+\end{axis}
+\end{tikzpicture}
+&
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=2450, xmax=3300,
+    ymin=390, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.0065cm,
+    y=0.025cm,
+    xtick={2500,2550,...,3300},
+    xticklabels={2500,,2600,,2700,,2800,,2900,,3000,,3100,,3200,,3300},
+    ytick={390,400,...,500},
+    yticklabels={390,400,...,500},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    %xlabel={Size (sq. ft.)},
+    %ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	2521 400
+	2555 426
+	2735 428
+	2846 435
+	3028 469
+	3049 475
+	3198 488
+	3198 455
+	};
+	\addplot [blue, thick, domain=2500:3500, samples=10] {0.0992*x+160.19};
+	\draw [red] (axis cs:2521,400) -- (axis cs:2521,410.2732);
+	\draw [red] (axis cs:2555,426) -- (axis cs:2555,413.646);
+	\draw [red] (axis cs:2735,428) -- (axis cs:2735,431.502);
+	\draw [red] (axis cs:2846,435) -- (axis cs:2846,442.5132);
+	\draw [red] (axis cs:3028,469) -- (axis cs:3028,460.5676);
+	\draw [red] (axis cs:3049,475) -- (axis cs:3049,462.6508);
+	\draw [red] (axis cs:3198,488) -- (axis cs:3198,477.4316);
+	\draw [red] (axis cs:3198,455) -- (axis cs:3198,477.4316);
+\end{axis}
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+The line on the right is a better fit for the data, because the residuals are smaller, on the whole.\\
+
+\marginnote{\textbf{Why Least Squares?}\\
+Since some residuals will be positive and others will be negative, just minimizing the total or sum of the residuals isn't good enough, because we could draw a line that doesn't fit the data very well, but simply balances the positive and negative errors.  It turns out that if we square all the residuals, we get all positive answers, and minimizing this result leads to the line of best fit.}
+How do we get the \emph{best} line, though?  This ideal line is called the \textbf{line of best fit} or the \textbf{least-squares regression line}.  The derivation of the formula is much too complicated to show here, but the formula is shown below.  Note that for actual calculations, we'll simply use the calculator, so we won't use this formula, other than one quick example.
+
+\begin{formula}{Equation of the Regression Line}
+Given ordered pairs ($x$,$y$) with sample means $\overline{x}$ and $\overline{y}$, sample standard deviations $s_x$ and $s_y$, and correlation coefficient $r$, the equation of the least-squares regression line for predicting $y$ from $x$ is 
+\[\hat{y}=ax+b\]
+where the slope and intercept are given by
+\begin{itemize}
+\item \textbf{Slope:} $a=r \ \dfrac{s_y}{s_x}$
+\item \textbf{Intercept:} $b=\overline{y}-a\overline{x}$
+\end{itemize}
+\end{formula}
+
+\begin{example}{Regression with House Prices}
+Construct the least-squares regression line for the house price data given below, knowing that $r=0.9$.
+\begin{center}
+\begin{tabular}{c c}
+\textbf{Size (sq. ft.)} & \textbf{Selling Price (\$1000s)}\\
+\hline
+& \\
+2521 & 400\\
+2555 & 426\\
+2735 & 428\\
+2846 & 435\\
+3028 & 469\\
+3049 & 475\\
+3198 & 488\\
+3198 & 455\\
+\end{tabular}
+\end{center}
+
+\sol
+First, we need to calculate the mean and standard deviation for each of the variables.  To do this, we can enter the data as shown into the calculator and use \texttt{2-Var Stats} (we could also enter one column at once and use \texttt{1-Var Stats} twice, but this is quicker).
+\begin{center}
+\begin{tabular}{c c c}
+\includegraphics[height=0.9in]{RegressionHouses1}
+& \includegraphics[height=0.9in]{RegressionHouses2}
+& \includegraphics[height=0.9in]{RegressionHouses3}
+\end{tabular}
+\end{center}
+\pagebreak
+
+Scanning through the results, we collect the following:
+\[\overline{x} = 2891, \overline{y} = 447\]
+\[s_x = 269.5, s_y = 29.7\]
+
+Notice that in order to find $b$ in the regression equation, we must know $a$, so we'll start by calculating $a$:
+\begin{align*}
+a &= r\ \dfrac{s_y}{s_x}\\
+&= (0.9)\left(\dfrac{29.7}{269.5}\right)\\
+&= 0.099
+\end{align*}
+
+Now we can find $b$:
+\begin{align*}
+b &= \overline{y} - a\overline{x}\\
+&= 447 - (0.099)(2891)\\
+&= 160.8
+\end{align*}
+
+Therefore, the regression line (graphed below) is given by the equation
+\[\boxed{\hat{y} = 0.099 x + 160.8}\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=2450, xmax=3300,
+    ymin=390, ymax=500,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.01cm,
+    y=0.035cm,
+    xtick={2500,2550,...,3300},
+    xticklabels={2500,,2600,,2700,,2800,,2900,,3000,,3100,,3200,,3300},
+    ytick={390,400,...,500},
+    yticklabels={390,400,...,500},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    xlabel={Size (sq. ft.)},
+    ylabel={Price (\$1000s)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=2] table {
+	2521 400
+	2555 426
+	2735 428
+	2846 435
+	3028 469
+	3049 475
+	3198 488
+	3198 455
+	};
+	\addplot [blue, thick, domain=2500:3500, samples=10] {0.0992*x+160.19};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+We've now computed the regression line manually exactly once, and from now on, we'll rely on the calculator to do it for us, because using the formula doesn't give us any extra insight.
+
+\subsection{Regression with the Calculator}
+Once you've entered the data into the calculator, with the $x$ values in the first list and $y$ values in the second list, press the \calcbutton{STAT} button and scroll to the right to access the \texttt{CALC} menu (where we find \texttt{1-Var Stats}, for instance).  There, look for the fourth option, labeled \texttt{4:LinReg(ax+b)}.  After selecting it, you can leave all the default options alone, as long as you entered $x$ and $y$ in the usual order.  Select \texttt{Calculate} to see the results.
+\begin{center}
+\begin{tabular}{c c c}
+\includegraphics[height=0.8in]{gmRegression4}
+& \includegraphics[height=0.8in]{gmRegression5}
+& \includegraphics[height=0.8in]{RegressionHouses4}
+\end{tabular}
+\end{center}
+The results shown here are for the house price example; notice that the answers we calculated manually are a bit different due to rounding the answers along the way, but the differences are small.
+
+\paragraph{Note:} when you first follow this process, you may not see the $r$ value in the results.  If you don't, there's a setting you can change to display it.  To do this, press \calcbutton{2ND} \calcbutton{0} to access the full catalog, then use the arrow keys to scroll down (the options are listed in alphabetical order) to an option called \texttt{DiagnosticOn}.  Press \calcbutton{ENTER} twice to turn this on, and then repeat the steps above; now $r$ should appear with the other results.
+\pagebreak
+
+\begin{example}{Regression Line}
+A random sample of 11 statistics students produced the following data, where $x$ is the third exam score out of 80, and $y$ is the final exam score out of 200.
+\begin{center}
+\begin{tabular}{c c}
+$x$ & $y$\\
+\hline
+\\
+65 & 175\\
+67 & 133\\
+71 & 185\\
+71 & 163\\
+66 & 126\\
+75 & 198\\
+67 & 153\\
+70 & 163\\
+71 & 159\\
+69 & 151\\
+69 & 159
+\end{tabular}
+\end{center}
+
+Find the equation of the least-squares regression line that can be used to predict a student's performance on the final exam based on their third test score.
+
+\sol
+First, enter the data in the calculator, then use the \texttt{LinReg} function to calculate the regression line.
+\marginnote{\text{}\\ \textbf{Note:} To find $r$ with the calculator, we calculate the equation of the line of best fit.  However, if we then find that $r$ is too close to 0 for a good linear association, we will discard the linear equation.  The calculator will calculate the linear equation whether it is relevant or not; it's up to us to interpret the results.}
+\begin{center}
+\begin{tabular}{c c c}
+\includegraphics[height=0.8in]{gmRegression4}
+& \includegraphics[height=0.8in]{gmRegression5}
+& \includegraphics[height=0.8in]{RegressionTestScores}
+\end{tabular}
+\end{center}
+
+The correlation coefficient is
+\[\boxed{r = 0.66}\]
+so there is a moderate linear relationship, and it is a positive association, as we might expect.\\
+
+The regression line has the equation
+\[\boxed{\hat{y} = 4.83x-173.51}\]
+\end{example}
+
+\begin{try}
+Consider the following data set.
+\begin{center}
+\begin{tabular}{c | c c c c c c c c}
+$x$ & 9 & 5 & 7 & 13 & $-8$ & $-2$ & 6 & $-10$\\
+\hline
+$y$ & 3 & 3 & 31 & 36 & 0 & 3 & $-2$ & $-14$
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item Calculate $r$, the correlation coefficient.  Interpret this value.
+\item Compute the least-squares regression line for this data set.
+\end{enumerate}
+\end{try}
+\vfill
+\pagebreak
+
+\subsection{Making Predictions}
+One of the primary reasons for computing a regression equation is to use it to make predictions about new $x$ values.  For instance, using the house price dataset, we could assess the value of a new home on the market by measuring its square footage.
+
+\begin{example}{Predicting House Values}
+Using a sample of houses on the market, we found the following regression equation to predict the price $y$ based on the square footage $x$:
+\[\hat{y} = 0.099x + 160.8\]
+Use this equation to predict the price of homes with the following square footage values:
+\begin{enumerate}[(a)]
+\item 2700 square feet
+\item 4500 square feet
+\end{enumerate}
+Which prediction do you expect to be more reliable?
+
+\sol
+\begin{enumerate}
+\item The predicted price for a home with 2700 square feet is
+\begin{align*}
+\hat{y} &= 0.099(2700) + 160.8\\
+&= 428.1
+\end{align*}
+Recall that prices are listed in thousands of dollars, so this corresponds to $\boxed{\$428,100}$.
+
+\item For 4500 square feet:
+\begin{align*}
+\hat{y} &= 0.099(4500) + 160.8\\
+&= 606.3
+\end{align*}
+so the predicted price is $\boxed{\$606,300}$.
+\end{enumerate}
+
+Now, which of these is likely to be more reliable?  The key is that the first house falls within the range of sizes that are listed in our sample; this is called an \textbf{interpolation}.  On the other hand, our sample doesn't include any houses as large as the second one, so that represents an \textbf{extrapolation}.  In general, interpolations are more reliable, because the trend may be different outside the range for which we have data.  Maybe really large houses are more expensive than expected because they are built with top-quality materials.
+\end{example}
+
+\begin{try}
+Using the data for students test scores shown below, predict the final exam score for students who scored 60 and 80 on the third exam.
+\begin{center}
+\begin{tabular}{c c}
+$x$ & $y$\\
+\hline
+\\
+65 & 175\\
+67 & 133\\
+71 & 185\\
+71 & 163\\
+66 & 126\\
+75 & 198\\
+67 & 153\\
+70 & 163\\
+71 & 159\\
+69 & 151\\
+69 & 159
+\end{tabular}
+\end{center}
+\end{try}
+
+\paragraph{Note:} Not every $x$ value that you can plug into the regression equation is a meaningful one.  For instance, you could try predicting the final exam score of a student who got a 90 on the third test (even though the third test scores can only go up to 80), or the price of a home with negative square footage, and each equation will dutifully give you a value.  Just note that that value is meaningless; you need to use common sense when making predictions.
+
+\begin{example}{NFL Quarterbacks}
+The following table lists the heights (in inches) and weights (in pounds) of 10 NFL quarterbacks in the 2019 season.
+\begin{center}
+\begin{tabular}{l c c}
+\textbf{Name} & \textbf{Height} & \textbf{Weight}\\
+\hline
+& & \\
+Lamar Jackson & 75 & 200\\
+Patrick Mahomes & 74 & 225\\
+Dak Prescott & 74 & 226\\
+Kyler Murray & 70 & 207\\
+Russell Wilson & 71 & 206\\
+Deshaun Watson & 74 & 221\\
+Matt Ryan & 76 & 220\\
+Josh Allen & 77 & 233\\
+Drew Brees & 72 & 209\\
+Aaron Rodgers & 74 & 225\\
+\end{tabular}
+\end{center}
+\begin{enumerate}[(a)]
+\item Calculate the correlation coefficient for this data.
+\item Is there are strong linear relationship?
+\item Compute the regression line for predicting weight from height.
+\item Graph the data and the regression equation.
+\item Predict the weight of a quarterback who is 73 inches tall.
+\item Does Drew Brees weigh more or less than the weight predicted by the regression line, based on his height?
+\end{enumerate}
+
+\sol
+First, enter the data in the calculator and use the \texttt{LinReg} option; this will give us the answers for $r$ and the regression equation.
+\begin{center}
+\begin{tabular}{c c c}
+\includegraphics[height=0.75in]{RegressionQB1}
+& \includegraphics[height=0.75in]{gmRegression4}
+& \includegraphics[height=0.75in]{RegressionQB2}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[(a)]
+\item The value of the correlation coefficient is \[\boxed{r=0.6}\]
+
+\marginnote{Notice in the graph below that there is a clear outlier; Lamar Jackson is one of the tallest quarterbacks, but also one of the lightest.  If we remove him from the sample, the correlation coefficient jumps to 0.88, greatly strengthening the linear relationship.\\ \text{}\\
+This illustrates how \emph{sensitive to outliers} the correlation coefficient is.}
+\item The relationship isn't strong ($r\ \cancel\geq\ 0.8$), but there is a moderate linear relationship ($r \geq 0.6$), so we'll continue.
+
+\item The regression equation is \[\boxed{\hat{y} = 3.01x - 4.43}\]
+
+\item The graph is shown below (note that some of the points overlap).
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    xmin=69, xmax=78,
+    ymin=190, ymax=230,
+    axis lines=center,
+    axis on top=false,
+    domain=0:1,
+    x=0.8cm,
+    y=0.07cm,
+    xtick={69,70,...,78},
+    xticklabels={69,70,...,78},
+    ytick={190,200,...,230},
+    yticklabels={190,200,...,230},
+    axis lines=middle,
+    axis line style={->},
+    x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+    y label style={at={(axis description cs:-0.11,.5)},rotate=90,anchor=south},
+    xlabel={Height (in.)},
+    ylabel={Weight (lbs)},
+    grid=none
+    ]
+	\addplot [blue,only marks,mark size=1.5] table {
+	75 200
+	74 220
+	74 226
+	70 207
+	71 206
+	74 221
+	76 220
+	77 233
+	72 209
+	74 225
+	};
+	\addplot [blue, dashed, thick, domain=69:78, samples=10] {3.01*x-4.43};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\item Simply substitute 73 for $x$:
+\begin{align*}
+\hat{y} &= 3.01(73) - 4.43\\
+&= \boxed{215.3 \textrm{ pounds}}
+\end{align*}
+
+\item Since Drew Brees is 72 inches tall, we can use the regression equation to predict his weight:
+\begin{align*}
+\hat{y} &= 3.01(72) - 4.43\\
+&= 212.3 \textrm{ pounds}
+\end{align*}
+A QB of that height is predicted to weight 212 pounds, so since Drew Brees only weighs 209 pounds, he weighs $\boxed{\textrm{less}}$ than predicted.
+\end{enumerate}
+\end{example}
+
+\begin{try}
+A blood pressure measurement consists of two numbers: the systolic pressure, which is the maximum pressure taken when the heart is contracting, and the diastolic pressure, which is the minimum pressure taken at the beginning of the heartbeat.  Blood pressures were measured (in millimeters of mercury, mmHg) for a sample of 16 adults.
+\begin{center}
+\begin{tabular}{l | c c c c c c c c c c c c c c c c}
+Systolic & 134 & 115 & 113 & 123 & 119 & 118 & 130 & 116\\
+Diastolic & 87 & 83 & 77 & 77 & 69 & 88 & 76 & 70\\
+\\
+\hline
+\\
+Systolic & 133 & 112 & 107 & 110 & 108 & 105 & 157 & 154\\
+Diastolic & 91 & 75 & 71 & 74 & 69 & 66 & 103 & 94
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[(a)]
+\item Calculate $r$, the correlation coefficient.
+\item Do you think there is a strong linear association?
+\item Compute the regression line for predicting the diastolic pressure from the systolic pressure.
+\item Predict the diastolic pressure for a patient whose systolic pressure is 125 mmHg.
+\end{enumerate}
+\end{try}
+
+\subsection{Using Excel}
+We can also use Excel to calculate regression equations.  To begin, enter the data as shown (we'll use the data from the QB height/weight example):
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{QBRegressionExcel1}
+\end{center}
+\pagebreak
+
+Next, we need to insert a scatterplot of these data points; select the Insert menu at the top of the screen, then select the scatterplot option under the Charts section (select the first type of scatterplot under that submenu).
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{QBRegressionExcel2}
+\end{center}
+
+This creates a graph similar to the one that we drew earlier for this same example; we could add a title to the chart and the axes, but we won't bother for this example.
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{QBRegressionExcel3}
+\end{center}
+
+To add a regression line, click on the plus symbol at the upper right (when the chart is selected).  One of the options is to add a trendline.  If you check that box, the line will be drawn, but by default, Excel won't show the equation of the line, which is what we're after, so we need to select ``More Options'' after clicking on the arrow next to the trendline option.
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{QBRegressionExcel4}
+\end{center}
+
+This brings up the following menu.  Notice that there are different types of equations we can use to model the data, including several that we'll encounter later in the chapter.  For now, though, leave the linear option selected, but check the box at the bottom of the menu that says ``Display Equation on chart.''
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{QBRegressionExcel5}
+\end{center}
+
+We can also select the option to display the R-squared value on the chart (more on this in a moment).
+\pagebreak
+
+This leads to the following:
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{QBRegressionExcel6}
+\end{center}
+
+The equation, as calculated by Excel, is \[\hat{y} = 3.0071x - 4.4252\] which, after rounding, is identical to the one obtained by the calculator (this is no surprise, since they're using the same formulas).
+
+\paragraph{Note:} Excel does not directly report the value of $r$, but it can show the value $R^2$, which is simply the square of the correlation coefficient, so we can calculate the value of $r$ with one step:
+\[r = \sqrt{R^2} = \sqrt{0.3579} = \boxed{0.598}\]
+After rounding, this is the same as the value we found earlier (0.6).

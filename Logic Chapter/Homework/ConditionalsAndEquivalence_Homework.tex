@@ -1,0 +1,198 @@
+\begin{exercises}
+\emph{In problems 1--8, let $p$ and $q$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ You studied.}\\
+&q: \textrm{ You passed this course.}
+\end{align*}
+\emph{Write each of the following statements in symbolic form.}
+
+\ptwo{If you passed this course, you studied.}
+\ptwo{You passed this course if and only if you studied.}
+
+\ptwo{You didn't study if and only if you passed this course.}
+\ptwo{You didn't study if you didn't pass this course.}\\ \\
+
+\emph{Write each of the following statements in words.}
+
+\pfour{$p \to q$}
+\pfour{$\sim p \leftrightarrow\ \sim q$}
+\pfour{$\sim q \to p$}
+\pfour{$\sim p \to q$}\\ \\
+
+\emph{In problems 9--16, let $p$, $q$, and $r$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ The ice cream truck is here.}\\
+&q: \textrm{ The pool is open.}\\
+&r: \textrm{ It is summertime.}
+\end{align*}
+\emph{Write each of the following statements in symbolic form.}
+
+\ptwo{If the ice cream truck is here, and the pool is open, then it is summertime.}
+\ptwo{It isn't summertime if the ice cream truck isn't here and the pool isn't open.}
+
+\ptwo{It's summertime if and only if the pool is open.}
+\ptwo{If it isn't summertime, the pool isn't open or the ice cream truck isn't here.}\\ \\
+
+\emph{Write each of the following statements in words.}
+
+\pfour{$(p \vee q) \to r$}
+\pfour{$r \to (p \wedge q)$}
+\pfour{$p \leftrightarrow q$}
+\pfour{$p \leftrightarrow (q \wedge r)$}\\ \\
+
+\emph{In problems 17--24, fill in the blanks in each truth table.}
+
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c|}
+\hline
+$p$ & $q$ & $q \to p$ & $\sim (q \to p)$\\
+\hline
+& & &\\
+T & T & & \\
+T & F & & \\
+F & T & & \\
+F & F & & \\
+\hline
+\end{tabular}
+\end{center}}
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c | c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim q$ & $\sim p \leftrightarrow \sim q$\\
+\hline
+& & & &\\
+T & T & & & \\
+T & F & & & \\
+F & T & & & \\
+F & F & & & \\
+\hline
+\end{tabular}
+\end{center}}
+
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c|}
+\hline
+$p$ & $q$ & $p \vee q$ & $q \to (p \vee q)$\\
+\hline
+& & &\\
+T & T & & \\
+T & F & & \\
+F & T & & \\
+F & F & & \\
+\hline
+\end{tabular}
+\end{center}}
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$p$ & $q$ & $p \wedge q$ & $\sim p$ & $\sim q$ & $\sim p \wedge \sim q$ & $(p \wedge q) \to (\sim p \wedge \sim q)$\\
+\hline
+& & & & & &\\
+T & T & & & & & \\
+T & F & & & & & \\
+F & T & & & & & \\
+F & F & & & & & \\
+\hline
+\end{tabular}
+\end{center}}
+
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c | c|}
+\hline
+$p$ & $q$ & $q \to p$ & $p \to q$ & $(q \to p) \wedge (p \to q)$\\
+\hline
+& & & &\\
+T & T & & & \\
+T & F & & & \\
+F & T & & & \\
+F & F & & & \\
+\hline
+\end{tabular}
+\end{center}}
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c | c|}
+\hline
+$p$ & $q$ & $p \to q$ & $\sim q$ & $(p \to q) \wedge \sim q$\\
+\hline
+& & & &\\
+T & T & & & \\
+T & F & & & \\
+F & T & & & \\
+F & F & & & \\
+\hline
+\end{tabular}
+\end{center}}
+
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c | c | c|}
+\hline
+$p$ & $q$ & $r$ & $\sim p$ & $\sim p \vee r$ & $(\sim p \vee r) \to q$\\
+\hline
+& & & & &\\
+T & T & T & & & \\
+T & F & T & & & \\
+F & T & T & & & \\
+F & F & T & & & \\
+T & T & F & & & \\
+T & F & F & & & \\
+F & T & F & & & \\
+F & F & F & & & \\
+\hline
+\end{tabular}
+\end{center}}
+\ptwo{
+\begin{center}
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$p$ & $q$ & $r$ & $\sim p$ & $\sim r$ & $q \to \sim p$ & $\sim r \wedge (q \to \sim p)$\\
+\hline
+& & & & & &\\
+T & T & T & & & & \\
+T & F & T & & & & \\
+F & T & T & & & & \\
+F & F & T & & & & \\
+T & T & F & & & & \\
+T & F & F & & & & \\
+F & T & F & & & & \\
+F & F & F & & & & \\
+\hline
+\end{tabular}
+\end{center}}\\ \\
+
+\emph{In problems 25--28, determine if each statement is a tautology or not.}
+
+\ptwo{$p \wedge \sim p$}
+\ptwo{$p \vee \sim p$}
+
+\ptwo{$(p \wedge q) \vee (\sim p \wedge q) \leftrightarrow q$}
+\ptwo{$(q \to p) \vee (\sim q \to \sim p)$}\\ \\
+
+\emph{In problems 29--30, select the statement that is equivalent to the one given.}
+
+\ptwo{``Either the Cardinals or the Yankees will win the World Series.''
+\begin{enumerate}[(a)]
+\item If the Cardinals don't win the World Series, the Yankees will win it.
+\item The Cardinals and the Yankees will win the World Series.
+\item If the Cardinals win the World Series, the Yankees will not win it.
+\item If the Yankees win the World Series, the Cardinals will not.
+\end{enumerate}}
+\ptwo{``If the light is on, someone is home.''
+\begin{enumerate}[(a)]
+\item The light is on and someone is home.
+\item If someone is home, the light is on.
+\item Either someone is not home, or the light is on.
+\item If someone is not home, the light is not on.
+\end{enumerate}}\\ \\
+
+\emph{In problems 31--32, write the converse, inverse, and contrapositive of the given statement.}
+
+\ptwo{If you drive through the field, you see fireflies.}
+\ptwo{If you go to office hours, you pass the test.}
+\end{exercises}

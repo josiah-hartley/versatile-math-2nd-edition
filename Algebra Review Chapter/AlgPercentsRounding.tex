@@ -1,0 +1,176 @@
+\setcounter{ExampleCounter}{1}
+\subsection{Percents}
+One very useful way of representing numbers like rates--interest rates in finance or growth rates in general, for instance--is by using \textbf{percents}, using the \% symbol.  The word ``percent'' simply means ``per hundred,'' and it can be helpful to think of it that way.
+
+For instance 50\% refers to 50 hundredths: \[50\% = \dfrac{50}{100}\] and thus 50\% is equivalent to one half.
+\vfill
+
+\begin{formula}{Percents}
+A percentage, denoted using the \% symbol, refers to a proportion out of 100: \[x\% = \dfrac{x}{100}.\]
+
+Thus, 0\% corresponds to 0, 100\% corresponds to 1, and every percentage in between corresponds to a number between 0 and 1.  Percentages greater than 100\% correspond to numbers greater than 1.
+
+\paragraph{Converting from Percents to Decimals}
+Since a percentage refers to a number divided by 100, any percentage can be converted to an equivalent decimal by dividing the percentage by 100.
+
+\paragraph{Example:} To convert 35\% to a decimal, simply divide 35 by 100 (shortcut: move the decimal point at the end of 35 to the left by two places): 
+\[35\% = \dfrac{35}{100} = 0.35\]
+\text{} \\
+
+\paragraph{Converting from Decimals to Percents}
+To reverse this process, simply multiply any decimal by 100 (move the decimal point two places to the \textit{right}) to express the corresponding percentage.
+
+\paragraph{Example:} To convert 0.08 to a percentage, multiply by 100:
+\[0.08 = 0.08 \cdot 100\% = 8\%\]
+
+\end{formula}
+\vfill
+
+With practice, you can become adept at switching easily between percents and decimals.  This is important because, in the Financial Math chapter, for instance, problems are often stated with interest rates expressed as percentages (as they are in practice).  However, to use the formulas in that chapter, we will need to convert the percentages to their equivalent decimal forms.
+\vfill
+
+\text{}
+\pagebreak
+
+\begin{example}{Converting to Percents}
+Convert each of the following numbers to the equivalent percentage.
+\begin{enumerate}[(a)]
+\item $\dfrac{3}{5}$
+\item $0.635$
+\item $\dfrac{12}{8}$
+\item $-2.38$
+\item $0.0004$
+\item $-\dfrac{1}{4}$
+\end{enumerate}
+
+\sol
+Remember, to convert a fraction or decimal to a percentage, simply multiply the number by 100:
+
+\begin{enumerate}[(a)]
+\item $\dfrac{3}{5} = 0.6 = 0.6 \cdot 100\% = \boxed{60\%}$
+\item $0.635 \cdot 100\% = \boxed{63.5\%}$
+\item $\dfrac{12}{8} = 1.5 = 1.5 \cdot 100\% = \boxed{150\%}$
+\item $-2.38 \cdot 100\% = \boxed{-238\%}$
+\item $0.0004 \cdot 100\% = \boxed{0.04\%}$
+\item $-\dfrac{1}{4} = -0.25 = -0.25 \cdot 100\% = \boxed{-25\%}$
+\end{enumerate}
+
+Notice how in each example, we were able to simply multiply a number by 100\% without changing its value.  For instance, we wrote that $1.5 = 1.5 \cdot 100\%$.  Why are we able to do this?  The answer is that 100\% is equivalent to 1, and if we multiply any number by 1, that number remains unchanged.\\
+
+This way of keeping track of your work may be helpful to you, but the key is that to convert a decimal to a percentage, you must multiply the decimal by 100.
+\end{example}
+
+\begin{example}{Converting to Decimals}
+Convert each of the following percentages to the equivalent decimal form.
+\begin{enumerate}[(a)]
+\item $53.9\%$
+\item $0.0325\%$
+\item $6722\%$
+\item $-12\%$
+\end{enumerate}
+
+\sol
+To convert a percentage to a decimal, divide the percentage by 100:
+
+\begin{enumerate}[(a)]
+\item $53.9\% = \dfrac{53.9}{100} = \boxed{0.539}$
+\item $0.0325\% = \dfrac{0.0325}{100} = \boxed{0.000325}$
+\item $6722\% = \dfrac{6722}{100} = \boxed{67.22}$
+\item $-12\% = -\dfrac{12}{100} = \boxed{-0.12}$
+\end{enumerate}
+\end{example}
+
+
+\subsection{Rounding}
+When we get a numerical answer to a question, we often want to round that answer to some reasonable length.  For instance, when dealing with the amount of money in a bank account, we could get an answer like \$2455.62178, but of course, since U.S. currency is expressed in terms of dollars and cents, we would like to round that answer to the second decimal place.  Furthermore, if we calculated the cost of a mortgage to be \$327,856.72, we may be more interested in simply the dollar amount, not including the cents, since for a transaction that large, a few extra cents do not make that much difference.
+
+\begin{formula}{Rounding}
+To round a decimal to a given point, remove everything after that point.  Before you do, though, look at the number right after the cutoff point:
+\begin{enumerate}
+\item If the number after the cutoff point is less than 5, leave the last remaining digit unchanged.
+\item If the number after the cutoff point is 5 or greater, add 1 to the last remaining digit.
+\end{enumerate}
+
+For example, suppose we wanted to round 3.1415926 to three decimal places:
+\[3.141\bigg|5926\]
+
+Therefore, we will remove everything after the vertical line shown above.  As we do so, we notice that the first digit after the line is 5, so we'll add 1 to the last digit of the remaining number:
+\[3.141\bigg|5926 \approx 3.142\]
+
+Notice the $\approx$ symbol: this wavy equals sign means ``approximately equal to.''  If you see that symbol, in tends to mean that the answer has been rounded.
+\end{formula}
+
+Of course, at what point you choose to round will vary based on the context.  In financial contexts, it makes sense to round to two decimal places.  Elsewhere, it may be a good idea to round to three or four decimal places, or you may want to round off everything after the decimal point, to get a whole number.
+
+In any case, you should be flexible enough to round to any desired point.
+
+\begin{example}{Rounding}
+\begin{enumerate}[(a)]
+\item Round 0.1111111 to two decimal places.
+
+\sol
+Since the third digit is less than 5, leave the second digit unchanged as you drop off everything after it:
+\[0.11\bigg|11111 \approx \boxed{0.11}\]
+
+\solline
+\item Round 184,515 to the nearest thousand.
+
+\sol
+To round to the nearest thousand, we must drop everything after 4.  Since the next digit is greater than or equal to 5, we round the 4 up:
+\[184,\bigg|515 \approx \boxed{185,000}\]
+\end{enumerate}
+\end{example}
+
+\begin{proc}{Sidenote: The Importance of Rounding}
+Not only is rounding convenient, but in many cases, it is important to show how precise a number is.\\
+
+For instance, suppose a mathematical model is used to predict the population of a certain state five years in the future.  The model will give a very precise answer, by its nature.  Suppose it predicts that there will be 11,245,617 people (after rounding off everything after the decimal point, since there cannot be a fraction of a person).  \\
+
+Of course, every prediction contains some inherent uncertainty, so there's no way that this answer can be known so precisely.  Thus, to give this answer would be misleading, because it would imply that the population \textit{can} be predicted with such precision.  It might make more sense to give the answer as ``approximately 11,200,000'' or something similar.
+\end{proc}
+
+\begin{exercises}
+\textit{In exercises 1--8, convert each number to the equivalent percentage.}
+
+\pfour{$\dfrac{15}{20}$}
+\pfour{$\dfrac{1}{5}$}
+\pfour{$-\dfrac{6}{4}$}
+\pfour{$3$}
+
+\pfour{$0.514$}
+\pfour{$-0.96$}
+\pfour{$1.112$}
+\pfour{$15.8$}
+
+\textit{In exercises 9--16, convert each percentage to the equivalent decimal form.}
+
+\pfour{$18\%$}
+\pfour{$0\%$}
+\pfour{$155\%$}
+\pfour{$0.5\%$}
+
+\pfour{$3.06\%$}
+\pfour{$2.72\%$}
+\pfour{$-12\%$}
+\pfour{$0.01\%$}
+
+\textit{In exercises 17--20, round each number to the specified point.}
+
+\pfour{Round 67,853 to the nearest hundred.}
+\pfour{Round 4.64779 to one decimal place.}
+\pfour{Round 7.6663 to two decimal places.}
+\pfour{Round 48,749 to the nearest thousand.}
+
+\vspace*{0.25in}
+
+{\color{blue!60!black} \rule{\textwidth}{3pt}}
+\vspace*{0.25in}
+
+\subsection{Answers}
+\begin{tabularx}{\textwidth}{l l l l l l}
+1. 75\% & 2. 20\% & 3. $-150$\% & 4. 300\% & 5. 51.4\% & 6. $-96\%$\\ \\
+7. 111.2\% & 8. 1580\% & 9. 0.18 & 10. 0 & 11. 1.55 & 12. 0.005\\ \\
+13. 0.0306 & 14. 0.0272 & 15. $-0.12$ & 16. 0.0001 & 17. 67,900 & 18. 4.6\\ \\
+19. 7.67 & 20. 49,000
+\end{tabularx}
+\end{exercises}

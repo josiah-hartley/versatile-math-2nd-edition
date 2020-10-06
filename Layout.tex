@@ -1,0 +1,551 @@
+\usepackage[svgnames,table]{xcolor}
+\usepackage{circuitikz}
+\usepackage{xparse}
+\usepackage{filecontents}
+%\usepackage{minibox}
+\usepackage{longtable}
+\usepackage{amsmath,pgfplots}
+\usepgfplotslibrary{statistics}
+\usepackage[shortlabels]{enumitem}
+%\usepackage{tkz-euclide}
+%\usetkzobj{all}
+
+\usepackage{tikz}
+\usepackage{tkz-berge}
+
+\usetikzlibrary{decorations.fractals,calc,decorations.markings}
+\usetikzlibrary{arrows,decorations.markings,positioning}
+\newcommand{\tikzmark}[2]{\tikz[overlay, remember picture] \node[inner sep=5pt, outer sep=5pt, anchor=base] (#1) {#2};}
+
+\usepackage{amssymb}
+\usepackage{etoolbox}
+\usepackage{cancel}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins,xparse}
+\usepackage{marginnote}
+%\usepackage{verbatim}
+\usepackage[style=2]{mdframed}
+\usepackage[top=0.75in, bottom=0.75in, inner=0.75in, outer=2.5in, marginparwidth=1.75in, marginparsep=0.25in]{geometry}
+\usepackage{titlesec}
+\usepackage[official]{eurosym}
+%\usepackage[Bjornstrup]{fncychap}
+
+\usepackage{changepage}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{url}
+\usepackage{comment}
+\ifpdf
+  \usepackage{pdfcolmk}
+\fi
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+%\usepackage[outline]{contour}
+\usepackage{pifont}
+%\ifxetex
+%  \usepackage{fontspec}
+%\fi
+
+\strictpagecheck
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+
+%%%%Author Name in Table of Contents---------
+\makeatletter
+\let\@nodottedtocline\@dottedtocline
+\patchcmd{\@nodottedtocline}{\hbox{.}}{\hbox{}}{}{}
+\patchcmd{\@nodottedtocline}{\normalcolor #5}{\normalcolor}{}{}
+\newcommand*\l@sectionsubtitle{\@nodottedtocline{1}{0em}{1.5em}}
+\makeatother
+
+\def\sectionsubtitle#1{%
+    \addcontentsline{toc}{sectionsubtitle}{\protect\numberline{}\textit{#1}}%
+}
+%%%%------------------------------------------
+
+%%%%Define Gaussian Plot for Stats Chapter
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+%%%%End Define Gaussian Plot
+
+%%%%Drawing Fractal
+\newcommand{\bedknobsthree}[1]{
+    %\begin{center}
+        \tikz [
+            decoration = #1
+        ] \draw decorate{ decorate{ decorate{ (0, 0) -- (0.35\linewidth, 0) }}};
+    %\end{center}
+}
+%%%%Drawing Fractal
+
+%%%%Begin Header Format
+\nouppercaseheads
+\copypagestyle{doc}{companion}
+\makeevenhead{doc}{\textbf{\Large \thepage} \hspace{0.1in} \textbf{CHAPTER \thechapter} \hspace{0.1in} \leftmark}{}{}
+\makeoddhead{doc}{}{}{SECTION \rightmark \hspace{0.1in} \textbf{\Large \thepage}}
+\makeevenfoot{doc}{}{}{}
+\makeoddfoot{doc}{}{}{}
+\makeheadrule{doc}{\textwidth}{0pt} %Uncomment to remove headrule
+
+\copypagestyle{algebra}{doc}
+\makeevenhead{algebra}{\textbf{\Large \thepage} \hspace{0.1in} \textbf{CHAPTER R \hspace{0.1in} \leftmark}}{}{}
+
+\copypagestyle{chapter}{doc}
+\makeevenhead{chapter}{}{}{}
+\makeoddhead{chapter}{}{}{}
+\makeevenfoot{chapter}{\textbf{\Large \thepage}}{}{}
+\makeoddfoot{chapter}{\hfill}{\hfill}{\textbf{\Large \thepage}}
+\makeheadrule{chapter}{\textwidth}{0pt} %Uncomment to remove headrule
+
+\copypagestyle{exercise}{doc}
+\makeevenfoot{exercise}{
+\begin{tikzpicture}[overlay,remember picture]
+      \fill [color=blue!60!black]
+        ($ (current page.north west) - (1cm,-1cm) $)
+        rectangle
+        ($ (current page.south west) + (1cm,-1cm) $);
+\end{tikzpicture}
+}{}{}
+\makeoddfoot{exercise}{\hfill}{\hfill}{
+\begin{tikzpicture}[overlay,remember picture]
+      \fill [color=blue!60!black]
+        ($ (current page.north east) + (1cm,1cm) $)
+        rectangle
+        ($ (current page.south east) - (1cm,1cm) $);
+\end{tikzpicture}
+}
+
+\setsecheadstyle{\Large\scshape\raggedright\bfseries\color{blue!30!black}}
+\setsubsecheadstyle{\large\scshape\raggedright}
+\setsubsubsecheadstyle{\normalsize\scshape\raggedright}
+\setbeforesecskip{-1.5ex plus -.5ex minus -.2ex}
+\setaftersecskip{1.3ex plus .2ex}
+\setbeforesubsecskip{-1.25ex plus -.5ex minus -.2ex}
+\setaftersubsecskip{1ex plus .2ex}
+%%%%End Header Format
+
+%%%%Begin Chapter Header Format
+\usepackage{color,calc}
+\newsavebox{\ChpNumBox}
+\definecolor{ChapBlue}{rgb}{0.2,0.6,1}
+\makeatletter
+%\newcommand*{\thickhrulefill}{%
+%\leavevmode\leaders\hrule height 1\p@ \hfill \kern \z@}
+\newcommand*{\thickhrulefill}{\rule{1.0\textwidth}{5pt}}
+\newcommand*\BuildChpNum[2]{%
+\begin{tabular}[t]{@{}c@{}}
+\makebox[0pt][c]{#1\strut} \\[.5ex]
+\colorbox{ChapBlue}{%
+\rule[-10em]{0pt}{0pt}%
+\rule{1ex}{0pt}\color{black}#2\strut
+\rule{1ex}{0pt}}%
+\end{tabular}}
+\makechapterstyle{BlueBox}{%
+\renewcommand{\chapnamefont}{\large\scshape}
+\renewcommand{\chapnumfont}{\Huge\bfseries}
+\renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
+\setlength{\beforechapskip}{20pt}
+\setlength{\midchapskip}{26pt}
+\setlength{\afterchapskip}{40pt}
+\renewcommand{\printchaptername}{}
+\renewcommand{\chapternamenum}{}
+\renewcommand{\printchapternum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\@chapapp}%
+{\chapnumfont\thechapter}}}
+\renewcommand{\printchapternonum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
+{\chapnumfont\hphantom{\thechapter}}}}
+\renewcommand{\afterchapternum}{}
+\renewcommand{\printchaptertitle}[1]{%
+\usebox{\ChpNumBox}\hfill
+\parbox[t]{\hsize-\wd\ChpNumBox-1em}{%
+\vspace{\midchapskip}%
+\thickhrulefill\par
+\chaptitlefont ##1\par}}%
+}
+\chapterstyle{BlueBox}
+%%%%End Chapter Header Format
+
+%%%%Begin Title Page Definition
+\newlength{\drop}
+\newcommand*{\FSfont}[1]{%
+  \fontencoding{T1}\fontfamily{#1}\selectfont}
+\renewcommand*{\FSfont}[1]{}%    kills special font selections
+
+\newcommand*{\rotrt}[1]{\rotatebox{90}{#1}}
+\newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}}
+\newcommand*{\topb}{%
+  \resizebox*{\unitlength}{\baselineskip}{\rotrt{$\}$}}}
+\newcommand*{\botb}{%
+  \resizebox*{\unitlength}{\baselineskip}{\rotlft{$\}$}}}
+\newcommand*{\titleBC}{\begingroup
+\begin{center}
+\settowidth{\unitlength}{\textit{\Large COMMON APPLICATIONS OF MATHEMATICS}} 
+{\color{LightGoldenrod}\topb} \\[\baselineskip]
+\textcolor{Sienna}{\textit{\HUGE Versatile Mathematics}} \\[\baselineskip]
+{\color{RosyBrown}\Large COMMON MATHEMATICAL APPLICATIONS} \\
+{\color{LightGoldenrod}\botb}
+\end{center}
+\vfill
+\begin{center}
+{\LARGE\textbf{Josiah Hartley}}\\ Frederick Community College\\ \text{}\\ \text{}\\
+{\LARGE\textbf{Val Lochman}}\\ Frederick Community College\\ \text{}\\ \text{}\\
+{\LARGE\textbf{Erum Marfani}}\\ Frederick Community College\\ \text{}\\ \text{}\\
+\vfill
+{\huge\textbf{2nd Edition}}\\ \text{}\\ \text{}\\
+{\LARGE\textbf{2020}}
+\end{center}
+\endgroup}
+
+\newcommand*{\titleSolutionManual}{\begingroup
+\begin{center}
+\settowidth{\unitlength}{\textit{\Large COMMON APPLICATIONS OF MATHEMATICS}} 
+{\color{LightGoldenrod}\topb} \\[\baselineskip]
+\textcolor{Sienna}{\textit{\HUGE Versatile Mathematics}} \\[\baselineskip]
+{\color{RosyBrown}\Large COMMON MATHEMATICAL APPLICATIONS} \\
+{\color{LightGoldenrod}\botb}
+\end{center}
+\vfill
+\begin{center}
+{\HUGE\textbf{Instructor Solution Manual}}\\ \text{}\\
+{\LARGE\textbf{NOT FOR USE BY STUDENTS}}
+\end{center}
+\vfill
+\begin{center}
+{\LARGE\textbf{Josiah Hartley}}\\ Frederick Community College\\ \text{}\\ \text{}\\
+{\LARGE\textbf{Val Lochman}}\\ Frederick Community College\\ \text{}\\ \text{}\\
+{\LARGE\textbf{Erum Marfani}}\\ Frederick Community College\\ \text{}\\ \text{}\\
+\vfill
+{\huge\textbf{2nd Edition}}\\ \text{}\\ \text{}\\
+{\LARGE\textbf{2020}}
+\end{center}
+\endgroup}
+%%%%End Title Page Definition
+
+%Makes labels on axes smaller
+\pgfplotsset{
+    every axis/.append style={font=\tiny},  
+}
+%
+
+%%%%Begin Procedure Definition
+\newtcolorbox{proc}[1]{enhanced,colback=green!5!white,colframe=green!40!white!40!black,drop fuzzy shadow, toprule=5pt,bottomrule=0mm,rightrule=0mm,leftrule=0mm,fonttitle=\large,title={\fontfamily{fvs}\selectfont \textbf{#1}},sharp corners=all}
+%%%%End Procedure Definition
+
+\def\fra#1#2{\vskip #2\noindent\textcolor{black!60!red}{\rule{\textwidth}{2pt}}}
+
+%%%%Begin Try It Definition
+\renewcommand{\pfbreakdisplay}{%
+\ding{167}\quad\ding{167}\quad\ding{167}}
+
+\newenvironment{try}[1][]
+{
+\begin{tcolorbox}[enhanced,beforeafter skip=10pt,breakable,colframe=yellow!10,colback=yellow!10,drop lifted shadow,sharp corners=all]
+\marginnote{\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!orange}\textbf{TRY IT}}}
+}
+{ \end{tcolorbox}}
+
+\newenvironment{trynolabel}[1][]
+{
+\begin{tcolorbox}[enhanced,beforeafter skip=10pt,breakable,colframe=yellow!10,colback=yellow!10,drop lifted shadow,sharp corners=all]
+}
+{ \end{tcolorbox}}
+%%%%End Try It Definition
+
+%%%%Begin Formula Definition
+\newenvironment{formula}[1]
+{\begin{tcolorbox}[beforeafter skip=10pt,colframe=black!10,colback=blue!70!cyan!20!white,opacityfill=0.5,toprule=0mm,bottomrule=0mm,rightrule=0mm,leftrule=0mm,sharp corners=all]
+
+{\fontfamily{fvs}\selectfont \Large\bfseries #1}\\
+
+}
+{\end{tcolorbox}}
+%%%%End Formula Definition
+
+%%%%Counter for examples; reset for each chapter/section?
+\newcounter{ExampleCounter}
+\setcounter{ExampleCounter}{1}
+
+%%%%Begin Example Definition
+\begin{comment}
+\newenvironment{example}[2][https://dl.dropboxusercontent.com/u/28928849/Webpages/MathInSocietyVideos2.htm]
+{
+\marginnote{\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!blue!80!cyan}\uppercase{\bfseries\centering EXAMPLE \theExampleCounter}
+}}[9.2mm]
+\begin{tcolorbox}[check odd page,toggle left and right,
+beforeafter skip=10pt,breakable,bottomrule at break=0mm,toprule at break=0mm,colframe=black!50!blue!50!cyan,colback=white,toprule=0mm,rightrule=0mm,sharp corners=all] 
+{%\renewcommand*\sfdefault{iwona}
+\checkoddpage
+\ifoddpage{
+\hfill {\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!blue!80!cyan}\uppercase{\bfseries #2}}}}\\
+ \else{
+{\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!blue!80!cyan}\uppercase{\bfseries #2}}}}\\
+\fi
+\end{comment}
+
+\colorlet{colexam}{black!50!blue!50!cyan}
+\newenvironment{example}[2][]
+{
+\begin{tcolorbox}[empty,
+breakable,
+if odd page*={overlay unbroken={\coordinate (X) at ([yshift=-10pt]frame.north west); \coordinate (Y) at (frame.south west); \coordinate (Z) at (frame.south east);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y)--(Z); },
+overlay first={\coordinate (X) at ([yshift=-10pt]frame.north west); \coordinate (Y) at (frame.south west);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y); },
+overlay middle={\coordinate (X) at ([yshift=-10pt]frame.north west); \coordinate (Y) at (frame.south west);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y); },
+overlay last={\coordinate (X) at ([yshift=-10pt]frame.north west); \coordinate (Y) at (frame.south west); \coordinate (Z) at (frame.south east);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y)--(Z); }}{overlay unbroken={\coordinate (X) at ([yshift=-10pt]frame.north east); \coordinate (Y) at (frame.south east); \coordinate (Z) at (frame.south west);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y)--(Z); },
+overlay first={\coordinate (X) at ([yshift=-10pt]frame.north east); \coordinate (Y) at (frame.south east);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y); },
+overlay middle={\coordinate (X) at ([yshift=-10pt]frame.north east); \coordinate (Y) at (frame.south east);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y); },
+overlay last={\coordinate (X) at ([yshift=-10pt]frame.north east); \coordinate (Y) at (frame.south east); \coordinate (Z) at (frame.south west);
+\draw[black!50!blue!50!cyan,line width=2pt]
+(X)--(Y)--(Z); }}] 
+{%\renewcommand*\sfdefault{iwona}
+\checkoddpage
+\ifoddpage{
+\hfill {\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!blue!80!cyan}\uppercase{\bfseries #2}\marginnote{\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!blue!80!cyan}\uppercase{\bfseries\centering EXAMPLE \theExampleCounter}
+}}}}}\\
+ \else{
+{\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!blue!80!cyan}\uppercase{\bfseries #2}\marginnote{\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!blue!80!cyan}\uppercase{\bfseries\centering EXAMPLE \theExampleCounter}
+}}}}}\\
+\fi
+%\renewcommand*\sfdefault{cmr}
+}
+
+%\Large\color{black!70!blue!80!cyan}\scshape #2}\\
+
+}
+{ \end{tcolorbox} \stepcounter{ExampleCounter}}
+
+\newcommand{\sol}{
+\begin{center}\textcolor{black!50!blue!50!cyan}{\line(1,0){250}}\end{center}
+\marginnote{\bfseries Solution}
+}
+\newcommand{\solline}{
+\begin{center}\textcolor{black!50!blue!50!cyan}{\line(1,0){250}}\end{center}
+}
+%%%%End Example Definition
+
+\newcommand\calcbutton[1]{$\boxed{\textrm{#1}}$}
+\newcommand\boxtext[1]{$\boxed{\textrm{#1}}$}
+
+%%%%Begin Section Definition
+\newcounter{SectionNo}[chapter]
+
+\DeclareDocumentCommand \section { m }
+{
+\phantomsection
+\stepcounter{section}
+\addcontentsline{toc}{section}{\thesection\ #1}
+\sectionmark{#1}
+
+\checkoddpage
+\ifoddpage{\begin{adjustwidth}{0in}{-1.75in}
+\stepcounter{SectionNo}
+	
+	\tcbset{enhanced,colback=brown!70!white,colframe=brown!75!black}
+	\begin{tcolorbox}[toprule=3mm,sharp corners = all]
+	{\fontfamily{fvs}\selectfont \huge\bfseries\color{white} SECTION \thechapter .\theSectionNo} \ {\fontfamily{fvs}\selectfont \LARGE\bfseries\color{black!80} #1}
+	\end{tcolorbox}
+	
+ \end{adjustwidth}}
+\else{\begin{adjustwidth}{-1.75in}{0in}
+\stepcounter{SectionNo}
+	
+	\tcbset{enhanced,colback=brown!70!white,colframe=brown!75!black}
+	\begin{tcolorbox}[toprule=3mm,sharp corners = all]
+	{\fontfamily{fvs}\selectfont \huge\bfseries\color{white} SECTION \thechapter .\theSectionNo} \ {\fontfamily{fvs}\selectfont \LARGE\bfseries\color{black!80} #1}
+	\end{tcolorbox}
+	
+ \end{adjustwidth}}
+\fi
+}
+
+\DeclareDocumentCommand \subsection { m }
+{
+\vspace{0.2in}
+{\fontfamily{fvs}\selectfont \LARGE\color{brown!65!black} \textbf{#1}}
+\vspace{0.1in}\\
+}
+%%%%End Section Definition
+
+%%%%Begin Example 2.0 Definition
+\newcounter{example}[SectionNo]
+
+\DeclareDocumentCommand \examplet { O{www.google.com} +m O{www.frederick.edu} +m }
+{
+\stepcounter{example}
+\checkoddpage
+\ifoddpage{\begin{adjustwidth}{0in}{-1.75in}
+\begin{tcolorbox}[enhanced,breakable,drop lifted shadow,sharp corners=all,sidebyside,sidebyside align=top seam,title=\href{#1}{{\Large\bfseries\color{blue!40!black}EXAMPLE \theexample}} \hfill \href{#3}{{\Large\bfseries\color{green!40!black} TRY IT}},colframe=white,bottomrule=0mm,righthand width=2in,bicolor,colback=brown!15!white,colbacklower=yellow!10] #2 \tcblower #4
+\end{tcolorbox}
+\end{adjustwidth}}
+\else{
+\begin{adjustwidth}{-1.75in}{0in}
+\begin{tcolorbox}[enhanced,breakable,drop lifted shadow,sharp corners=all,sidebyside,sidebyside align=top seam,title=\href{#1}{{\Large\bfseries\color{blue!40!black}EXAMPLE \theexample}} \hfill \href{#3}{{\Large\bfseries\color{green!40!black} TRY IT}},colframe=white,bottomrule=0mm,righthand width=2in,bicolor,colback=brown!15!white,colbacklower=yellow!10] #2 \tcblower #4
+\end{tcolorbox}
+\end{adjustwidth}}
+\fi
+}
+
+\begin{comment}
+\DeclareDocumentCommand \example { O{www.google.com} +m }
+{
+\stepcounter{example}
+\checkoddpage
+\ifoddpage{\begin{adjustwidth}{0in}{-1.75in}
+\begin{tcolorbox}[enhanced,breakable,drop lifted shadow,sharp corners=all,title=\href{#1}{{\Large\bfseries\color{blue!40!black}EXAMPLE \theexample}},colframe=white,bottomrule=0mm,colback=brown!15!white] #2
+\end{tcolorbox}
+\end{adjustwidth}}
+\else{
+\begin{adjustwidth}{-1.75in}{0in}
+\begin{tcolorbox}[enhanced,breakable,drop lifted shadow,sharp corners=all,title=\href{#1}{{\Large\bfseries\color{blue!40!black}EXAMPLE \theexample}},colframe=white,bottomrule=0mm,colback=brown!15!white] #2
+\end{tcolorbox}
+\end{adjustwidth}}
+\fi
+}
+\end{comment}
+%%%%End Example 2.0 Definition
+
+%%%%Begin Objectives Definition
+%\newenvironment{objectives}
+%{\begin{adjustwidth}{-1.5in}{0in}\begin{minipage}{0.5\textwidth}}
+%{\end{minipage}\end{adjustwidth}}
+\newenvironment{objectives}
+{\marginnote{\begin{enumerate}}
+{\end{enumerate}}}
+%%%%End Objectives Definition
+
+%%%%Begin Exercises Definition
+\newcounter{ProblemNumber}
+
+\newcommand\pone[1]{ %One exercise per line
+  \noindent
+  \begin{minipage}[t]{\textwidth}
+  \vspace{0.1in}
+    {\large\bfseries\theProblemNumber .} #1
+  \vspace{0.1in}
+  \end{minipage}
+  \stepcounter{ProblemNumber}
+}
+
+\newcommand\ptwo[1]{ %Two exercises per line
+  \noindent
+  \begin{minipage}[t]{0.48\textwidth}
+  \vspace{0.1in}
+    {\large\bfseries\theProblemNumber .} #1
+  \vspace{0.1in}
+  \end{minipage}
+  \stepcounter{ProblemNumber}
+}
+
+\newcommand\pthree[1]{ %Three exercises per line
+  \noindent
+  \begin{minipage}[t]{0.31\textwidth}
+  \vspace{0.1in}
+    {\large\bfseries\theProblemNumber .} #1
+  \vspace{0.1in}
+  \end{minipage}
+  \stepcounter{ProblemNumber}
+}
+
+\newcommand\pfour[1]{ %Four exercises per line
+  \noindent
+  \begin{minipage}[t]{0.228\textwidth}
+  \vspace{0.15in}
+    {\large\bfseries\theProblemNumber .} #1
+  \vspace{0.15in}
+  \end{minipage}
+  \stepcounter{ProblemNumber}
+}
+
+\newenvironment{exercises}
+{ 
+	\newgeometry{margin=0.75in}	
+	\pagestyle{exercise}
+	\setcounter{ProblemNumber}{1}
+	\noindent{\href{https://www.myopenmath.com/index.php}{\Huge\bfseries\color{blue!60!black} Exercises \thesection}}\\
+	\checkoddpage
+	\ifoddpage{{\color{blue!60!black} \rule{1.5\textwidth}{3pt}}} 
+	\else{\begin{adjustwidth}{-0.8in}{0in}{\color{blue!60!black} \par\noindent\hspace{-0.25\textwidth}\rule{1.75\textwidth}{3pt}}\end{adjustwidth}} 
+	\fi
+	%{\color{blue!60!black} \rule{1.1\textwidth}{3pt}}
+	
+
+%\begin{comment}
+%\tikz[remember picture,overlay] {%
+%\draw [blue!60!black,line width=10mm]
+%(current page.south east)
+%rectangle
+%(current page.north east)
+%;}
+%\end{comment}
+
+
+}
+{ \setcounter{ProblemNumber}{1}
+  \restoregeometry
+  \pagestyle{doc} }
+%%%%End Exercises Definition
+
+%%%%Begin Chapter Summary Definition
+\newenvironment{summary}
+{ 
+	\newgeometry{margin=0.75in}	
+	\pagestyle{exercise}
+	\setcounter{ProblemNumber}{1}
+	\noindent{\href{https://www.myopenmath.com/index.php}{\Huge\bfseries\color{blue!60!black} Exercises \thesection}}\\
+	{\color{blue!60!black} \rule{1.1\textwidth}{3pt}}
+	
+
+%\begin{comment}
+%\tikz[remember picture,overlay] {%
+%\draw [blue!60!black,line width=10mm]
+%(current page.south east)
+%rectangle
+%(current page.north east)
+%;}
+%\end{comment}
+
+
+}
+{ \setcounter{ProblemNumber}{1}
+  \restoregeometry
+  \pagestyle{doc} }
+
+%%%%End Chapter Summary Definition
+
+%%%% Graph Theory Vertex Label
+\newcommand\extralabel[4][0mm]{\node[label={[label distance=#1]#3:#4}] at (#2){};}
+% looks like \extralabel[distance(optional)]{node name}{angle}{label text}
+
+% middle arrows on graphs
+\tikzset{->-/.style={
+ decoration={
+   markings,
+   mark=at position #1 with {\arrow{>}}
+   },
+   postaction={decorate}
+  },
+  ->-/.default=0.5 % set default value for arrow position
+}
+
+% circled numbers (or other text)
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+  \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}

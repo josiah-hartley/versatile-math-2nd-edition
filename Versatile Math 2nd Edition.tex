@@ -1,0 +1,299 @@
+\documentclass[9pt,letter,twoside,openright]{memoir}
+\input{Layout.tex}
+\graphicspath{ {./Images/} }
+
+\begin{document}
+\frontmatter
+\newgeometry{margin=1.25in}
+\pagestyle{empty}
+\titleBC
+\frontmatter
+
+\input{FrontMatter.tex}
+%\clearpage
+\setcounter{tocdepth}{1}
+\newgeometry{margin=1.25in}
+\tableofcontents*
+\mainmatter
+\restoregeometry
+\pagestyle{doc}
+
+\begin{comment}
+\chapter{Financial Mathematics}
+\begin{center}
+\includegraphics[width=\textwidth]{NYSE2}\\
+\text{} \hfill {\color{gray} NYSE by Abhisit Vejjajiva is licensed under CC BY 2.0}
+\end{center}
+\vfill
+
+The Great Recession, as it came to be called, began in 2007 when housing bubble in the U.S. burst, leading to an economic decline that spread across the globe and lasted until 2009, with effects of the recession lasting even longer.  Although the causes of the recession were complicated, the root of the problem was the subprime mortgage market; thousands of people were offered mortgages to buy homes beyond what they could afford, and the true cost of the mortgages were obscured.  If they had truly known what they were getting themselves into, perhaps many of these hapless borrowers could have avoided defaulting on (failing to pay) their mortgage.
+
+The purpose of this chapter is to train you to be a careful, knowledgeable consumer.  No other area in this book will be as immediately and broadly applicable as this material on financial mathematics.  Here you'll begin to apply mathematical techniques to everyday financial management.  How much should you budget for a new car?  How is your federal income tax calculated?  When should you start saving for retirement?  These questions and ones like them will find answers in this chapter, as we investigate everything from sales tax to credit cards.  By understanding your personal finances, you can protect yourself and take control of your financial future.
+\vfill
+\pagebreak
+
+\section{Introduction}
+\input{Finance Chapter/FinanceIntroduction.tex}
+\vfill
+\pagebreak
+
+\section{Applied Percentage Problems}
+\input{Finance Chapter/AppliedPercentageProblems.tex}
+\input{Finance Chapter/Homework/AppliedPercentageProblems_Homework.tex}
+
+\section{Simple and Compound Interest}
+\input{Finance Chapter/SimpleAndCompoundInterest.tex}
+\input{Finance Chapter/Homework/SimpleAndCompoundInterest_Homework.tex}
+
+\section{Saving for Retirement}
+\input{Finance Chapter/SavingForRetirement.tex}
+\input{Finance Chapter/Homework/SavingForRetirement_Homework.tex}
+
+\section{Mortgages and Credit Cards}
+\input{Finance Chapter/MortgagesAndCreditCards.tex}
+\input{Finance Chapter/Homework/MortgagesAndCreditCards_Homework.tex}
+
+\section{Income Tax}
+\input{Finance Chapter/IncomeTax.tex}
+\input{Finance Chapter/Homework/IncomeTax_Homework.tex}
+
+\chapter{Growth Models}
+\begin{center}\includegraphics[width=\textwidth]{hurricane}\end{center}
+
+What does the future hold?  Although we cannot peer forward and find out for sure, it turns out that in many cases we can use mathematical models to make predictions.  For instance, by tracking the development and path of a hurricane, we can predict where it will go next, although weather prediction is such a difficult problem that the true path is often very different from the prediction.  While we won't be tackling anything nearly as complicated as weather forecasting, we will see in this chapter how to build a few different types of mathematical models and use them to make predictions.
+
+Of course, it is crucial to understand that no mathematical model is perfect.  There will always be a trade-off between the accuracy of a model and its simplicity.  The simpler a model, the more easily we can make predictions with it, but there will be more error in the approximation.  On the other hand, more precise models may be more difficult---or even impossible---to solve.  You should always remember, though, that every model is at best an imperfect representation of the real world, and there will always be some inherent error between what the model predicts and what actually occurs.
+\vfill
+\pagebreak
+
+\section{Linear Models}
+\input{Growth Models Chapter/LinearGrowth.tex}
+\input{Growth Models Chapter/Homework/LinearGrowth_Homework.tex}
+
+\section{Quadratic Models}
+\input{Growth Models Chapter/QuadraticGrowth.tex}
+\input{Growth Models Chapter/Homework/QuadraticGrowth_Homework.tex}
+
+\section{Exponential Models}
+\input{Growth Models Chapter/ExponentialGrowth.tex}
+\input{Growth Models Chapter/Homework/ExponentialGrowth_Homework.tex}
+
+\section{Logistic Models}
+\input{Growth Models Chapter/LogisticGrowth.tex}
+\input{Growth Models Chapter/Homework/LogisticGrowth_Homework.tex}
+
+\chapter{Statistics}
+\begin{center}\includegraphics[width=\textwidth]{lineGraphsOnScreen}\end{center}
+
+More than ever before, we are surrounded by tremendous amounts of data.  Machine learning, an advanced form of statistics, is one of the fastest-growing fields in the world, with applications in every industry imaginable.  Even something as simple as unlocking a phone often involves a fingerprint or face scan, and self-driving cars have gone from science fiction to reality.
+
+Statistics are everywhere, from crime rates in your city to weight percentiles for children on growth charts. When a research team is testing a new treatment for a disease, they can use statistics to make conclusions based on a relatively small trial and show that there is good evidence that their drug is effective. Statistics allowed prosecutors in the 1950's 
+and 60's to demonstrate that racial bias existed in jury panels.
+
+How do we make sense of all of this information?  There are many tools that have been developed to do exactly that, and in this chapter, you will learn about a few basic ones.
+
+Broadly speaking, statistics is the study of how to gather and make sense of data.  We will begin by learning to gather data carefully, which generally involves picking a good sample.  Then we will see how to describe data both visually and numerically, and finally, we will discuss a few ways to put data to work answering questions.
+\vfill
+\pagebreak
+
+\section{Gathering Data}
+\input{Statistics Chapter/GatheringData.tex}
+\input{Statistics Chapter/Homework/GatheringData_Homework.tex}
+
+\section{Visualizing Data}
+\input{Statistics Chapter/VisualizingData.tex}
+\input{Statistics Chapter/Homework/VisualizingData_Homework.tex}
+
+\section{Describing Data with Statistics}
+\input{Statistics Chapter/DescribingData.tex}
+\input{Statistics Chapter/Homework/DescribingData_Homework.tex}
+
+\section{Linear Regression}
+\input{Statistics Chapter/LinearRegression.tex}
+\input{Statistics Chapter/Homework/LinearRegression_Homework.tex}
+
+\section{The Normal Distribution}
+\input{Statistics Chapter/NormalDistribution.tex}
+\input{Statistics Chapter/Homework/NormalDistribution_Homework.tex}
+
+\chapter{Probability}
+\begin{center}
+\includegraphics[width=\textwidth]{casino}
+\end{center}
+
+It is often necessary to ``guess'' about the outcome of an event in order to make a decision. Politicians study polls to guess
+their likelihood of winning an election. Teachers choose a particular course of study based on what they think students can
+comprehend. Doctors choose the treatments needed for various diseases based on their assessment of likely results. You
+may have visited a casino where people play games chosen because of the belief that the likelihood of winning is good. You
+may have chosen your course of study based on the probable availability of jobs.
+
+You have, more than likely, used probability. In fact, you probably have an intuitive sense of probability. Probability deals with the chance of an event occurring. Whenever you weigh the odds of whether or not to do your homework or to study for an exam, you are using probability. In this chapter, you will learn how to solve probability problems using a systematic approach.
+\vfill
+\pagebreak
+
+\section{Basic Concepts of Probability}
+\input{Probability Chapter/BasicConceptsOfProbability.tex}
+\input{Probability Chapter/Homework/BasicConceptsOfProbability_Homework.tex}
+
+\section{The Addition Rule and the Rule of Complements}
+\input{Probability Chapter/AdditionRule.tex}
+\input{Probability Chapter/Homework/AdditionRule_Homework.tex}
+
+\section{The Multiplication Rule and Conditional Probability}
+\input{Probability Chapter/MultiplicationRule.tex}
+\input{Probability Chapter/Homework/MultiplicationRule_Homework.tex}
+
+\section{Counting Methods}
+\input{Probability Chapter/CountingMethods.tex}
+\input{Probability Chapter/Homework/CountingMethods_Homework.tex}
+
+\chapter{Linear Programming}
+\begin{center}\includegraphics[width=\textwidth]{BerlinAirlift}\end{center}
+
+After World War II, the victorious Allies divided Germany into four sectors, with one Allied nation administering each region.  Berlin, located deep within East Germany, controlled by the Soviet Union, was also split into four regions, with the United States, the United Kingdom, and France controlling the western half of the city and the Soviet Union controlling the eastern half.
+
+However, Stalin wouldn't rest until all of Germany was under Soviet control, and in 1948, in an effort to drive the other Allied forces out without declaring open war, the USSR blockaded West Berlin, cutting off road, rail, and canal lines into the city from West Germany.
+
+The Allies responded with an immense effort known as the Berlin Airlift, eventually moving 8,000 tons of food and fuel \textit{per day} into West Berlin in massive cargo planes.  To handle the incredibly complex logistics of this process, the Allies turned to a new area of applied mathematics known as linear programming, the topic we'll investigate in this chapter.  Linear programming, part of a wider field known as \textit{mathematical optimization}, is used today in fields ranging from business and economics to engineering and manufacturing, solving problems involving the allocation of limited resources.
+\vfill
+\pagebreak
+
+\section{Linear Functions and Their Graphs}
+\input{Linear Programming Chapter/LinearFunctionsAndGraphs.tex}
+\input{Linear Programming Chapter/Homework/LinearFunctionsAndGraphs_Homework.tex}
+
+\section{Systems of Linear Equations}
+\input{Linear Programming Chapter/SystemsOfEquations.tex}
+\input{Linear Programming Chapter/Homework/SystemsOfEquations_Homework.tex}
+
+\section{Systems of Linear Inequalities}
+\input{Linear Programming Chapter/SystemsOfInequalities.tex}
+\input{Linear Programming Chapter/Homework/SystemsOfInequalities_Homework.tex}
+
+\section{Linear Programming}
+\input{Linear Programming Chapter/LinearProgrammingSection.tex}
+\input{Linear Programming Chapter/Homework/LinearProgrammingSection_Homework.tex}
+
+\chapter{Logic}
+\begin{center}\includegraphics[width=\textwidth]{LogicChapter1}\end{center}
+
+At\marginnote{\includegraphics[width=0.9in]{GeorgeBoole}\\George Boole} its heart, every computer circuit---like the memory chip shown above---runs on relatively simple rules of logic.  A 19th-century English mathematician named George Boole described a set of rules for abstract logic that seemed to have little practical significance at the time.  Nearly a hundred years later, though, a young American student named Claude Shannon, a master's candidate at MIT, noticed that Boole's algebra could be applied to analyzing circuits, leading to tremendous advances in this new field.  Today, we rely heavily on computers, and it is intriguing to peer behind the curtain a bit and see how they operate.
+
+Computers recognize two states, often written 1 and 0 (or ON and OFF, or TRUE and FALSE).  These two states correspond to a high voltage and a low voltage, respectively; early computers used vacuum tubes to represent these states, but the transistor, invented in 1947 at Bell Labs, replaced the vacuum tube as a cheaper, smaller, more reliable alternative.
+
+In this chapter, we will study the fundamentals of logic.  We will use values of T and F to represent\marginnote{\includegraphics[width=0.9in]{ClaudeShannon}\\Claude Shannon} true and false statements, but everything that we will consider can be applied to computer circuits by simply substituting 1 for T and 0 for F.  We will learn how to translate statements in words into symbolic form and how to manipulate that symbolic form.  Finally, we will consider complete arguments, which are series of statements that lead to conclusions.  We will test whether various arguments are valid or not, and in doing so, we will begin to see the importance of being careful when making an argument.
+\vfill
+\pagebreak
+
+\section{Statements and Logical Operations}
+\input{Logic Chapter/StatementsAndLogicalOperations.tex}
+\input{Logic Chapter/Homework/StatementsAndLogicalOperations_Homework.tex}
+
+\section{Conditionals and Equivalence}
+\input{Logic Chapter/ConditionalsAndEquivalence.tex}
+\input{Logic Chapter/Homework/ConditionalsAndEquivalence_Homework.tex}
+
+\section{Logic Rules}
+\input{Logic Chapter/LogicRules.tex}
+\input{Logic Chapter/Homework/LogicRules_Homework.tex}
+
+\section{Arguments}
+\input{Logic Chapter/Arguments.tex}
+\input{Logic Chapter/Homework/Arguments_Homework.tex}
+
+\chapter{Set Theory}
+\begin{center}\includegraphics[width=\textwidth]{SetTheoryChapter1}\end{center}
+
+The Library of Congress, the national library of the United States, contains a vast collection of works that fill over 800 miles of bookshelves, and somewhere around 10,000 new works are added each day.  The question naturally arises: how can anything be found in such a huge, diverse collection?  The answer, of course, lies in categorization, or organization.
+
+Librarians, among others (like grocery store planners, for instance), have to be experts at categorization, in order to arrange their collections in such a way that items are easy to find.  The basics of this skill are natural, though; you have an intuitive idea of how to categorize objects in a way that makes sense.  When we categorize, what we're really doing is creating \textbf{sets}.  For instance, a library has a fiction section, where the set of novels in their collection are placed.  Within that set of novels, there may be a \textbf{subset} of young adult fiction, a subset of historical fiction, and so on.  As a student, you can be categorized by your major, the classes you're taking, your year in school, etc., each of which can be expressed as a set.
+
+It turns out that much of higher mathematics (which we don't do in this book) uses the terms and concepts of set theory extensively.  We'll only see the basic structure of set theory in this chapter, but this way of thinking is valuable to those who study mathematics in more detail.
+
+In fact, if you compare this chapter to the chapter on logic, you'll notice some similar ideas coming up, which illustrates the ties that set theory has to other areas of mathematics.
+\vfill
+\pagebreak
+
+\section{Basic Concepts}
+\input{Set Theory Chapter/SetConcepts.tex}
+\input{Set Theory Chapter/Homework/SetConcepts_Homework.tex}
+
+\section{Set Operations}
+\input{Set Theory Chapter/SetOperations.tex}
+\input{Set Theory Chapter/Homework/SetOperations_Homework.tex}
+
+\section{Properties of Set Operations}
+\input{Set Theory Chapter/SetProperties.tex}
+\input{Set Theory Chapter/Homework/SetProperties_Homework.tex}
+
+\section{Survey Problems}
+\input{Set Theory Chapter/SurveyProblems.tex}
+\input{Set Theory Chapter/Homework/SurveyProblems_Homework.tex}
+\end{comment}
+
+\chapter{Graph Theory}
+\begin{center}\includegraphics[width=\textwidth]{facebook1}\end{center}
+
+With billions of users, Facebook is probably the most successful social media company ever.  Since their revenue is based on advertising, Facebook is completely focused on user engagement: attracting and keeping users, and getting users to sign in regularly and browse.
+
+In order to accomplish this, they need to have a way to track relationships.  New users are more likely to sign up if their friends have accounts, and current users are more likely to be engaged if their News Feed shows relevant content from the people they are closest to.
+
+The way that social media companies track social networks is through the use of \emph{graphs}, which resemble webs (it turns out that the Internet, the World Wide \emph{Web}, is another example of a graph).  By tracking connections between people, these companies can learn a tremendous amount of information.  For instance, Facebook can suggest new friends for you, and they tend to indeed be people that you know, because Facebook can tell that you share many friends in common.
+
+In this chapter, we will learn a few basic concepts related to these graphs, and we'll find how they can be used in a wide array of applications: any kind of network can be modeled in the same way as a friend group.
+\vfill
+\pagebreak
+
+\section{Introduction to Graphs}
+\input{Graph Theory Chapter/IntroductionToGraphs.tex}
+\input{Graph Theory Chapter/Homework/IntroductionToGraphs_Homework.tex}
+
+\section{Euler and Hamilton Paths}
+\input{Graph Theory Chapter/EulerAndHamiltonPaths.tex}
+\input{Graph Theory Chapter/Homework/EulerAndHamiltonPaths_Homework.tex}
+
+\section{Shortest Paths}
+\input{Graph Theory Chapter/ShortestPaths.tex}
+\input{Graph Theory Chapter/Homework/ShortestPaths_Homework.tex}
+
+\section{Trees}
+\input{Graph Theory Chapter/Trees.tex}
+\input{Graph Theory Chapter/Homework/Trees_Homework.tex}
+
+\begin{comment}
+\pagestyle{algebra}
+\setcounter{chapter}{17}% Equivalent to "letter R"
+\renewcommand{\thechapter}{\Alph{chapter}}%
+\chapter{Algebra Review}
+
+This chapter contains the algebra required to understand the other chapters in the book.  The material from this supplement is used mainly for the first two chapters on Financial Mathematics and Growth Models, but some aspects from it may appear briefly in other chapters.
+
+\paragraph{Section R.1: Operations} This section discusses the appropriate order of operations, as well as distributing and carrying out operations with fractions.  This material will be useful for every chapter of Versatile Math.
+\paragraph{Section R.2: Percents and Rounding} In this section, we will cover how to express numbers as fractions, decimals, or percentages, and how to convert from one form to another.  Also, we will discuss how to round numbers.
+\paragraph{Section R.3: Solving Equations and Formulas} Here, we will see how to solve linear equations with one variable, as well as polynomial equations.  We will then extend these ideas to solving a formula for a given variable.
+\paragraph{Section R.4: Exponents, Exponential Equations, and Logarithms} When we deal with growth models, like the financial and population models in the first two chapters of this book, we will need to deal with exponential models, and this section will give us the tools to do so.
+
+\subsection{How to Use This Chapter}
+This chapter is meant to supplement your learning from the rest of the textbook, so you should use it as needed to brush up on algebra topics that you haven't seen before or have forgotten.  Thus, rather than reading through it from start to finish, you may want to focus on the areas that you need as you go through other chapters.
+
+\paragraph{Homework} Since this is meant as practice to prepare you for the work in the other chapters, the answers to the homework problems are all given at the end of each section.  This will enable you to practice solving problems and find out immediately whether you got each topic.
+
+\vfill
+\pagebreak
+
+\section{Operations}
+\input{Algebra Review Chapter/AlgOrderOfOperations.tex}
+
+\section{Percents and Rounding}
+\input{Algebra Review Chapter/AlgPercentsRounding.tex}
+
+\section{Solving Equations and Formulas}
+\input{Algebra Review Chapter/AlgEquationsFormulas.tex}
+
+\section{Exponents and Exponential Equations}
+\input{Algebra Review Chapter/AlgExponents.tex}
+
+\renewcommand{\thechapter}{\arabic{chapter}}%
+\end{comment}
+
+\end{document}

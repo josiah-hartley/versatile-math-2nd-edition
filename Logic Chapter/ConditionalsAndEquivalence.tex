@@ -1,0 +1,652 @@
+\setcounter{ExampleCounter}{1}
+In this section, we'll introduce two more ways to combine statements.
+
+\paragraph{Conditional} A\marginnote{If-Then} presidential candidate might say something like ``If I am elected, I will reduce taxes by 20\%.''  This is an example of a \textit{conditional statement}, or an \textit{if-then statement.}  A conditional statement consists of a condition and an implication.
+\begin{center}
+\begin{tabular}{l l}
+Condition & Implication\\
+\hline
+& \\
+I am elected & I will reduce taxes by 20\%
+\end{tabular}
+\end{center}
+
+\paragraph{Biconditional} In\marginnote{If-and-Only-If} the example of a conditional statement above, the candidate made a claim about what would happen if they WERE elected, and didn't make any mention of what would happen if they WEREN'T elected.\\
+
+For another example, suppose a mother tells her son, ``If you clean your room, you can have a popsicle before dinner.''  She made no claim about what would happen if he didn't clean his room; based on that statement, it's possible that she'd let him have one even if he failed to clean his room.
+
+On the other hand, if she said, ``You can have a popsicle before dinner IF AND ONLY IF you clean your room,'' she would account for all possibilities: if he cleans his room, he will get a popsicle; if he doesn't clean, he won't get a popsicle.\\
+
+This is an example of a \textit{biconditional statement}, or an \textit{if-and-only-if statement.}  This is stronger than a conditional statement, because it accounts for all possibilities.
+
+\subsection{Conditional: If-Then}
+The following are all examples of conditional statements:
+\begin{center}
+If you get an average of 90\% or higher in this course, you'll receive an A.\\
+If you don't pay your taxes, then the IRS will fine you.\\
+It will rain tomorrow if this tropical storm stays in the area.
+\end{center}
+
+Notice that in the last example, the statement is written in reverse order; the implication is the first half of the sentence, and the condition is the second half.  Pay attention to where the word IF appears.\\
+
+A conditional statement can also provide an alternate result for what will occur if the condition is not met.  For instance, one could say, ``If the weather is clear tomorrow, we'll go hiking.  Otherwise, we'll go to the mall.''
+
+What occurs depends on the truth value of the condition.
+\begin{center}
+\begin{tabular}{c l}
+If the weather is clear tomorrow... & Result\\
+\hline
+& \\
+T & We'll go hiking.\\
+F & We'll go to the mall.
+\end{tabular}
+\end{center}
+
+\begin{proc}{Conditional}
+When the truth of one statement depends on the truth of another statement, this forms a conditional.  A conditional statement has the form 
+\begin{center}
+If $p$, then $q$. \hspace{0.25in} or \hspace{0.25in} If $p$, then $q$.  Otherwise, $r$.\\
+\end{center}
+
+The conditional ``If $p$ then $q$'' is written
+\[p \to\marginnote{Also written as $p \implies q$} q\]
+\end{proc}
+
+\vfill
+\pagebreak
+
+Let's practice with the notation by translating from word statements to their symbolic form.
+
+\begin{example}[https://www.youtube.com/watch?v=_rnB6rre2zM]{Using Conditional Notation}
+Let $p$ represent the statement ``You give me \$10,000'' and let $q$ represent the statement ``I will give you my car.''  Write the following statements symbolically.
+
+\begin{enumerate}[(a)]
+\item If you give me \$10,000, I will give you my car.
+\[p \to q\]
+
+\item I won't give you my car if you give me \$10,000.
+\[p \to\ \sim q\]
+
+\item If you don't give me \$10,000, I won't give you my car.
+\[\sim p \to\ \sim q\]
+
+\item If I don't give you my car, you don't give me \$10,000.
+\[\sim q \to\ \sim p\]
+\end{enumerate}
+\end{example}
+
+\begin{try}
+Let $p$ represent the statement ``You give me \$10,000'' and let $q$ represent the statement ``I will give you my car.''  Which of the following  represents the statement ``If I give you my car, you will give me \$10,000''?
+\begin{enumerate}[(a)]
+\item $\sim p \to q$
+\item $q \to \sim p$
+\item $q \to p$
+\item $\sim q \to p$
+\end{enumerate}
+\end{try}
+
+We can also reverse this by taking a statement written in symbols, and finding a way to express this in words.  As with other statements, there are several different ways of expressing statements like these in words.  Let's look at a few examples.
+
+\begin{example}[https://www.youtube.com/watch?v=loZvvBM3BZk]{Using Conditional Notation}
+Let $p$ represent the statement ``You are hurt'' and let $q$ represent the statement ``You use a bandage.''  Write the following statements in words.
+\begin{enumerate}[(a)]
+\item $p \to q$: ``If you are hurt, you use a bandage.''
+\item $p \to\ \sim q$: ``When you are hurt, you don't use a bandage.''
+\item $\sim p \to\ q$: ``You use a bandage if you aren't hurt.''
+\item $q \to p$: ``If you use a bandage, you are hurt.''
+\item $\sim q \to\ \sim p$: ``If you don't use a bandage, you aren't hurt.''
+\end{enumerate}
+\end{example}
+
+\begin{try}
+Let $p$ represent the statement ``You are hurt'' and let $q$ represent the statement ``You use a bandage.''  Which of the following statements corresponds to $\sim q \to p$?
+\begin{enumerate}[(a)]
+\item ``Don't use a bandage if you are hurt.''
+\item ``Use a bandage if you aren't hurt.''
+\item ``Use a bandage if you are hurt.''
+\item ``If you don't use a bandage, you are hurt.''
+\end{enumerate}
+\end{try}
+
+\begin{formula}{Sidenote: Programming With If Statements}
+Conditional statements are a basic and important piece of computer programming; they tell the program what to do, depending on the value of some variable.\\
+
+For instance, suppose we want to write a simple program that takes a student's grade and determines whether or not the student is passing.  In C++, the snippet of code that makes this decision would look like the following:
+
+\begin{verbatim}
+if (grade > 70) {
+    cout << "You are passing this course.";	//This prints to the screen
+}
+else {
+    cout << "You are failing this course.";
+}
+\end{verbatim}
+\end{formula}
+
+\subsubsection{Conditional Statements with Excel}
+Spreadsheet programs also use conditional statements extensively.  For example, suppose a student's grade is stored in cell \verb|A1| of a spreadsheet, and we wanted to calculate whether the student is passing or failing.  In Excel, we would write in another cell (where we want \verb|P| or \verb|F| to appear):
+\begin{center}
+\verb|=IF(A1>70,"P","F")|
+\end{center}
+This expression will check whether the condition (\verb|A1>70|) is true.  If it is, the cell will be filled in with \verb|P|; if not, it will be filled in with \verb|F|.
+
+The format is \verb|=IF(condition, value-if-true, value-if-false)|.
+
+\begin{example}[https://www.youtube.com/watch?v=uGgvFGv2kuw]{Conditional Statement in Excel}
+An accountant needs to withhold 15\% of her client's income for taxes if the client's income is below \$30,000.  If the income is above \$30,000, she needs to withhold 20\%.  Write a statement in Excel that would calculate the amount to withhold, if the income is stored in cell \verb|A1|.
+
+\sol
+In words, we would write: ``If income $<$ \$30,000, multiply by 0.15; otherwise, multiply by 0.2.''  In Excel, that would look like 
+\begin{center}
+\verb|=IF(A1<30000, 0.15*A1, 0.2*A1)|
+\end{center}
+\end{example}
+
+We can also combine multiple statements in the condition, as shown in the following example.
+
+\begin{example}[https://www.youtube.com/watch?v=36rk4NKhQZc]{Conditional Statement with Multiple Conditions}
+Suppose that in a spreadsheet, cell \verb|A1| contains annual income, and cell \verb|A2| contains the number of dependents.  A certain tax credit applies to someone with no dependents who earns less than \$10,000, or to someone with dependents who earns less than \$20,000.  Write a rule that describes this.
+
+\sol
+There are two ways to get this tax credit:\\
+Income $<$ \$10,000 AND dependents $=$ 0 OR\\
+Income $<$ \$20,000 AND dependents $>$ 0\\
+
+In Excel, an \verb|AND| operation is written \verb|AND(first-statement, second-statement)|, and an \verb|OR| operation is written similarly.\\
+
+Thus, to write this conditional statement, we would enter
+\begin{center}
+\verb|=IF(OR(AND(A1<10000, A2=0),AND(A2<20000, A2>0)),"Credit","No credit")|
+\end{center}
+\end{example}
+\vfill
+\pagebreak
+
+\subsection{Truth Table for a Conditional Statement}
+Consider a conditional statement like ``If the Cardinals win the next game, they'll win the World Series.''  To fill out a truth table for $p \to q$, where $p$ is ``the Cardinals win the next game'' and $q$ is ``they win the World Series,'' we'll evaluate the truth of $p \to q$ for each possible combination of $p$ and $q$.
+
+\paragraph{If $p$ is true and $q$ is true:} then the Cardinals win the next game and win the World Series, so the statement $p \to q$ wasn't disproven.  Thus, in this case $p \to q$ is true.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \to q$\\
+\hline
+& & \\
+T & T & T
+\end{tabular}
+\end{center}
+
+\paragraph{If $p$ is true and $q$ is false:} then the Cardinals win the next game but they \textit{don't} win the World Series, so the statement $p \to q$ \textit{was} disproven.  Thus, in this case $p \to q$ is false.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \to q$\\
+\hline
+& & \\
+T & F & F
+\end{tabular}
+\end{center}
+
+\paragraph{If $p$ is false and $q$ is true:} then the Cardinals \textit{don't} win the next game but they \textit{do} win the World Series.  In this case, the statement $p \to q$ \textit{wasn't} disproven, because the statement only made a claim of what would happen if $p$ occurred.  Since $p$ didn't occur, $p \to q$ never broke down.  Under traditional logic, in this case $p \to q$ is true, since it was never disproven.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \to q$\\
+\hline
+& & \\
+F & T & T
+\end{tabular}
+\end{center}
+
+\paragraph{If $p$ is false and $q$ is false:} then the Cardinals don't win the next game and they don't win the World Series.  Using the same logic as the last case, in this case $p \to q$ is defined as true, since it makes no claim on what should happen if $p$ is false.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \to q$\\
+\hline
+& & \\
+F & F & T
+\end{tabular}
+\end{center}
+
+If the Cardinals don't win the next game, it doesn't matter whether they win the World Series or not; the given statement is presumed to be true.\\
+
+\begin{formula}{Truth Table for a Conditional Statement}
+The conditional statement $p \to q$ is only false when the condition ($p$) is true and the implication ($q$) is false.
+
+\begin{center}
+\begin{tabular}{|c c c|}
+\hline
+$p$ & $q$ & $p \to q$\\
+\hline
+& & \\
+T & T & T\\
+T & F & F\\
+F & T & T\\
+F & F & T\\
+\hline
+\end{tabular}
+\end{center}
+\end{formula}
+
+With regard to the mother who promised the popsicle to her son if he cleaned his room, if he doesn't clean his room, she is free to give him the popsicle or not; no matter what she does, she's keeping her word, because her promise only applied to what would happen if he did clean his room.  If he does clean his room, though, she is forced to give him the popsicle, or else her promise was a lie.\\
+
+Remember this key to a conditional statement: it is only false when the condition is met, but the promised result doesn't occur.
+\vfill
+\pagebreak
+
+\begin{example}[https://www.youtube.com/watch?v=Tx2r1SRMsKc]{Truth Tables with Conditionals}
+Construct a truth table for $\sim (q \to p)$.
+
+\sol
+First, after placing the columns for $p$ and $q$, we'll need a column for $q \to p$, and then finally we'll negate this column.  Notice that the implication direction is reversed from what we've seen before; this just means that $q$ is now the condition and $p$ is the implication.  The only false value in this column will occur when $q$ is true and $p$ is false.
+\begin{center}
+\begin{tabular}{|c c c|}
+\hline
+$p$ & $q$ & $q \to p$\\
+\hline
+& & \\
+T & T & T\\
+T & F & T\\
+F & T & F\\
+F & F & T\\
+\hline
+\end{tabular}
+\end{center}
+
+Finally, negating this column:
+\begin{center}
+{\color{green!30!black}
+\begin{tabular}{|c c c c|}
+\hline
+$p$ & $q$ & $q \to p$ & $\sim (q \to p)$\\
+\hline
+& & &\\
+T & T & T & F\\
+T & F & T & F\\
+F & T & F & T\\
+F & F & T & F\\
+\hline
+\end{tabular}}
+\end{center}
+\end{example}
+
+\begin{try}
+Fill in the truth table below for $\sim p \to q$.
+\begin{center}
+\begin{tabular}{|c c c c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim p \to q$\\
+\hline
+& && \\
+T & T & &\\
+T & F & &\\
+F & T & &\\
+F & F & &\\
+\hline
+\end{tabular}
+\end{center}
+\end{try}
+
+Just for practice, let's try another example.
+
+\begin{example}[https://www.youtube.com/watch?v=UDSeXDm9rfo]{Truth Tables with Conditionals}
+Construct a truth table for $\sim r\ \wedge (q \to \sim p)$.
+
+\sol
+The table is shown below; it is left to the reader to verify.
+\begin{center}
+\begin{tabular}{|c c c c c c c|}
+\hline
+$p$ & $q$ & $r$ & $\sim p$ & $q \to \sim p$ & $\sim r$ & $\sim r\ \wedge (q \to \sim p)$\\
+\hline
+& & & & & &\\
+T & T & T & F & F & F & F\\
+T & F & T & F & T & F & F\\
+F & T & T & T & T & F & F\\
+F & F & T & T & T & F & F\\
+T & T & F & F & F & T & F\\
+T & F & F & F & T & T & T\\
+F & T & F & T & T & T & T\\
+F & F & F & T & T & T & T\\
+\hline
+\end{tabular}
+\end{center}
+\end{example}
+\vfill
+\pagebreak
+
+The next example leads to a new definition.
+\begin{example}[https://www.youtube.com/watch?v=adZZ2W6apWA]{Tautology}
+Construct a truth table for $[(p \to q) \wedge p] \to q$.
+
+\sol
+At first, this looks daunting, but if we break it down, we notice that we'll need a column for $p \to q$ (which we've done before), we'll need to combine that with the $p$ column using $\wedge$ (which we practiced in the last section), and finally we'll need to use that column as the condition side of a conditional statement with $q$ as the implication.\\
+
+The filled-in table looks like the one below.\marginnote{This is actually an example of an \textit{argument}, which we'll cover in more detail later in this chapter.  This is what we call a \textit{valid} argument, which we prove by noting that the last column is all T's.}
+\begin{center}
+\begin{tabular}{|c c c c c|}
+\hline
+$p$ & $q$ & $p \to q$ & $(p \to q) \wedge p$ & $[(p \to q) \wedge p] \to q$\\
+\hline
+& & & &\\
+T & T & T & T & T\\
+T & F & F & F & T\\
+F & T & T & F & T\\
+F & F & T & F & T\\
+\hline
+\end{tabular}
+\end{center}
+
+Having the last column full of T's is something that we haven't seen before; this is an example of what is called a \textit{tautology}.
+\end{example}
+
+\begin{formula}{Tautologies and Self-Contradictions}
+A \textbf{tautology} is a statement that is always true.  For our purposes, it is a statement involving $p$ and $q$, for instance, that is true no matter what combination of $p$ and $q$ are true or false.  This is the same as saying that it is a statement whose column in a truth table is all T's.\\
+
+The opposite of a tautology is a \textbf{self-contradiction}, which is a statement that is always false (a column in a truth table that is full of F's).
+\end{formula}
+
+A simple example of a tautology is the statement $p \vee \sim p$:
+\begin{center}
+\begin{tabular}{|c c c|}
+\hline
+$p$ & $\sim p$ & $p\ \vee \sim p$\\
+\hline
+& & \\
+T & F & T\\
+F & T & T\\
+\hline
+\end{tabular}
+\end{center}
+For any statement $p$, either it will be true, or its negation will be true, so $p\ \vee \sim p$ is always true; it is a tautology.
+
+\begin{try}
+Construct a truth table to determine whether $(p\ \vee q) \wedge (\sim p\ \wedge \sim q)$ is a tautology, a self-contradiction, or neither.
+\end{try}
+
+\subsection{Biconditional: If-and-Only-If}
+At the beginning of this section, we introduced the idea of the \textit{biconditional}, which is a stronger statement than the conditional; the biconditional states not only the result of some condition being met, but also that that result will not occur if that condition is not met.\\
+
+For instance, consider a statement like ``You will pass this course if and only if your average score is over 70\%.''  This is equivalent to saying ``If your average score is over 70\%, you will pass this course, and if not, you will not pass this course.''  
+
+\begin{proc}{Biconditional}
+The biconditional ``$p$ if and only if $q$'' is written \[p \leftrightarrow q\]
+\end{proc}
+
+Let's build the truth table for the statement above.
+
+\paragraph{If $p$ is true and $q$ is true:} then your score is over 70\% and you pass this course.  In this case, the biconditional is true, because this situation fits the claim.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \leftrightarrow q$\\
+\hline
+& & \\
+T & T & T
+\end{tabular}
+\end{center}
+
+\paragraph{If $p$ is true and $q$ is false:} then your score is over 70\% and you don't pass this course.  In this case, the biconditional is false, because the claim didn't match what happened.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \leftrightarrow q$\\
+\hline
+& & \\
+T & F & F
+\end{tabular}
+\end{center}
+
+\paragraph{If $p$ is false and $q$ is true:} then your score is not over 70\% and you pass this course.  This is a case where the one-way conditional was true, because it didn't make any claim about what would occur when the condition wasn't met.  However, now the claim is that if your score is not over 70\%, you do not pass the course, so this situation makes a lie of the claim.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \leftrightarrow q$\\
+\hline
+& & \\
+F & T & F
+\end{tabular}
+\end{center}
+
+\paragraph{If $p$ is false and $q$ is false:} then your score is not over 70\% and you do not pass this course.  In this case, the biconditional is true, because that's exactly what the second part of the claim said.
+\begin{center}
+\begin{tabular}{c c c}
+$p$ & $q$ & $p \leftrightarrow q$\\
+\hline
+& & \\
+F & F & T
+\end{tabular}
+\end{center}
+
+\begin{formula}{Truth Table for a Biconditional Statement}
+The biconditional statement $p \leftrightarrow q$ is true whenever $p$ and $q$ have identical truth values; it is false when their truth values are different.
+
+\begin{center}
+\begin{tabular}{|c c c|}
+\hline
+$p$ & $q$ & $p \leftrightarrow q$\\
+\hline
+& & \\
+T & T & T\\
+T & F & F\\
+F & T & F\\
+F & F & T\\
+\hline
+\end{tabular}
+\end{center}
+
+This is another way of saying that $p \leftrightarrow q$ claims that $p$ and $q$ are equivalent; $p \leftrightarrow q$ is true precisely when they \textit{are} equivalent.
+\end{formula}
+
+\begin{example}[https://www.youtube.com/watch?v=nM41cWtuc34]{Truth Tables with Biconditionals}
+Construct the truth table for $\sim q \leftrightarrow\ \sim p$.
+
+\sol
+For this example, we'll need columns for $\sim q$ and $\sim p$.  Then, to construct the final column, just look for where $\sim q$ and $\sim p$ are identical; these are where $\sim q \leftrightarrow\ \sim p$ is true, and it is false everywhere else.
+\begin{center}
+\begin{tabular}{|c c c c c|}
+\hline
+$p$ & $q$ & $\sim q$ & $\sim p$ & $\sim q \leftrightarrow\ \sim p$\\
+\hline
+& & & & \\
+T & T & F & F & T\\
+T & F & T & F & F\\
+F & T & F & T & F\\
+F & F & T & T & T\\
+\hline
+\end{tabular}
+\end{center}
+\end{example}
+\vfill
+\pagebreak
+
+\subsection{Equivalence}
+We used the word \textit{equivalent} in discussing the biconditional statement above, saying that the biconditional is true when the truth values of two statements are identical.
+
+We can go further than this; if two compound statements have identical truth values no matter what combination of $p$ and $q$ are true, these two statements are said to be equivalent.\marginnote{Note: another way to say this is to say that $a$ and $b$ are equivalent if $a \leftrightarrow b$ is a tautology.}
+
+\begin{proc}{Equivalent Statements}
+Two statements are \textbf{equivalent}, symbolized $\equiv$, if their columns in a truth table are identical.
+\end{proc}
+
+\begin{example}[https://www.youtube.com/watch?v=B5GmnkcuKHc]{Equivalent Statements}
+Show that $\sim (\sim p) \equiv\ p$.
+
+\sol
+To show this, we'll construct a truth table that contains columns for both $\sim(\sim p)$ and $p$, and we'll show that these columns are identical.
+\begin{center}
+\begin{tabular}{|c c c|}
+\hline
+$p$ & $\sim p$ & $\sim (\sim p)$\\
+\hline
+& &\\
+T & F & T\\
+F & T & F\\
+\hline
+\end{tabular}
+\end{center}
+
+Since the columns for $p$ and $\sim (\sim p)$ are identical, we conclude that saying ``NOT NOT $p$'' is the same as saying ``$p$.''
+\end{example}
+
+\begin{example}[https://www.youtube.com/watch?v=RVZ8X7gFzio]{Equivalent Statements}
+Show that $(p \vee q) \vee r \equiv p \vee (q \vee r)$.
+
+\sol
+To show this, we'll build a truth table that contains a column for $(p \vee q) \vee r$ and a column for $p \vee (q \vee r)$, and show that these columns are identical.\\
+
+The truth table is 
+\begin{center}
+\begin{tabular}{|c c c c c c c|}
+\hline
+$p$ & $q$ & $r$ & $p \vee q$ & $q \vee r$ & $(p \vee q) \vee r$ & $p \vee (q \vee r)$\\
+\hline
+& & & & & & \\
+T & T & T & T & T & T & T\\
+T & F & T & T & T & T & T\\
+F & T & T & T & T & T & T\\
+F & F & T & F & T & T & T\\
+T & T & F & T & T & T & T\\
+T & F & F & T & F & T & T\\
+F & T & F & T & T & T & T\\
+F & F & F & F & F & F & F\\
+\hline
+\end{tabular}
+\end{center}
+
+Since the columns for $(p \vee q) \vee r$ and $p \vee (q \vee r)$ are identical, we have proven that \[(p \vee q)\marginnote{This is called an associative law.} \vee r \equiv p \vee (q \vee r).\]
+\end{example}
+
+In the next example, we'll look at alternate ways of stating a conditional statement, and show their equivalence.  We will also see one example of a statement that sometimes looks equivalent but isn't.
+\vfill
+\pagebreak
+
+\begin{example}[https://www.youtube.com/watch?v=2pMpgmywnp8]{Equivalent Statements to a Conditional}
+Select the statement that is not equivalent to the following statement:
+\begin{center}
+If it is raining, I need a jacket.
+\end{center}
+\begin{enumerate}[(a)]
+\item It's not raining or I need a jacket.
+\item I need a jacket or it's not raining.
+\item If I need a jacket, it's raining.
+\item If I don't need a jacket, it's not raining.
+\end{enumerate}
+
+\sol
+To find which of these are equivalent to the original, we'll need to define simple statements and construct a truth table to compare all the alternatives.  Whichever statements have identical truth columns will be the ones that are equivalent.\\
+
+If $p$ is ``It is raining'' and $q$ is ``I need a jacket,'' then the original statement is $p \to q$.  The other statements are 
+\begin{enumerate}[(a)]
+\item $\sim p \vee q$
+\item $q\ \vee \sim p$
+\item $q \to p$
+\item $\sim q \to\ \sim p$
+\end{enumerate}
+
+Now all that remains is to build the truth table.
+\begin{center}
+\begin{tabular}{|c c c c c c c c c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim q$ & $p \to q$ & $\sim p \vee q$ & $q\ \vee \sim p$ & $q \to p$ & $\sim q \to\ \sim p$\\
+\hline
+& & & & & & & & \\
+T & T & F & F & T & T & T & T & T\\
+T & F & F & T & F & F & F & T & F\\
+F & T & T & F & T & T & T & F & T\\
+F & F & T & T & T & T & T & T & T\\
+\hline
+\end{tabular}
+\end{center}
+
+Note that the only alternative that isn't equivalent to $p \to q$ is $q \to p$.\\
+
+The only statement that isn't equivalent is 
+\begin{center}
+(c) If I need a jacket, it's raining.\marginnote{This is called the \textit{converse} of $p \to q$.}
+\end{center}
+\end{example}
+
+\begin{try}
+Pick the converse of the statement ``If it is raining, then there are clouds in the sky.''
+\begin{enumerate}[(a)]
+\item There aren't clouds in the sky or it is raining.
+\item If there are clouds in the sky, it is raining.
+\item If there aren't clouds in the sky, it isn't raining.
+\item It is raining and there are clouds in the sky.
+\end{enumerate}
+\end{try}
+
+Notice that in that example, we found that $\sim p \vee q$ is equivalent to $p \to q$.  This is why we consider the three operations from the previous section to be the \textit{basic} operations, because others like the conditional and biconditional can be re-phrased in terms of AND, OR, and NOT.\\
+
+Therefore, we can say something like ``If you eat a pound of cotton candy, you'll feel sick'' or ``Either you didn't eat a pound of cotton candy, or you feel sick''; these are equivalent.  To see why, think about how we evaluate the truth of a conditional statement---a conditional statement $p \to q$ is only false when $p$ is true ($\sim p$ is false) and $q$ is false.  Similarly, $\sim p \vee q$ is only false when $\sim p$ is false and $q$ is false.
+\vfill
+\pagebreak
+
+\begin{formula}{Conditional and Biconditional Using Basic Operations}
+We can write both the conditional and the biconditional in terms of the basic operations AND, OR, and NOT.\\
+
+Specifically,
+\[p \to q\ \equiv\ \sim p \vee q \hspace*{0.2in} \textrm{and} \hspace*{0.2in} p \leftrightarrow q\ \equiv\ (p \wedge q) \vee (\sim p\ \wedge \sim q)\]
+
+Think about why the equivalence shown for the biconditional makes sense.  This states that claiming that two statements are equivalent is the same as claiming that they're either both true ($p \wedge q$) or both false ($\sim p\ \wedge \sim q$).  Of course, this is precisely what equivalence means.
+\end{formula}
+
+\subsection{Statements Related to the Conditional}
+For every conditional statement $p \to q$, we can rearrange the terms in three common ways by reversing the arrow and negating one or the other or both of $p$ and $q$.
+
+\begin{proc}{Converse, Inverse, and Contrapositive}
+\begin{tabular}{l l c}
+Name & In words & In symbols\\
+\hline
+& & \\
+ & If $p$, then $q$. & $p \to q$\\
+Converse & If $q$, then $p$. & $q \to p$\\
+Inverse & If not $p$, then not $q$. & $\sim p \to\ \sim q$\\
+Contrapositive & If not $q$, then not $p$. & $\sim q \to\ \sim p$
+\end{tabular}
+\end{proc}
+
+\begin{example}[https://www.youtube.com/watch?v=GDE6Yg22DUk]{Converse, Inverse, and Contrapositive}
+Consider the valid statement, ``If you live in Frederick, you live in Maryland.''  Write the converse, inverse, and contrapositive of this statement.
+
+\sol
+\begin{enumerate}[(a)]
+\item Converse: ``If you live in Maryland, you live in Frederick.''
+\item Inverse: ``If you don't live in Frederick, you don't live in Maryland.''
+\item Contrapositive: ``If you don't live in Maryland, you don't live in Frederick.''
+\end{enumerate}
+\end{example}
+
+\begin{try}
+Write the converse, inverse, and contrapositive of the statement ``If it is summer, the sun is shining.''
+\end{try}
+
+This example already gives us an idea of which of these is equivalent to the original conditional, because only one of the three is also true---the contrapositive (assuming that when we refer to Frederick, we mean Frederick, MD).
+
+The contrapositive is logically equivalent to the original statement.  To show this, we can build a truth table with the four related statements.\marginnote{If we have a conditional statement (like $p \to q$ or $q \to p$), we can obtain an equivalent conditional statement by switching the direction and negating both $p$ and $q$.}
+\begin{center}
+\begin{tabular}{|c c c c c c|}
+\hline
+& & & & & \\
+& & Conditional & Converse & Inverse & Contrapositive\\
+$p$ & $q$ & $p \to q$ & $q \to p$ & $\sim p \to\ \sim q$ & $\sim q \to\ \sim p$\\
+\hline
+& & \cellcolor{blue!15} & \cellcolor{orange!20} & \cellcolor{orange!20} & \cellcolor{blue!15}\\
+T & T & \cellcolor{blue!15}T & \cellcolor{orange!20}T & \cellcolor{orange!20}T & \cellcolor{blue!15}T\\
+T & F & \cellcolor{blue!15}F & \cellcolor{orange!20}T & \cellcolor{orange!20}T & \cellcolor{blue!15}F\\
+F & T & \cellcolor{blue!15}T & \cellcolor{orange!20}F & \cellcolor{orange!20}F & \cellcolor{blue!15}T\\
+F & F & \cellcolor{blue!15}\tikzmark{cond}{T} & \cellcolor{orange!20}\tikzmark{conv}{T} & \cellcolor{orange!20}\tikzmark{inv}{T} & \cellcolor{blue!15}\tikzmark{contra}{T}\\
+\hline
+\end{tabular}
+\tikz[overlay,remember picture] {
+  \node (condb) [below=1.0cm of cond] {};
+  \draw[latex-,very thick] (cond) -- (condb.center);
+  
+  \node (convb) [below=0.3cm of conv] {};
+  \draw[latex-,very thick] (conv) -- (convb.center);
+  
+  \node (invb) [below=0.3cm of inv] {};
+  \draw[latex-,very thick] (inv) -- (invb.center);
+  
+  \node (contrab) [below=1.0cm of contra] {};
+  \draw[latex-,very thick] (contra) -- (contrab.center);
+  
+  \draw[very thick] (convb.center) -- (invb.center) node[midway,below=0.1cm] {Equivalent};
+  \draw[very thick] (condb.center) -- (contrab.center);
+}
+\end{center}

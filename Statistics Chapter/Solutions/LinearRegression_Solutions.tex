@@ -1,0 +1,136 @@
+\begin{enumerate}
+\item If the value of $r$ is 0.91 for a dataset comparing two variables, what does that tell us? \answer{There is a strong positive linear association}
+
+\item If the value of $r$ is $-0.43$ for a dataset comparing two variables, what does that tell us? \answer{There is a weak negative linear association}
+
+\item Compute the equation of the regression line for a dataset that has the following statistics:
+\[\overline{x} = 5,\ \ s_x = 2,\ \ \overline{y} = 1350,\ \ s_y = 100,\ \ r = 0.70\]
+\text{} \answer{$\hat{y} = 35x + 1175$}
+\begin{center}
+Slope: $a = r \cdot \dfrac{s_y}{s_x} = (0.70)\left(\dfrac{100}{2}\right) = 35$\\
+Intercept: $b = \overline{y} - a \overline{x} = 1350 - (35)(5) = 1175$
+\end{center}
+
+\item Compute the equation of the regression line for a dataset that has the following statistics:
+\[\overline{x} = 152,\ \ s_x = 24.5,\ \ \overline{y} = 26,\ \ s_y = 2.7,\ \ r = -0.82\]
+\text{} \answer{$\hat{y} = -0.09x + 39.7$}
+\begin{center}
+Slope: $a = r \cdot \dfrac{s_y}{s_x} = (-0.82)\left(\dfrac{2.7}{24.5}\right) = -0.09$\\
+Intercept: $b = \overline{y} - a \overline{x} = 26 - (-0.09)(152) = 39.7$
+\end{center}
+\end{enumerate}
+
+\emph{For problems 5--8, use the dataset shown in the table below.  This is a sample of 15 players in Major League Baseball, chosen from the starting lineups of teams in 2019.  The table shows the team, age, position, height, and salary for each player, as well as several statistics from that season.  These include the number of games they played (G), their batting average (AVE) (the proportion of their at-bats for which they got a hit), and their home runs (HR).}
+\begin{center}
+{\footnotesize
+\begin{tabular}{l l c c c c c r}
+\textbf{Name} & \textbf{Team} & \textbf{Age} & \textbf{Height} & \textbf{G} & \textbf{AVE} & \textbf{HR} & \textbf{Salary}\\
+\hline
+& & & & & & & \\
+Cedric Mullins & Orioles & 25 & 173 cm & 22 & .094 & 0 & \$557,500\\
+Tim Anderson & White Sox & 26 & 185 cm & 123 & .335 & 18 & \$1,400,000\\
+Christin Stewart & Tigers & 25 & 183 cm & 104 & .233 & 10 & \$556,400\\
+Alex Gordon & Royals & 35 & 185 cm & 150 & .266 & 13 & \$20,000,000\\
+Jonathan Schoop & Twins & 27 & 185 cm & 121 & .256 & 23 & \$7,500,000\\
+Marcus Semien & Athletics & 29 & 183 cm & 162 & .285 & 33 & \$5,900,000\\
+Yandy Diaz & Rays & 28 & 188 cm & 79 & .267 & 14 & \$558,400\\
+Randal Grichuk & Blue Jays & 28 & 188 cm & 151 & .232 & 31 & \$5,000,000\\
+Josh Donaldson & Braves & 33 & 185 cm & 155 & .259 & 37 & \$23,000,000\\
+Joey Votto & Reds & 36 & 188 cm & 142 & .261 & 15 & \$25,000,000\\
+Cody Bellinger & Dodgers & 24 & 193 cm & 156 & .305 & 47 & \$605,000\\
+Ryan Braun & Brewers & 35 & 188 cm & 144 & .285 & 22 & \$19,000,000\\
+Maikel Franco & Phillies & 27 & 185 cm & 123 & .234 & 17 & \$5,200,000\\
+Ian Kinsler & Padres & 37 & 183 cm & 87 & .217 & 9 & \$3,750,000\\
+Marcell Ozuna & Cardinals & 28 & 185 cm & 130 & .241 & 29 & \$12,250,000\\
+\end{tabular}}
+\end{center}
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item Suppose we want to try to predict a player's salary based on the number of home runs they hit (HR).
+\begin{enumerate}[(a)]
+\item Before doing any calculations, does it seem likely that there will be a strong association between these two variables?  If so, which direction do you expect for the association? \answersub{Yes; positive}
+\item Calculate the value of the correlation coefficient, $r$, using a calculator. \answersub{$r = 0.137$}
+\item Interpret the value of $r$; specifically, describe the direction of the trend and the strength of the linear association. \answersub{Positive, but negligible}
+\item Find the equation of the regression line for this association.\\
+\emph{(Note: this may not be meaningful, depending on the value of $r$, but we can still use it for practice.)} \answersub{$\hat{y} = 98,257x + 6,602,098$}
+\item Ignoring the possibility that the regression line may not be a good fit for the data, use this regression line to predict the salary of a player who hits 21 home runs.  Then predict the salary of a player who hits 70 home runs.  Which prediction is likely to be more accurate? \answersub{\$8,665,495; \$13,480,088; the first one (interpolation)}
+\begin{center}
+21 home runs: $\hat{y} = 98,257(21) + 6,602,098 = 8,665,495$\\
+70 home runs: $\hat{y} = 98,257(70) + 6,602,098 = 13,480,088$
+\end{center}
+\end{enumerate}
+
+\item Suppose we want to try to predict a player's height based on their age.
+\begin{enumerate}[(a)]
+\item Before doing any calculations, does it seem likely that there will be a strong association between these two variables?  If so, which direction do you expect for the association? \answersub{No}
+\item Calculate the value of the correlation coefficient, $r$, using a calculator. \answersub{$r = 0.121$}
+\item Interpret the value of $r$; specifically, describe the direction of the trend and the strength of the linear association. \answersub{Positive, but negligible}
+\item Find the equation of the regression line for this association.\\
+\emph{(Note: this may not be meaningful, depending on the value of $r$, but we can still use it for practice.)} \answersub{$\hat{y} = 0.117x + 181.7$}
+\item Ignoring the possibility that the regression line may not be a good fit for the data, use this regression line to predict the height of a player who is 26 years old. \answersub{184.7 cm}
+\[\hat{y} = 0.117(26) + 181.7 = 184.7\]
+\end{enumerate}
+
+\item Suppose we want to try to predict the number of home runs that a player hits (HR) based on the number of games they play (G).
+\begin{enumerate}[(a)]
+\item Before doing any calculations, does it seem likely that there will be a strong association between these two variables?  If so, which direction do you expect for the association? \answersub{Yes; positive}
+\item Calculate the value of the correlation coefficient, $r$, using a calculator. \answersub{$r = 0.76$}
+\item Interpret the value of $r$; specifically, describe the direction of the trend and the strength of the linear association. \answersub{Positive, moderate}
+\item Find the equation of the regression line for this association.\\
+\emph{(Note: this may not be meaningful, depending on the value of $r$, but we can still use it for practice.)} \answersub{$\hat{y} = 0.25x - 9.5$}
+\item Ignoring the possibility that the regression line may not be a good fit for the data, use this regression line to predict how many home runs a player will hit if he plays 100 games. \answersub{15.5 home runs}
+\[\hat{y} = 0.25(100) - 9.5 = 15.5\]
+\end{enumerate}
+\pagebreak
+
+\item Suppose we want to try to predict a player's batting average based on the number of home runs they hit.
+\begin{enumerate}[(a)]
+\item Before doing any calculations, does it seem likely that there will be a strong association between these two variables?  If so, which direction do you expect for the association? \answersub{Yes; positive}
+\item Calculate the value of the correlation coefficient, $r$, using a calculator. \answersub{$r = 0.6$}
+\item Interpret the value of $r$; specifically, describe the direction of the trend and the strength of the linear association. \answersub{Positive, moderate}
+\item Find the equation of the regression line for this association.\\
+\emph{(Note: this may not be meaningful, depending on the value of $r$, but we can still use it for practice.)} \answersub{$\hat{y} = 0.002x + 0.2$}
+\item Ignoring the possibility that the regression line may not be a good fit for the data, use this regression line to predict the batting average of a player who hits 12 home runs.  Then predict the batting average of a player who hits 58 home runs.  Which prediction is likely to be more accurate? \answersub{.224; .316; the first one (interpolation)}
+\begin{center}
+12 home runs: $\hat{y} = 0.002(12) + 0.2 = .224$\\
+58 home runs: $\hat{y} = 0.002(58) + 0.2 = .316$
+\end{center}
+\end{enumerate}
+
+\item The data set below shows the GMAT scores for five MBA students and the students' grade point averages (GPA) upon graduation.
+\begin{center}
+\begin{tabular}{l | c c c c c}
+\textbf{GMAT} & 660 & 580 & 480 & 710 & 600\\
+\hline
+\textbf{GPA} & 3.7 & 3.0 & 3.2 & 4.0 & 3.5
+\end{tabular}
+\end{center}
+\begin{enumerate}[(a)]
+\item Calculate $r$, the correlation coefficient between these two variables. \answersub{$r = 0.82$}
+\item Interpret the value of $r$; specifically, describe the direction of the trend and the strength of the linear association. \answersub{Positive; strong}
+\item Compute the regression line for predicting GPA from GMAT score. \answersub{$\hat{y} = 0.004x + 1.21$}
+\item Predict the GPA of a student who gets a score of 500 on the GMAT. \answersub{3.21}
+\[\hat{y} = 0.004(500) + 1.21 = 3.21\]
+\item Does the student with a GMAT score of 580 have a higher or lower GPA than the one predicted by the regression line? \answersub{Lower}
+\[\hat{y} = 0.004(580) + 1.21 = 3.53 \textrm{ (actual GPA is 3.0)}\]
+\end{enumerate}
+
+\item The data set below shows the mileage and selling prices of eight used cars of the same model.
+\begin{center}
+\begin{tabular}{l | c c c c cc c c}
+\textbf{Mileage} & 21,000 & 34,000 & 41,000 & 43,000 & 65,000 & 72,000 & 76,000 & 84,000\\
+\hline
+\textbf{Price} & \$16,000 & \$11,000 & \$13,000 & \$14,000 & \$10,000 & \$12,000 & \$7,000 & \$7,000
+\end{tabular}
+\end{center}
+\begin{enumerate}[(a)]
+\item Calculate $r$, the correlation coefficient between these two variables. \answersub{$r = -0.84$}
+\item Interpret the value of $r$; specifically, describe the direction of the trend and the strength of the linear association. \answersub{Negative; strong}
+\item Compute the regression line for predicting price from mileage. \answersub{$\hat{y} = -0.118x + 17,688$}
+\item Predict the price of a car with 30,000 miles. \answersub{\$14,148}
+\[\hat{y} = -0.118(30,000) + 17,688 = 14,148\]
+\item Does the car with 43,000 miles on it have a higher or lower price than the one predicted by the regression line? \answersub{Higher}
+\[\hat{y} = -0.118(43,000) + 17,688 = 12,614 \textrm{ (actual price is 14,000)}\]
+\end{enumerate}
+\end{enumerate}

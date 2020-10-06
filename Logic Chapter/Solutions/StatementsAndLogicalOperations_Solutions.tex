@@ -1,0 +1,271 @@
+\emph{In problems 1--10, determine whether or not each sentence is a statement.}
+\begin{enumerate}
+\item 1024 is the smallest 4-digit number that is a perfect square. \answer{Yes, this is a statement.}
+
+\item Doc Brown's time machine requires 1.21 jigowatts of power to operate. \answer{Yes, this is a statement.}
+
+\item All elephants are purple. \answer{Yes, this is a statement.}
+
+\item Don't do drugs. \answer{No, this is not a statement (command).}
+
+\item $64=2^5$ \answer{Yes, this is a statement.}
+
+\item Lizard people run the government. \answer{Yes, this is a statement.}
+
+\item What are you holding? \answer{No, this is not a statement (question).}
+
+\item Don't believe everything you read. \answer{No, this is not a statement (command).}
+
+\item More soldiers died from sickness than combat in the Revolutionary War. \answer{Yes, this is a statement.}
+
+\item This statement is a lie. \answer{No, this is not a statement (self-contradictory).}
+\end{enumerate}
+
+\emph{In problems 11--13, let $p$ and $q$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ It will rain this weekend.}\\
+&q: \textrm{ We can go to the mall on Saturday.}
+\end{align*}
+\emph{Write each of the following statements in symbolic form.}
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item ``It won't rain this weekend.'' \answer{$\sim p$}
+
+\item ``Either it will rain this weekend, or we can go to the mall on Saturday.'' \answer{$p \vee q$}
+
+\item ``We can't go to the mall on Saturday, but at least it won't rain this weekend.'' \answer{$\sim q \wedge \sim p$}
+\end{enumerate}
+
+\emph{In problems 14--16, let $p$ and $q$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ Interest rates are low.}\\
+&q: \textrm{ It is not time to buy a house.}
+\end{align*}
+\emph{Write each of the following statements in symbolic form.}
+\begin{enumerate}
+\setcounter{enumi}{13}
+
+\item ``It is time to buy a house; interest rates are low.'' \answer{$\sim q \wedge p$}
+
+\item ``Interest rates are not low, and it is not time to buy a house.'' \answer{$\sim p \wedge q$}
+
+\item ``Either it is time to buy a house, or interest rates are not low.'' \answer{$\sim q \vee \sim p$}
+\end{enumerate}
+
+\emph{In problems 17--22, let $p$ and $q$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ You study hard.}\\
+&q: \textrm{ You graduate with honors.}
+\end{align*}
+\emph{Write each of the following statements in symbolic form.}
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item ``You study hard and you graduate with honors.'' \answer{$p \wedge q$}
+
+\item ``You don't study hard, but you graduate with honors anyway.'' \answer{$\sim p \wedge q$}
+
+\item ``You study hard, but you still don't graduate with honors.'' \answer{$p \wedge \sim q$}
+
+\item ``You study hard or you don't graduate with honors.'' \answer{$p \vee \sim q$}
+
+\item ``You don't study hard or you graduate with honors anyway.'' \answer{$\sim p \vee q$}
+
+\item ``You don't study hard, or you don't graduate with honors.'' \answer{$\sim p \vee \sim q$}
+\end{enumerate}
+
+\emph{In problems 23--26, let $p$ and $q$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ Kevin Durant will win the MVP award.}\\
+&q: \textrm{ The Lakers will win the NBA championship.}
+\end{align*}
+\emph{Write each of the following statements in words.}
+\begin{enumerate}
+\setcounter{enumi}{22}
+
+\item $p \vee q$ \answer{Kevin Durant will win the MVP award, or the Lakers will win the NBA championship.}
+
+\item $p \wedge q$ \answer{Kevin Durant will win the MVP award, and the Lakers will win the NBA championship.}
+
+\item $\sim p \vee q$ \answer{Kevin Durant will not win the MVP award, or the Lakers will win the NBA championship.}
+
+\item $p\ \wedge \sim q$ \answer{Kevin Durant will win the MVP award, and the Lakers will not win the NBA championship.}
+\end{enumerate}
+
+\emph{In problems 27--30, let $p$ and $q$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ This is a dog.}\\
+&q: \textrm{ This is a mammal.}
+\end{align*}
+\emph{Write each of the following statements in words.}
+\begin{enumerate}
+\setcounter{enumi}{26}
+
+\item $\sim p \wedge q$ \answer{This is not a dog, but it is a mammal.}
+
+\item $p\ \wedge \sim q$ \answer{This is a dog, and it is not a mammal.}
+
+\item $\sim p\ \vee \sim q$ \answer{This is not a dog, or it is not a mammal.}
+
+\item $\sim q$ \answer{This is not a mammal.}
+\end{enumerate}
+
+\emph{In problems 31--34, let $p$ and $q$ represent the following statements:}
+\begin{align*}
+&p: \textrm{ Eggs make a good breakfast.}\\
+&q: \textrm{ Bacon is not healthy.}
+\end{align*}
+\emph{Write each of the following statements in words.}
+\begin{enumerate}
+\setcounter{enumi}{30}
+
+\item $\sim p$ \answer{Eggs do not make a good breakfast.}
+
+\item $p\ \vee \sim q$ \answer{Eggs make a good breakfast, or bacon is healthy.}
+
+\item $\sim p\ \wedge \sim q$ \answer{Eggs do not make a good breakfast, and bacon is healthy.}
+
+\item $\sim p \vee q$ \answer{Eggs do not make a good breakfast, or bacon is not healthy.}
+\end{enumerate}
+
+\emph{In problems 35--40, evaluate the truth value of the given statement for the given truth values of $p$, $q$, and $r$.}
+\begin{enumerate}
+\setcounter{enumi}{34}
+
+\item $p\ \vee \sim q$, where $p$ is T and $q$ is F. \answer{T}
+\[T \vee \sim F = T \vee T = T\]
+
+\item $\sim p\ \wedge q$, where $p$ is F and $q$ is F. \answer{F}
+\[\sim F \wedge F = T \wedge F = F\]
+
+\item $p\ \wedge (q\ \vee \sim r)$, where $p$ is T, $q$ is F, and $r$ is F. \answer{T}
+\[T \wedge (F \vee \sim F) = T \wedge (F \vee T) = T \wedge T = T\]
+
+\item $\sim (p\ \wedge \sim p)$, where $p$ is F. \answer{T}
+\[\sim (F \wedge \sim F) = \sim (F \wedge T) = \sim F = T\]
+
+\item $(p\ \wedge q)\ \vee r$, where $p$ is F, $q$ is T, and $r$ is T. \answer{T}
+\[(F \wedge T) \vee T = F \vee T = T\]
+
+\item $(p\ \vee (\sim p\ \vee q))\ \wedge \sim(q \wedge r)$, where $p$ is F, $q$ is F, and $r$ is T. \answer{T}
+\[(F \vee (\sim F \vee F)) \wedge \sim (F \wedge T) = (F \vee (T \vee F)) \wedge \sim (F) = (F \vee T) \wedge T = T \wedge T = T\]
+\end{enumerate}
+
+\emph{In problems 41--46, fill in the blanks in each truth table.}
+\begin{enumerate}
+\setcounter{enumi}{40}
+
+\item 
+\begin{center}
+\begin{tabular}{|c | c | c | c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim p \wedge q$\\
+\hline
+& & &\\
+T & T & F & F\\
+T & F & F & F\\
+F & T & T & T\\
+F & F & T & F\\
+\hline
+\end{tabular}
+\end{center}
+
+\item 
+\begin{center}
+\begin{tabular}{|c | c | c | c | c|}
+\hline
+$p$ & $q$ & $\sim p$ & $p \wedge q$ & $(p \wedge q) \vee \sim p$\\
+\hline
+& & & &\\
+T & T & F & T & T\\
+T & F & F & F & F\\
+F & T & T & F & T\\
+F & F & T & F & T\\
+\hline
+\end{tabular}
+\end{center}
+
+\item 
+\begin{center}
+\begin{tabular}{|c | c | c | c | c | c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim q$ & $p \vee \sim 	q$ & $\sim p \wedge (p \vee \sim q)$\\
+\hline
+& & & & & \\
+T & T & F & F & T & F\\
+T & F & F & T & T & F\\
+F & T & T & F & F & F\\
+F & F & T & T & T & T\\
+\hline
+\end{tabular}
+\end{center}
+
+\item 
+\begin{center}
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$p$ & $q$ & $\sim p$ & $\sim q$ & $\sim p \vee q$ & $p \wedge \sim q$ & $(p \wedge \sim q) \vee (\sim p \vee q)$\\
+\hline
+& & & & & & \\
+T & T & F & F & T & F & T\\
+T & F & F & T & F & T & T\\
+F & T & T & F & T & F & T\\
+F & F & T & T & T & F & T\\
+\hline
+\end{tabular}
+\end{center}
+
+\item 
+\begin{center}
+\begin{tabular}{|c | c | c | c | c | c | c|}
+\hline
+$p$ & $q$ & $r$ & $\sim p$ & $\sim r$ & $q\ \vee \sim r$ & $\sim p\ \wedge (q\ \vee \sim r)$\\
+\hline
+& & & & & & \\
+T & T & T & F & F & T & F\\
+T & F & T & F & F & F & F\\
+F & T & T & T & F & T & T\\
+F & F & T & T & F & F & F\\
+T & T & F & F & T & T & F\\
+T & F & F & F & T & T & F\\
+F & T & F & T & T & T & T\\
+F & F & F & T & T & T & T\\
+\hline
+\end{tabular}
+\end{center}
+
+\item {\footnotesize
+\begin{center}
+\begin{tabular}{|c | c | c | c | c | c | c | c | c | c | c|}
+\hline
+& & & & & & & & & &\\
+$p$ & $q$ & $r$ & $\sim p$ & $\sim q$ & $\sim r$ & $\sim p\ \vee q$ & $p\ \vee \sim r$ & $\sim p\ \vee \sim q$ & $(\sim p\ \vee q) \wedge (p\ \vee \sim r)$ & $[(\sim p\ \vee q) \wedge (p\ \vee \sim r)] \wedge (\sim p\ \vee \sim q)$\\
+& & & & & & & & & &\\
+\hline
+& & & & & & & & & &\\
+T & T & T & F & F & F & T & T & F & T & F\\
+T & F & T & F & T & F & F & T & T & F & F\\
+F & T & T & T & F & F & T & F & T & F & F\\
+F & F & T & T & T & F & T & F & T & F & F\\
+T & T & F & F & F & T & T & T & F & T & F\\
+T & F & F & F & T & T & F & T & T & F & F\\
+F & T & F & T & F & T & T & T & T & T & T\\
+F & F & F & T & T & T & T & T & T & T & T\\
+\hline
+\end{tabular}
+\end{center}}
+\end{enumerate}
+
+\emph{In problems 47--50, write the negation of each quantified statement.}
+\begin{enumerate}
+\setcounter{enumi}{46}
+
+\item All mammals are land-based. \answer{Some mammals are not land-based.}
+
+\item Some horses are not domesticated. \answer{All horses are domesticated.}
+
+\item Some trains are late. \answer{All trains are not late.}
+
+\item All basketball players are not tall. \answer{Some basketball players are tall.}
+\end{enumerate}

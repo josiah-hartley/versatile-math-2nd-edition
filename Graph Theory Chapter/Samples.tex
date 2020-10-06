@@ -1,0 +1,69 @@
+\begin{comment}
+\subsection{Filled Circle}
+\begin{center}
+\begin{tikzpicture}
+  %\tikzset{VertexStyle/.style={draw,circle}}
+  \GraphInit[vstyle=Classic]
+  \grEmptyCycle*[rotation=90,prefix=a,RA=2,Math=true]{{(x,2)},{(0,0)},{(2,1)}}
+  \grEmptyCycle*[rotation=90,prefix=b,RA=4.5,Math=false]{(x,0),(1,0),(1,1),(0,1),(0,2),(2,2)}
+  \EdgeInGraphLoop{b}{6}
+  \SetUpEdge[style={bend right=10}]
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{1}{2}{3}
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{2}{2}{3}
+  \SetUpEdge[style={bend left=10}]
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{4}{2}{3}
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{5}{2}{3}    
+\end{tikzpicture}
+\end{center}
+
+\subsection{No Labels}
+\begin{center}
+\begin{tikzpicture}
+  %\tikzset{VertexStyle/.style={draw,circle}}
+  \GraphInit[vstyle=simple]
+  \grEmptyCycle*[rotation=90,prefix=a,RA=2,Math=true]{{(x,2)},{(0,0)},{(2,1)}}
+  \grEmptyCycle*[rotation=90,prefix=b,RA=4.5,Math=false]{(x,0),(1,0),(1,1),(0,1),(0,2),(2,2)}
+  \EdgeInGraphLoop{b}{6}
+  \SetUpEdge[style={bend right=10}]
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{1}{2}{3}
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{2}{2}{3}
+  \SetUpEdge[style={bend left=10}]
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{4}{2}{3}
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{5}{2}{3}    
+\end{tikzpicture}
+\end{center}
+
+\subsection{Labels in Circles}
+\begin{center}
+\begin{tikzpicture}
+  %\tikzset{VertexStyle/.style={draw,circle}}
+  \grEmptyCycle*[rotation=90,prefix=a,RA=2,Math=true]{{(x,2)},{(0,0)},{(2,1)}}
+  \grEmptyCycle*[rotation=90,prefix=b,RA=4.5,Math=false]{(x,0),(1,0),(1,1),(0,1),(0,2),(2,2)}
+  \EdgeInGraphLoop{b}{6}
+  \SetUpEdge[style={bend right=10}]
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{1}{2}{3}
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{2}{2}{3}
+  \SetUpEdge[style={bend left=10}]
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{4}{2}{3}
+  \EdgeDoubleMod{a}{3}{0}{1}{b}{6}{5}{2}{3}    
+\end{tikzpicture}
+\end{center}
+
+\subsection{Path}
+\begin{center}
+\begin{tikzpicture}
+  \grEmptyPath*[Math=true,RA=2,prefix=a]{{(1,0)},{(2,0)},{(1,1)}}
+  \EdgeInGraphLoop*{a}{3}
+\end{tikzpicture}
+\end{center}
+\end{comment}
+
+\begin{center}
+\begin{tikzpicture}
+  %\tikzset{VertexStyle/.style={shape=circle,draw}}
+  \grEmptyCycle*[rotation=90,prefix=a,RA=2,Math=true]{{x},{y},{one}}
+  %\EdgeFromOneToSel{a}{a}{0}{1}
+  %\Edges(a1,a2)
+  \Edge(a1)(a2)
+\end{tikzpicture}
+\end{center}
