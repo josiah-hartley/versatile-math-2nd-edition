@@ -1,6 +1,9 @@
 \emph{In problems 1-3, use the nearest neighbor algorithm to find a minimum possible circuit through each graph starting at $a$.}
-\begin{enumerate}
-\item \begin{center}
+
+\begin{center}
+\begin{tabular}{c c c}
+\parbox{1.5in}{\begin{enumerate}
+\item \text{} \begin{center}
 \begin{tikzpicture}
   \GraphInit[vstyle=simple]
   \tikzset{VertexStyle/.append style={scale=0.3}}
@@ -20,8 +23,11 @@
   \Edge[label=5](a0)(a2)
 \end{tikzpicture}
 \end{center}
-
-\item \begin{center}
+\end{enumerate}}
+&
+\parbox{1.5in}{\begin{enumerate}
+\setcounter{enumi}{1}
+\item \text{} \begin{center}
 \begin{tikzpicture}
   \GraphInit[vstyle=simple]
   \tikzset{VertexStyle/.append style={scale=0.3}}
@@ -45,8 +51,11 @@
   \Edge[label=5](a2)(a4)
 \end{tikzpicture}
 \end{center}
-
-\item \begin{center}
+\end{enumerate}}
+&
+\parbox{1.5in}{\begin{enumerate}
+\setcounter{enumi}{2}
+\item \text{} \begin{center}
 \begin{tikzpicture}
   \GraphInit[vstyle=simple]
   \tikzset{VertexStyle/.append style={scale=0.3}}
@@ -76,13 +85,19 @@
   \Edge[label=4](a4)(a1)
 \end{tikzpicture}
 \end{center}
-\end{enumerate}
+\end{enumerate}}\\
+\boxtext{$a \to d \to b \to c$} & \boxtext{$a \to b \to e \to d \to c$} & \boxtext{$a \to c \to d \to f \to e \to b$}
+\end{tabular}
+\end{center}
+\pagebreak
 
 \emph{In problems 4--6, use Dijkstra's algorithm to find the shortest path through each graph between $a$ and $z$.}
-\begin{enumerate}
-\setcounter{enumi}{3}
 
-\item \begin{center} %4
+\begin{center}
+\begin{tabular}{c c c}
+\parbox{1.5in}{\begin{enumerate}
+\setcounter{enumi}{3}
+\item \text{} \begin{center}
 \begin{tikzpicture}
   \GraphInit[vstyle=simple]
   \tikzset{VertexStyle/.append style={scale=0.3}}
@@ -112,8 +127,11 @@
   \Edge[label=4](e)(z)
 \end{tikzpicture}
 \end{center}
-
-\item \begin{center} %5
+\end{enumerate}}
+&
+\parbox{1.5in}{\begin{enumerate}
+\setcounter{enumi}{4}
+\item \text{} \begin{center}
 \begin{tikzpicture}
   \GraphInit[vstyle=simple]
   \tikzset{VertexStyle/.append style={scale=0.3}}
@@ -151,8 +169,11 @@
   \Edge[label=4](g)(z)
 \end{tikzpicture}
 \end{center}
-
-\item \begin{center} %6
+\end{enumerate}}
+&
+\parbox{1.5in}{\begin{enumerate}
+\setcounter{enumi}{5}
+\item \text{} \begin{center}
 \begin{tikzpicture}
   \GraphInit[vstyle=simple]
   \tikzset{VertexStyle/.append style={scale=0.3}}
@@ -175,6 +196,13 @@
   \Edge[label=7](a1)(a4)
 \end{tikzpicture}
 \end{center}
+\end{enumerate}}\\
+\boxtext{$a \to b \to e \to d \to z$} & \boxtext{$a \to c \to d \to e \to g \to z$} & \boxtext{$a \to c \to z$}
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\setcounter{enumi}{6}
 
 \item The graph below shows the distances between cities.  Use the graph to answer the questions below.
 \begin{center} %7
@@ -223,11 +251,12 @@
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}[(a)]
-\item Use the nearest neighbor algorithm to find a path that starts in Chicago and visits all the cities shown, while trying to minimize distance traveled.
-\item What is the total length of the path found in part (a)?
-\item Find the shortest path between Dallas and New York.  What is the length of this path?
-\item Find the shortest path between Minneapolis and Atlanta.  What is the length of this path?
+\item Use the nearest neighbor algorithm to find a path that starts in Chicago and visits all the cities shown, while trying to minimize distance traveled. \answersub{CHI $\to$ IND $\to$ STL $\to$ MIN $\to$ DEN $\to$ DAL $\to$ NAS $\to$ ATL $\to$ NYC $\to$ DET}
+\item What is the total length of the path found in part (a)? \answersub{4300 miles}
+\item Find the shortest path between Dallas and New York.  What is the length of this path? \answersub{DAL $\to$ ATL $\to$ NYC (1445 miles)}
+\item Find the shortest path between Minneapolis and Atlanta.  What is the length of this path? \answersub{MIN $\to$ CHI $\to$ IND $\to$ NAS $\to$ ATL (1000 miles)}
 \end{enumerate}
+\pagebreak
 
 \item The graph below shows the cost of flights between cities.  Use the graph to answer the questions below.
 \begin{center} %8
@@ -263,7 +292,7 @@
   \Edge[label=\$103](Minneapolis)(STL)
   \Edge[label=\$77](Chicago)(Detroit)
   \Edge[label=\$68](Chicago)(Indianapolis)
-  \Edge[label=\$78](Chicago)(STL)
+  \Edge[label=\$80](Chicago)(STL)
   \Edge[label=\$79](Indianapolis)(STL)
   \Edge[label=\$80](Indianapolis)(Nashville)
   \Edge[label=\$74](Nashville)(Atlanta)
@@ -276,10 +305,10 @@
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}[(a)]
-\item Use the nearest neighbor algorithm to find a path that starts in St. Louis and visits all the cities shown, while trying to minimize the cost of travel.
-\item What is the total cost of the path found in part (a)?
-\item Find the cheapest path between Nashville and Denver.  What is the cost of this path?
-\item Find the cheapest path between Detroit and Denver.  What is the cost of this path?
+\item Use the nearest neighbor algorithm to find a path that starts in St. Louis and visits all the cities shown, while trying to minimize the cost of travel. \answersub{STL $\to$ IND $\to$ CHI $\to$ DET $\to$ NYC $\to$ ATL $\to$ NAS $\to$ DAL $\to$ DEN $\to$ MIN}
+\item What is the total cost of the path found in part (a)? \answersub{\$897}
+\item Find the cheapest path between Nashville and Denver.  What is the cost of this path? \answersub{NAS $\to$ DAL $\to$ DEN (\$241)}
+\item Find the cheapest path between Detroit and Denver.  What is the cost of this path? \answersub{DET $\to$ CHI $\to$ MIN $\to$ DEN (\$293)}
 \end{enumerate}
 
 \item A salesperson has responsibility over four cities in Maryland and northern Virginia, and they compiled the distances between them; these distances are shown in the table below.    If the salesperson needs to visit all four cities, and is currently in Ellicott City, use the nearest neighbor algorithm to plan their route.  How far will they travel in total along this path?
@@ -292,7 +321,7 @@ Alexandria & 45 & -- & 37 & 19\\
 Ellicott City & 26 & 37 & -- & 35\\
 Reston & 46 & 19 & 35 & --
 \end{tabular}
-\end{center}}
+\end{center}} \text{} \answer{EC $\to$ Ann. $\to$ Alex. $\to$ Res. (90 miles)}
 
 \item An American tourist is traveling through Great Britain, and would like to visit five cities.  The tourist has estimated the cost of a train ticket between pairs of these cities, and the results are shown in the table below.  Plan a route that will take the tourist through all five cities with as little cost as possible, starting and ending in London.  Use the nearest neighbor algorithm; what is the cost of this journey?
 {\footnotesize\begin{center}
@@ -305,5 +334,5 @@ York & \$110 & \$95 & -- & \$145 & \$60\\
 Cardiff & \$65 & \$195 & \$145 & -- & \$85\\
 Chester & \$115 & \$105 & \$60 & \$85 & --
 \end{tabular}
-\end{center}}
+\end{center}} \text{} \answer{Lon. $\to$ Car. $\to$ Ches. $\to$ York $\to$ Edin. $\to$ Lon. (\$480)}
 \end{enumerate}

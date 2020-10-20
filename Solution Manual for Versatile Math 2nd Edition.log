@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.17)  5 OCT 2020 19:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.17)  6 OCT 2020 12:52
 entering extended mode
 **"./Solution Manual for Versatile Math 2nd Edition.tex"
 ("Solution Manual for Versatile Math 2nd Edition.tex"
@@ -1979,85 +1979,117 @@ Overfull \hbox (36.52486pt too wide) in paragraph at lines 186--186
 File: ./Images/selected_states_around_md_cropped.png Graphic file (type png)
 <use ./Images/selected_states_around_md_cropped.png>
 Package pdftex.def Info: ./Images/selected_states_around_md_cropped.png  used o
-n input line 8.
-(pdftex.def)             Requested size: 240.01335pt x 202.35622pt.
-<./Images/middle_east_countries_cropped.png, id=1660, 1056.19594pt x 1044.90375
+n input line 65.
+(pdftex.def)             Requested size: 128.57625pt x 108.405pt.
+
+Underfull \vbox (badness 3271) has occurred while \output is active []
+
+ [118 <./Images/selected_states_around_md_cropped.png>]
+<./Images/middle_east_countries_cropped.png, id=1668, 1056.19594pt x 1044.90375
 pt>
 File: ./Images/middle_east_countries_cropped.png Graphic file (type png)
 <use ./Images/middle_east_countries_cropped.png>
 Package pdftex.def Info: ./Images/middle_east_countries_cropped.png  used on in
-put line 13.
-(pdftex.def)             Requested size: 204.53108pt x 202.35622pt.
+put line 110.
+(pdftex.def)             Requested size: 146.09363pt x 144.54pt.
+ [119 <./Images/middle_east_countries_cropped.png>] [120] [121] [122])
+("Graph Theory Chapter/Solutions/EulerAndHamiltonPaths_Solutions.tex"
+Overfull \hbox (18.41318pt too wide) in paragraph at lines 58--58
+ [] 
+ []
 
-[118 <./Images/selected_states_around_md_cropped.png> <./Images/middle_east_cou
-ntries_cropped.png>] [119]
-Underfull \vbox (badness 4846) has occurred while \output is active []
+[123] [124]
+Underfull \vbox (badness 1297) has occurred while \output is active []
 
- [120])
-("Graph Theory Chapter/Solutions/EulerAndHamiltonPaths_Solutions.tex" [121]
-Underfull \vbox (badness 2707) has occurred while \output is active []
+ [125]
+Overfull \hbox (23.37064pt too wide) in paragraph at lines 607--607
+ [] 
+ []
 
- [122]
-[123]
-<./Images/southeast_states2_cropped.png, id=1738, 1264.725pt x 1254.93843pt>
+[126]
+<./Images/southeast_states2_cropped.png, id=1773, 1264.725pt x 1254.93843pt>
 File: ./Images/southeast_states2_cropped.png Graphic file (type png)
 <use ./Images/southeast_states2_cropped.png>
 Package pdftex.def Info: ./Images/southeast_states2_cropped.png  used on input 
-line 618.
+line 644.
 (pdftex.def)             Requested size: 123.81676pt x 122.85876pt.
-<./Images/france_states_cropped.png, id=1739, 2299.8422pt x 2294.5725pt>
+<./Images/france_states_cropped.png, id=1774, 2299.8422pt x 2294.5725pt>
 File: ./Images/france_states_cropped.png Graphic file (type png)
 <use ./Images/france_states_cropped.png>
 Package pdftex.def Info: ./Images/france_states_cropped.png  used on input line
- 623.
+ 649.
 (pdftex.def)             Requested size: 115.87616pt x 115.63243pt.
-
-Underfull \vbox (badness 6173) has occurred while \output is active []
-
- [124 <./Images/southeast_states2_cropped.png>])
-("Graph Theory Chapter/Solutions/ShortestPaths_Solutions.tex" [125 <./Images/fr
-ance_states_cropped.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [126]
-[127]) ("Graph Theory Chapter/Solutions/Trees_Solutions.tex"
-Overfull \hbox (131.99927pt too wide) in paragraph at lines 4--86
+ [127 <./Images/southeast_states2_cropped.png> <./Images/france_states_cropped.
+png>]) ("Graph Theory Chapter/Solutions/ShortestPaths_Solutions.tex"
+Overfull \hbox (28.28058pt too wide) in paragraph at lines 26--26
  [] 
  []
 
 
-Overfull \hbox (139.85928pt too wide) in paragraph at lines 90--176
- [] 
- []
-
-[128] [129]
-Overfull \hbox (109.84587pt too wide) in paragraph at lines 400--412
+Overfull \hbox (24.10315pt too wide) in paragraph at lines 54--54
  [] 
  []
 
 
-Underfull \vbox (badness 1742) has occurred while \output is active []
+Overfull \hbox (29.06879pt too wide) in paragraph at lines 88--88
+ [] 
+ []
 
- [130])
-[131]
+
+Underfull \vbox (badness 5133) has occurred while \output is active []
+
+ [128]
+Overfull \hbox (11.89563pt too wide) in paragraph at lines 130--130
+ [] 
+ []
+
+
+Overfull \hbox (34.6579pt too wide) in paragraph at lines 172--172
+ [] 
+ []
+
+
+Overfull \hbox (2.45535pt too wide) in paragraph at lines 199--199
+ [] 
+ []
+
+
+Underfull \vbox (badness 7433) has occurred while \output is active []
+
+ [129])
+[130] ("Graph Theory Chapter/Solutions/Trees_Solutions.tex"
+Overfull \hbox (4.55591pt too wide) in paragraph at lines 4--86
+ [] 
+ []
+
+[131] [132]
+Underfull \vbox (badness 3128) has occurred while \output is active []
+
+ [133]
+[134]
+Overfull \hbox (109.84587pt too wide) in paragraph at lines 543--555
+ [] 
+ []
+
+) [135]
 \tf@toc=\write9
 \openout9 = `"Solution Manual for Versatile Math 2nd Edition.toc"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 202.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 202.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
  ("Solution Manual for Versatile Math 2nd Edition.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 202.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 202.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 203.
 Package rerunfilecheck Info: File `"Solution Manual for Versatile Math 2nd Edit
 ion".out' has not changed.
 (rerunfilecheck)             Checksum: AC8C50D4B58D946C0CD3777CF549C116;2846.
  ) 
 Here is how much of TeX's memory you used:
- 55268 strings out of 481178
- 1344215 string characters out of 2914469
- 1988333 words of memory out of 3000000
- 68800 multiletter control sequences out of 15000+200000
- 645535 words of font info for 89 fonts, out of 3000000 for 9000
+ 55778 strings out of 481178
+ 1353821 string characters out of 2914469
+ 1985165 words of memory out of 3000000
+ 69285 multiletter control sequences out of 15000+200000
+ 654071 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,18n,103p,882b,2212s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiKTe
@@ -2086,10 +2118,10 @@ es/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/
 public/lm/lmsy9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm1
 0.pfb>
-Output written on "Solution Manual for Versatile Math 2nd Edition.pdf" (135 pag
-es, 1856738 bytes).
+Output written on "Solution Manual for Versatile Math 2nd Edition.pdf" (139 pag
+es, 1884337 bytes).
 PDF statistics:
- 2165 PDF objects out of 2487 (max. 8388607)
- 1186 named destinations out of 1200 (max. 500000)
+ 2207 PDF objects out of 2487 (max. 8388607)
+ 1210 named destinations out of 1440 (max. 500000)
  369 words of extra memory for PDF output out of 10000 (max. 10000000)
 

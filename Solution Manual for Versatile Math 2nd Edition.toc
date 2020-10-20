@@ -42,6 +42,6 @@
 \contentsline {section}{7.4\ Survey Problems}{115}{section*.35}%
 \contentsline {chapter}{\chapternumberline {8}Graph Theory}{117}{chapter.8}%
 \contentsline {section}{8.1\ Introduction to Graphs}{118}{section*.36}%
-\contentsline {section}{8.2\ Euler and Hamilton Paths}{121}{section*.37}%
-\contentsline {section}{8.3\ Shortest Paths}{125}{section*.38}%
-\contentsline {section}{8.4\ Trees}{128}{section*.39}%
+\contentsline {section}{8.2\ Euler and Hamilton Paths}{123}{section*.37}%
+\contentsline {section}{8.3\ Shortest Paths}{128}{section*.38}%
+\contentsline {section}{8.4\ Trees}{131}{section*.39}%

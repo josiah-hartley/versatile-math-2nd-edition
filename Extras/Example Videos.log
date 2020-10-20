@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.17)  8 SEP 2020 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.7) (preloaded format=pdflatex 2020.8.17)  12 OCT 2020 16:51
 entering extended mode
 **"./Example Videos.tex"
 ("Example Videos.tex"
@@ -802,13 +802,69 @@ File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.te
 x"
 File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-))) ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty"
+))) ("C:\Program Files\MiKTeX\tex/latex/tkz-berge\tkz-berge.sty"
+Package: tkz-berge 2011/06/01 1.00 c tkz-berge for named graphs
+
+("C:\Program Files\MiKTeX\tex/latex/tkz-graph\tkz-graph.sty"
+Package: tkz-graph 2018/09/19 ctan v 1.00 d base for graphs
+
+("C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Program Files\MiKTeX\tex/generic/xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX\tex/generic/xkeyval\xkvutils.tex"
+\XKV@toks=\toks50
+\XKV@tempa@toks=\toks51
+)
+\XKV@depth=\count327
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+("C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibr
+aryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryarrows.code.tex"
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen304
+))
+\c@tkz@gr@a=\count328
+\c@tkz@gr@b=\count329
+\c@tkz@gr@c=\count330
+\c@tkz@gr@e=\count331
+\c@tkz@gr@d=\count332
+\c@tkz@gr@p=\count333
+\c@tkz@gr@i=\count334
+\c@tkz@gr@n=\count335
+\c@tkz@gr@ta=\count336
+\c@tkz@gr@tb=\count337
+) ("C:\Program Files\MiKTeX\tex/latex/tkz-berge\tkz-arith.sty"
+Package: tkz-arith 2011/02/28 v 1.00 c integers numbers
+
+("C:\Program Files\MiKTeX\tex/latex/tkz-base\tkz-tools-arith.tex"
+2020/03/18 3.06c tkz-tools-arith.tex
+File: tkz-tool-arith.tex tkz-tool-arith 3.02 c
+))
+\c@tkz@bg@cnt=\count338
+\c@tkza@tmp=\count339
+)
+("C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibr
+arydecorations.markings.code.tex"
+("C:\Program Files\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecor
+ations.markings.code.tex"))
+("C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibr
+arypositioning.code.tex"
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcolorbox.sty"
 Package: tcolorbox 2020/07/31 version 4.31 text color boxes
 
 ("C:\Program Files\MiKTeX\tex/latex/tools\verbatim.sty"
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks50
-\verbatim@line=\toks51
+\every@verbatim=\toks52
+\verbatim@line=\toks53
 \verbatim@in@stream=\read3
 )
 ("C:\Program Files\MiKTeX\tex/latex/environ\environ.sty"
@@ -821,9 +877,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box80
 \tcb@lowerbox=\box81
 \tcb@phantombox=\box82
-\c@tcbbreakpart=\count327
-\c@tcblayer=\count328
-\c@tcolorbox@number=\count329
+\c@tcbbreakpart=\count340
+\c@tcblayer=\count341
+\c@tcolorbox@number=\count342
 \tcb@temp=\box83
 \tcb@temp=\box84
 \tcb@temp=\box85
@@ -838,9 +894,9 @@ Library (tcolorbox): 'tcbbreakable.code.tex' version '4.31'
 \tcb@totallowerbox=\box89
 ) ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcbraster.code.tex"
 Library (tcolorbox): 'tcbraster.code.tex' version '4.31'
-\c@tcbrastercolumn=\count330
-\c@tcbrasterrow=\count331
-\c@tcbraster=\count332
+\c@tcbrastercolumn=\count343
+\c@tcbrasterrow=\count344
+\c@tcbraster=\count345
 ) ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcbskins.code.tex"
 Library (tcolorbox): 'tcbskins.code.tex' version '4.31'
 \tcb@waterbox=\box90
@@ -852,10 +908,10 @@ Library (tcolorbox): 'tcbhooks.code.tex' version '4.31'
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.31'
 ) ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcbfitting.code.tex"
 Library (tcolorbox): 'tcbfitting.code.tex' version '4.31'
-\tcbfitdim=\dimen304
-\tcb@lowerfitdim=\dimen305
-\tcb@upperfitdim=\dimen306
-\tcb@cur@hbadness=\count333
+\tcbfitdim=\dimen305
+\tcb@lowerfitdim=\dimen306
+\tcb@upperfitdim=\dimen307
+\tcb@cur@hbadness=\count346
 ) ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcbxparse.code.tex"
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.31'
 ("C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty"
@@ -864,39 +920,39 @@ Package: expl3 2020-08-07 L3 programming layer (loader)
 
 ("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdfmode.def"
 File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count334
+\l__kernel_color_stack_int=\count347
 \l__pdf_internal_box=\box91
 ))
 Package: xparse 2020-05-15 L3 Experimental document command parser
 
 ("C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse-generic.tex"
-\l__xparse_current_arg_int=\count335
-\g__xparse_grabber_int=\count336
-\l__xparse_m_args_int=\count337
-\l__xparse_v_nesting_int=\count338
+\l__xparse_current_arg_int=\count348
+\g__xparse_grabber_int=\count349
+\l__xparse_m_args_int=\count350
+\l__xparse_v_nesting_int=\count351
 )))
 ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcblistingsutf8.code.tex"
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.31'
 ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcblistings.code.tex"
 Library (tcolorbox): 'tcblistings.code.tex' version '4.31'
 ("C:\Program Files\MiKTeX\tex/latex/listings\listings.sty"
-\lst@mode=\count339
+\lst@mode=\count352
 \lst@gtempboxa=\box92
-\lst@token=\toks52
-\lst@length=\count340
-\lst@currlwidth=\dimen307
-\lst@column=\count341
-\lst@pos=\count342
-\lst@lostspace=\dimen308
-\lst@width=\dimen309
-\lst@newlines=\count343
-\lst@lineno=\count344
-\lst@maxwidth=\dimen310
+\lst@token=\toks54
+\lst@length=\count353
+\lst@currlwidth=\dimen308
+\lst@column=\count354
+\lst@pos=\count355
+\lst@lostspace=\dimen309
+\lst@width=\dimen310
+\lst@newlines=\count356
+\lst@lineno=\count357
+\lst@maxwidth=\dimen311
 
 ("C:\Program Files\MiKTeX\tex/latex/listings\lstmisc.sty"
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count345
-\lst@skipnumbers=\count346
+\c@lstnumber=\count358
+\lst@skipnumbers=\count359
 \lst@framebox=\box93
 )
 ("C:\Program Files\MiKTeX\tex/latex/listings\listings.cfg"
@@ -912,7 +968,7 @@ Library (tcolorbox): 'tcbprocessing.code.tex' version '4.31'
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 ))
-\c@tcblisting=\count347
+\c@tcblisting=\count360
 ))
 ("C:\Program Files\MiKTeX\tex/latex/listingsutf8\listingsutf8.sty"
 Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
@@ -936,29 +992,45 @@ File: tikzlibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) ("C:\Program Files\MiKTeX\tex/latex/tcolorbox\tcbposter.code.tex"
 Library (tcolorbox): 'tcbposter.code.tex' version '4.31'
-)) ("C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty"
+)) ("C:\Program Files\MiKTeX\tex/latex/colortbl\colortbl.sty"
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+
+("C:\Program Files\MiKTeX\tex/latex/tools\array.sty"
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen312
+\ar@mcellbox=\box94
+\extrarowheight=\dimen313
+\NC@list=\toks55
+\extratabsurround=\skip63
+\backup@length=\skip64
+\ar@cellbox=\box95
+)
+\everycr=\toks56
+\minrowclearance=\skip65
+)
+("C:\Program Files\MiKTeX\tex/latex/base\fontenc.sty"
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
 ("C:\Program Files\MiKTeX\tex/latex/beamer\beamerfontthemeserif.sty")
 ("Example Videos.aux")
 \openout1 = `"Example Videos.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -996,17 +1068,17 @@ LaTeX Font Info:    ... okay on input line 32.
 
 ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count348
-\scratchdimen=\dimen311
-\scratchbox=\box94
-\nofMPsegments=\count349
-\nofMParguments=\count350
-\everyMPshowfont=\toks53
-\MPscratchCnt=\count351
-\MPscratchDim=\dimen312
-\MPnumerator=\count352
-\makeMPintoPDFobject=\count353
-\everyMPtoPDFconversion=\toks54
+\scratchcounter=\count361
+\scratchdimen=\dimen314
+\scratchbox=\box96
+\nofMPsegments=\count362
+\nofMParguments=\count363
+\everyMPshowfont=\toks57
+\MPscratchCnt=\count364
+\MPscratchDim=\dimen315
+\MPnumerator=\count365
+\makeMPintoPDFobject=\count366
+\everyMPtoPDFconversion=\toks58
 ) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -1021,8 +1093,8 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 504.
 )
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box95
-Package hyperref Info: Link coloring OFF on input line 32.
+\AtBeginShipoutBox=\box97
+Package hyperref Info: Link coloring OFF on input line 53.
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1033,11 +1105,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ("C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count354
+\c@section@level=\count367
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
 
 ("Example Videos.out") ("Example Videos.out")
 \@outlinefile=\write7
@@ -1072,22 +1144,441 @@ Dictionary: translator-theorem-dictionary, Language: English
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 32.
+ on input line 53.
 
-\c@lstlisting=\count355
+\c@lstlisting=\count368
 ("C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty"
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks55
-\inpenc@posthook=\toks56
+\inpenc@prehook=\toks59
+\inpenc@posthook=\toks60
 ) ("Example Videos.nav")
-LaTeX Font Info:    Trying to load font information for T1+fvs on input line 46
+LaTeX Font Info:    Trying to load font information for T1+fvs on input line 65
 .
 
 ("C:\Program Files\MiKTeX\tex/latex/bera\t1fvs.fd"
 File: t1fvs.fd 2004/09/07 scalable font definitions for T1/fvs.
-) [1
+)
+Overfull \vbox (237.3007pt too high) detected at line 65
+ []
+
+[1
 
 {C:/Users/josia/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \vbox (218.3007pt too high) detected at line 74
+ []
+
+[2
+
+]
+Overfull \vbox (218.3007pt too high) detected at line 84
+ []
+
+[3
+
+]
+Overfull \vbox (218.3007pt too high) detected at line 94
+ []
+
+[4
+
+]
+Overfull \vbox (265.8007pt too high) detected at line 106
+ []
+
+[5
+
+]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 118
+.
+ ("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 118
+.
+
+("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [6
+
+]
+Overfull \vbox (264.35637pt too high) detected at line 126
+ []
+
+[7
+
+]
+Overfull \vbox (264.35637pt too high) detected at line 133
+ []
+
+[8
+
+] [9
+
+] [10
+
+]
+Overfull \vbox (246.35637pt too high) detected at line 166
+ []
+
+[11
+
+]
+Overfull \vbox (246.8007pt too high) detected at line 177
+ []
+
+[12
+
+]
+Overfull \vbox (256.3007pt too high) detected at line 189
+ []
+
+[13
+
+]
+Overfull \vbox (323.3656pt too high) detected at line 210
+ []
+
+[14
+
+]
+Overfull \vbox (275.3007pt too high) detected at line 224
+ []
+
+[15
+
+]
+Overfull \vbox (284.8007pt too high) detected at line 239
+ []
+
+[16
+
+] [17
+
+]
+Overfull \vbox (226.35637pt too high) detected at line 259
+ []
+
+[18
+
+]
+Overfull \vbox (226.35637pt too high) detected at line 266
+ []
+
+[19
+
+]
+Overfull \vbox (226.35637pt too high) detected at line 273
+ []
+
+[20
+
+]
+Overfull \hbox (21.68123pt too wide) in paragraph at lines 303--303
+[]|$[]$| 
+ []
+
+
+Overfull \hbox (28.90756pt too wide) in paragraph at lines 303--303
+[]|$[]$| 
+ []
+
+
+Overfull \vbox (328.35631pt too high) detected at line 303
+ []
+
+[21
+
+]
+Overfull \hbox (21.68123pt too wide) in paragraph at lines 342--342
+[]|$[]$| 
+ []
+
+
+Overfull \hbox (28.90756pt too wide) in paragraph at lines 342--342
+[]|$[]$| 
+ []
+
+
+Overfull \vbox (392.35622pt too high) detected at line 342
+ []
+
+[22
+
+]
+Overfull \hbox (21.68123pt too wide) in paragraph at lines 381--381
+[]|$[]$| 
+ []
+
+
+Overfull \hbox (28.90756pt too wide) in paragraph at lines 381--381
+[]|$[]$| 
+ []
+
+
+Overfull \vbox (392.35622pt too high) detected at line 381
+ []
+
+[23
+
+] [24
+
+] [25
+
+]
+Overfull \vbox (65.91045pt too high) detected at line 457
+ []
+
+[26
+
+]
+Overfull \vbox (274.85637pt too high) detected at line 469
+ []
+
+[27
+
+] [28
+
+]
+Overfull \vbox (47.54689pt too high) detected at line 508
+ []
+
+[29
+
+] [30
+
+] [31
+
+] [32
+
+] [33
+
+]
+Overfull \vbox (365.201pt too high) detected at line 607
+ []
+
+[34
+
+]
+Overfull \vbox (255.35675pt too high) detected at line 617
+ []
+
+[35
+
+]
+Overfull \vbox (262.30066pt too high) detected at line 631
+ []
+
+[36
+
+]
+Overfull \vbox (262.30066pt too high) detected at line 645
+ []
+
+[37
+
+]
+Overfull \vbox (261.85632pt too high) detected at line 659
+ []
+
+[38
+
+]
+Overfull \vbox (252.80066pt too high) detected at line 673
+ []
+
+[39
+
+]
+Overfull \vbox (296.86607pt too high) detected at line 689
+ []
+
+[40
+
+]
+Overfull \vbox (284.36757pt too high) detected at line 709
+ []
+
+[41
+
+]
+Overfull \vbox (281.30061pt too high) detected at line 750
+ []
+
+[42
+
+]
+Overfull \vbox (309.75624pt too high) detected at line 770
+ []
+
+[43
+
+] [44
+
+]
+Overfull \vbox (271.80063pt too high) detected at line 811
+ []
+
+[45
+
+] [46
+
+]
+Overfull \vbox (265.46786pt too high) detected at line 842
+ []
+
+[47
+
+] [48
+
+]
+Overfull \vbox (292.35637pt too high) detected at line 881
+ []
+
+[49
+
+]
+Overfull \vbox (324.26369pt too high) detected at line 908
+ []
+
+[50
+
+]
+Overfull \vbox (333.76369pt too high) detected at line 936
+ []
+
+[51
+
+]
+Overfull \vbox (343.26369pt too high) detected at line 965
+ []
+
+[52
+
+]
+Overfull \vbox (119.95996pt too high) detected at line 995
+ []
+
+[53
+
+] [54
+
+]
+Overfull \vbox (362.26369pt too high) detected at line 1093
+ []
+
+[55
+
+]
+Overfull \vbox (380.81935pt too high) detected at line 1125
+ []
+
+[56
+
+] [57
+
+]
+Overfull \vbox (226.35637pt too high) detected at line 1185
+ []
+
+[58
+
+]
+Overfull \vbox (291.25436pt too high) detected at line 1206
+ []
+
+[59
+
+]
+Overfull \vbox (298.75485pt too high) detected at line 1227
+ []
+
+[60
+
+]
+Overfull \vbox (291.25436pt too high) detected at line 1248
+ []
+
+[61
+
+]
+Overfull \vbox (300.75436pt too high) detected at line 1269
+ []
+
+[62
+
+]
+Overfull \vbox (316.21188pt too high) detected at line 1349
+ []
+
+[63
+
+] [64
+
+] [65
+
+]
+<../Images/ModernKonigsberg.png, id=1700, 867.24pt x 581.17125pt>
+File: ../Images/ModernKonigsberg.png Graphic file (type png)
+<use ../Images/ModernKonigsberg.png>
+Package pdftex.def Info: ../Images/ModernKonigsberg.png  used on input line 144
+9.
+(pdftex.def)             Requested size: 107.83571pt x 72.26999pt.
+
+Overfull \vbox (317.12587pt too high) detected at line 1449
+ []
+
+[66
+
+ <../Images/ModernKonigsberg.png>]
+Overfull \vbox (362.14189pt too high) detected at line 1571
+ []
+
+[67
+
+]
+<../Images/Sample_Floorplan.png, id=1754, 845.1575pt x 571.13374pt>
+File: ../Images/Sample_Floorplan.png Graphic file (type png)
+<use ../Images/Sample_Floorplan.png>
+Package pdftex.def Info: ../Images/Sample_Floorplan.png  used on input line 158
+1.
+(pdftex.def)             Requested size: 153.64493pt x 103.82797pt.
+
+Overfull \vbox (347.12868pt too high) detected at line 1581
+ []
+
+[68
+
+ <../Images/Sample_Floorplan.png>]
+Overfull \vbox (329.636pt too high) detected at line 1650
+ []
+
+[69
+
+]
+Overfull \vbox (331.92015pt too high) detected at line 1754
+ []
+
+[70
+
+] [71
+
+] [72
+
+] [73
+
+]
+Overfull \vbox (251.35637pt too high) detected at line 1936
+ []
+
+[74
+
+] [75
+
+] [76
+
+] [77
+
+]
 \tf@nav=\write8
 \openout8 = `"Example Videos.nav"'.
 
@@ -1097,28 +1588,41 @@ File: t1fvs.fd 2004/09/07 scalable font definitions for T1/fvs.
 \tf@snm=\write10
 \openout10 = `"Example Videos.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 48.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 48.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2082.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2082.
  ("Example Videos.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 48.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 48.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2082.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2082.
+
 Package rerunfilecheck Info: File `"Example Videos".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 37208 strings out of 481178
- 903298 string characters out of 2914469
- 1287817 words of memory out of 3000000
- 52096 multiletter control sequences out of 15000+200000
- 550923 words of font info for 40 fonts, out of 3000000 for 9000
+ 41045 strings out of 481178
+ 977065 string characters out of 2914469
+ 1398400 words of memory out of 3000000
+ 55707 multiletter control sequences out of 15000+200000
+ 558926 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,14n,108p,820b,1011s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 73i,17n,108p,820b,2122s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\josia\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecrm0800.pk>{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Fi
-les/MiKTeX/fonts/type1/bera/fvsb8a.pfb>
-Output written on "Example Videos.pdf" (1 page, 29736 bytes).
+ecti0800.pk> <C:\Users\josia\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecbx0600.pk> <C:\Users\josia\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\josia\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecbx0800.pk> <C:\Users\josia\AppData\Local\MiKTeX
+\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\josia\AppData\Lo
+cal\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk>{C:/Program Files
+/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C
+:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/bera/fvsb8a.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Example Videos.pdf" (77 pages, 2898922 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 3 named destinations out of 1000 (max. 500000)
- 187 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2347 PDF objects out of 2487 (max. 8388607)
+ 155 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
