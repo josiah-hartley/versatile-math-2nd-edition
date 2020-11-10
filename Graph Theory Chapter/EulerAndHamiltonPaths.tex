@@ -423,12 +423,12 @@ If all the nodes of an undirected graph are even, the graph has an Euler circuit
 
 If there are two odd nodes, there is no Euler circuit, but there is an Euler path (starting at one odd node and ending at the other).\\
 
-If\marginnote{\emph{Note: if there is no Euler path, we could still try the Chinese Postman Problem (named in honor of the Chinese mathematician Kwan Mei-Ko, who first studied it.  The goal of this problem is to find the shortest circuit that visits every edge; in other words, the circuit that reuses as few edges as possible.}} there are more than two odd nodes, there is no Euler path or circuit.
+If\marginnote{\emph{Note: if there is no Euler path, we could still try the Chinese Postman Problem (named in honor of the Chinese mathematician Kwan Mei-Ko, who first studied it).  The goal of this problem is to find the shortest circuit that visits every edge; in other words, the circuit that reuses as few edges as possible.}} there are any other number of odd nodes (other than zero or two), there is no Euler path or circuit.
 \end{formula}
 
 With that, let's go back to the bridges of K\"onigsberg and see if there is an Euler path; let's label each node with its degree:
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
   \GraphInit[vstyle=simple]
   \tikzset{VertexStyle/.append style={scale=0.3}}
   \SetGraphUnit{0.9}
@@ -453,10 +453,10 @@ With that, let's go back to the bridges of K\"onigsberg and see if there is an E
 \end{tikzpicture}
 \end{center}
 
-Since there are 4 odd nodes, there is no Euler path, so there's no way to travel through the city by crossing every bridge exactly once.
+Since there are four odd nodes, there is no Euler path, so there's no way to travel through the city by crossing every bridge exactly once.
 \pagebreak
 
-\begin{example}{Modern K\"onigsberg}
+\begin{example}[https://www.youtube.com/watch?v=b7GYc7zb5ec&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=3]{Modern K\"onigsberg}
 A modern image of part of Kaliningrad (which was once K\"onigsberg) is shown below, with bridges highlighted.
 \begin{center}
 \includegraphics[height=3in]{ModernKonigsberg}
@@ -543,7 +543,7 @@ This path can be written $\boxed{a \to b \to c \to a \to d \to c}$.  Notice that
 \end{example}
 \pagebreak
 
-\begin{example}{Existence of Euler Paths}
+\begin{example}[https://www.youtube.com/watch?v=Lr596-_L0M0&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=4]{Existence of Euler Paths}
 For each of the following graphs, determine if an Euler circuit exists.  If not, determine whether there is an Euler path.
 \begin{center}
 \begin{tabular}{c c c}
@@ -687,7 +687,7 @@ Since there are exactly two nodes ($g$ and $j$) with odd degree, \boxtext{there 
 \end{enumerate}
 \end{example}
 
-\begin{try}
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/graph-theory--euler-paths]
 For each of the following graphs, determine if an Euler circuit exists.  If not, determine whether there is an Euler path.
 \begin{center}
 \begin{tabular}{c c}
@@ -722,7 +722,7 @@ For each of the following graphs, determine if an Euler circuit exists.  If not,
 \end{try}
 \pagebreak
 
-\begin{example}{Euler Path through House}
+\begin{example}[https://www.youtube.com/watch?v=tBkGIznLGZo&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=5]{Euler Path through House}
 The floor plan below shows the first floor of a single-family home.  Is there an Euler circuit/path through the interior of this level, using the highlighted doors (in other words, ignoring external doors and stairs)?
 \begin{center}
 \includegraphics[width=0.8\textwidth]{Sample_Floorplan}
@@ -841,7 +841,7 @@ However, here we'll illustrate a more systematic process for finding an Euler ci
 
 Notice that all the nodes are even, so it is possible to find an Euler circuit (or many, indeed).  We can start at any point, and eventually come back and end at the same node.
 
-To begin, pick a starting point, and construct \textbf{\emph{any}} circuit through the graph.  Let's say we start with $a$; we could do something as simple as $a \to b \to e \to a$, but the longer our initial circuit is, the faster this process will go, so let's start with $a \to b \to c \to d \to c \to e \to a$:
+To begin, pick a starting point, and construct \textbf{\emph{any}} circuit through the graph.  Let's say we start with $a$; we could do something as simple as $a \to b \to e \to a$, but the longer our initial circuit is, the faster this process will go, so let's start with $a \to b \to c \to d \to b \to e \to a$:
 \begin{center}
 \begin{tikzpicture}[scale=0.7]
   \GraphInit[vstyle=simple]
@@ -1008,7 +1008,7 @@ After removing those edges and isolated points, we can find one final circuit th
 
 Having used all the edges now, we have three partial circuits:
 \begin{center}
-{\color{blue!60!black}$a \to b \to c \to d \to c \to e \to a$}\\
+{\color{blue!60!black}$a \to b \to c \to d \to b \to e \to a$}\\
 {\color{green!50!black}$e \to i \to f \to d \to g \to f \to e$}\\
 {\color{red!80!black}$i \to j \to h \to k \to g \to h \to i$}
 \end{center}
@@ -1024,7 +1024,7 @@ we will now have
 
 Finally, notice that this long string begins and ends at $e$, so we can substitute the whole thing in the place of $e$ in the first circuit, and we'll have our full Euler circuit:
 \begin{center}
-{\color{blue!60!black}$a \to b \to c \to d \to c \to$} {\color{green!50!black}$e \to$} {\color{red!80!black}$i \to j \to h \to k \to g \to h \to i$} {\color{green!50!black}$\to f \to d \to g \to f \to e$} {\color{blue!60!black}$\to a$}
+{\color{blue!60!black}$a \to b \to c \to d \to b \to$} {\color{green!50!black}$e \to$} {\color{red!80!black}$i \to j \to h \to k \to g \to h \to i$} {\color{green!50!black}$\to f \to d \to g \to f \to e$} {\color{blue!60!black}$\to a$}
 \end{center}
 
 Again, in many cases there's no need to resort to a systematic process like this, but if you have trouble spotting an Euler circuit immediately, you can try it.
@@ -1043,7 +1043,7 @@ If each node of a directed graph has equal in-degree and out-degree, the graph h
 If one node has an in-degree that is larger than its out-degree by 1, and another node has an out-degree that is larger than its in-degree by 1, there is no Euler circuit, but there is an Euler path (starting at the node with larger out-degree and ending at the node with larger in-degree).
 \end{formula}
 
-\begin{example}{Euler Paths in Directed Graphs}
+\begin{example}[https://www.youtube.com/watch?v=2N7o_CWptpM&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=6]{Euler Paths in Directed Graphs}
 For each of the following graphs, determine if an Euler circuit exists.  If not, determine whether there is an Euler path.
 \begin{center}
 \begin{tabular}{c c}
@@ -1230,7 +1230,7 @@ There are a few observations that we can make:
 
 There are other, more complicated theorems that give conditions under which Hamilton circuits exist (for instance, \emph{Dirac's Theorem} says that a simple graph with $n$ nodes, where $n \geq 3$, has a Hamilton circuit if the degree of every node is at least half of $n$), but for our purposes, we will simply check whether a graph has a Hamilton path or circuit by inspecting it and seeing if we can find one.  Since we'll only deal with small graphs, this is good enough for us.  For larger graphs, we could use a \emph{brute force} approach, which means trying all the possible paths to see if any is Hamiltonian (as you can imagine, this is quite tedious).
 
-\begin{example}{Hamilton Paths}
+\begin{example}[https://www.youtube.com/watch?v=fMz9k_Z2Trg&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=7]{Hamilton Paths}
 For each of the following graphs, determine whether a Hamilton circuit exists; if so, describe the circuit.  If there is no Hamilton circuit, see if there is a Hamilton path.
 \begin{center}
 \begin{tabular}{c c c}
@@ -1339,7 +1339,7 @@ For each of the following graphs, determine whether a Hamilton circuit exists; i
 \end{enumerate}
 \end{example}
 
-\begin{try}
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/graph-theory--hamilton-paths]
 For each of the following graphs, determine whether a Hamilton circuit exists; if so, describe the circuit.  If there is no Hamilton circuit, see if there is a Hamilton path.
 \begin{center}
 \begin{tabular}{c c c}

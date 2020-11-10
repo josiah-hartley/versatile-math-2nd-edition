@@ -5,7 +5,7 @@ There's an old legend about the inventor of chess, who, when he was asked by the
 \includegraphics[width=0.8\textwidth]{riceboard}
 \end{center}
 
-He quickly ran into a problem, though.  By the time he reached the 21st square, he had to deliver over a million grains of rice, and by the 31st square, it was over a billion squares.  He called in his best mathematicians, and to his horror, they informed the ruler that if he kept up his side of the bargain, he would have to give the inventor a total of 18,446,774,073,709,551,615 grains of rice (about 1000 times the amount of rice harvested worldwide in recent years).
+He quickly ran into a problem, though.  By the time he reached the 21st square, he had to deliver over a million grains of rice, and by the 31st square, it was over a billion squares.  He called in his best mathematicians, and to his horror, they informed the ruler that if he kept up his side of the bargain, he would have to give the inventor a total of 18,446,774,073,709,551,615 grains of rice (about 1000 times the amount of rice harvested worldwide in a modern year).
 
 This exposes a flaw in using exponential models for population growth.  Although doubling at every step corresponds to a 200\% growth rate, even more modest rates exhibit the same behavior when observed over a long enough time: exponential models grow without bound, and they grow faster and faster over time.
 
@@ -14,7 +14,7 @@ In 1950, the world population was 2.53 billion, and it grew to 5.32 billion by 1
 
 Let's test the model; let $t=55$, for example, corresponding to the year 2005.  The actual population in 2005 was 6.51 billion, and the model predicts that the population would be 7.03 billion.  Not perfect, but not terrible either.
 
-However, what about 2015?  The model predicts 8.47 billion, and the actual population is only 7.32 billion.  In other words, the model is getting worse, and it's consistently overestimating; in 2005 the estimate was only off by half a billion, but by 2015 the error has more than doubled.  What's happening?
+However, what about 2015?  The model predicts 8.47 billion, and the actual population was only 7.32 billion.  In other words, the model is getting worse, and it's consistently overestimating; in 2005 the estimate was only off by half a billion, but by 2015 the error had more than doubled.  What's happening?
 
 It turns out that the population growth rate is not constant, as the exponential model assumed.  Instead, the growth rate is slowing.  The world population grew from 1.60 billion in 1900 to 6.13 billion in 2000, so even if it grew by the same \textit{amount} (not even the same \textit{rate}, which would lead to even bigger numbers) we might naively assume that by 2100 the world population would top 11 billion.  However, the United Nations estimates that the population will top 8 billion around 2050, and then \textit{fall} back to around present-day levels by 2100.
 
@@ -136,7 +136,7 @@ The next graph shows the same model, but this time with data from the U.S. censu
 
 Notice how closely the actual data tracks with the model's predictions; this is evidence of a good model, especially when we consider that the prediction was made ahead of time.  More often than you might expect, would-be experts will reach for data from the past and magically find a model that fits the data nearly perfectly, but such models tend to fail at making predictions, and they don't actually offer any insight.  A truly predictive model like this one with such accurate results is quite rare.
 
-\begin{example}[https://www.youtube.com/watch?v=cd5xQCfLUZM]{Lizard Population}
+\begin{example}[https://www.youtube.com/watch?v=cd5xQCfLUZM&list=PLfmpjsIzhztutjEb8Pg5OBOlI1p80yVoy&index=13]{Lizard Population}
 On an island that can support a population of 1000 lizards, there is currently a population of 600.  These lizards have a lot of offspring and not many natural predators, so they have a very high growth rate of 150\%.  Use a logistic model to predict the lizard population 2 years from now.
 
 \solline
@@ -186,11 +186,11 @@ P_2 &= \dfrac{1000}{1+\dfrac{2}{3}e^{-1.5(2)}}\\
 The model predicts that there will be approximately 968 lizards in 2 years.
 \end{example}
 
-\begin{try}
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/growth-models--logistic-growth-with-plants]
 A field contains 20 mint plants, and the number of plants increases at a rate of 70\%, but the field can only support a maximum population of 300 plants.  Use the logistic model to predict what the population will be in three years.
 \end{try}
 
-\begin{example}[https://www.youtube.com/watch?v=mmL2H7_ynUA]{Rabbit Population}
+\begin{example}[https://www.youtube.com/watch?v=mmL2H7_ynUA&list=PLfmpjsIzhztutjEb8Pg5OBOlI1p80yVoy&index=14]{Rabbit Population}
 \marginnote{\includegraphics[scale=0.07]{Rabbit1}}
 A forest is currently home to a population of 200 rabbits.  The forest is estimated to be able to sustain a population of 2000 rabbits, and the rabbits can grow at a rate of 50\% per year.
 \begin{enumerate}[(a)]
@@ -260,7 +260,7 @@ The intersection is at $x=4.394$, so the population is expected to reach 1000 ra
 \subsection{Logistic Regression}
 As before, it is unlikely that we will know at the beginning of a study what the growth rate is; it's more likely that we'll have data and need to build a model to fit.  We'll use a graphing calculator to do this; although Excel can do it, it is not built-in to the menus that we have used before, and the process is very involved, so we will not include that in this chapter.
 
-\begin{example}{Logistic Regression}
+\begin{example}[https://www.youtube.com/watch?v=7gXNhLY1Yyc&list=PLfmpjsIzhztutjEb8Pg5OBOlI1p80yVoy&index=15]{Logistic Regression}
 \marginnote{\includegraphics[width=1.5in]{nycgray}}
 Build a logistic population model for New York City using the population data below.
 \begin{center}

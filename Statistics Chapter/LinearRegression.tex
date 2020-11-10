@@ -851,7 +851,7 @@ where the slope and intercept are given by
 \end{itemize}
 \end{formula}
 
-\begin{example}{Regression with House Prices}
+\begin{example}[https://www.youtube.com/watch?v=hlY2MbHaBfE&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=19]{Regression with House Prices}
 Construct the least-squares regression line for the house price data given below, knowing that $r=0.9$.
 \begin{center}
 \begin{tabular}{c c}
@@ -942,7 +942,7 @@ Therefore, the regression line (graphed below) is given by the equation
 We've now computed the regression line manually exactly once, and from now on, we'll rely on the calculator to do it for us, because using the formula doesn't give us any extra insight.
 
 \subsection{Regression with the Calculator}
-Once you've entered the data into the calculator, with the $x$ values in the first list and $y$ values in the second list, press the \calcbutton{STAT} button and scroll to the right to access the \texttt{CALC} menu (where we find \texttt{1-Var Stats}, for instance).  There, look for the fourth option, labeled \texttt{4:LinReg(ax+b)}.  After selecting it, you can leave all the default options alone, as long as you entered $x$ and $y$ in the usual order.  Select \texttt{Calculate} to see the results.
+Once you've entered the data into the calculator, with the $x$ values in the first list and $y$ values in the second list, press the \calcbutton{STAT} button and scroll to the right to access the \texttt{CALC} menu (where we found \texttt{1-Var Stats} earlier).  There, look for the fourth option, labeled \texttt{4:LinReg(ax+b)}.  After selecting it, you can leave all the default options alone, as long as you entered $x$ and $y$ in the usual order.  Select \texttt{Calculate} to see the results.
 \begin{center}
 \begin{tabular}{c c c}
 \includegraphics[height=0.8in]{gmRegression4}
@@ -955,7 +955,7 @@ The results shown here are for the house price example; notice that the answers 
 \paragraph{Note:} when you first follow this process, you may not see the $r$ value in the results.  If you don't, there's a setting you can change to display it.  To do this, press \calcbutton{2ND} \calcbutton{0} to access the full catalog, then use the arrow keys to scroll down (the options are listed in alphabetical order) to an option called \texttt{DiagnosticOn}.  Press \calcbutton{ENTER} twice to turn this on, and then repeat the steps above; now $r$ should appear with the other results.
 \pagebreak
 
-\begin{example}{Regression Line}
+\begin{example}[https://www.youtube.com/watch?v=kcSr2C6I_-A&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=20]{Regression Line}
 A random sample of 11 statistics students produced the following data, where $x$ is the third exam score out of 80, and $y$ is the final exam score out of 200.
 \begin{center}
 \begin{tabular}{c c}
@@ -997,7 +997,7 @@ The regression line has the equation
 \[\boxed{\hat{y} = 4.83x-173.51}\]
 \end{example}
 
-\begin{try}
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/statistics--correlation-and-regression]
 Consider the following data set.
 \begin{center}
 \begin{tabular}{c | c c c c c c c c}
@@ -1017,7 +1017,7 @@ $y$ & 3 & 3 & 31 & 36 & 0 & 3 & $-2$ & $-14$
 \subsection{Making Predictions}
 One of the primary reasons for computing a regression equation is to use it to make predictions about new $x$ values.  For instance, using the house price dataset, we could assess the value of a new home on the market by measuring its square footage.
 
-\begin{example}{Predicting House Values}
+\begin{example}[https://www.youtube.com/watch?v=1M-Czl8swv8&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=21]{Predicting House Values}
 Using a sample of houses on the market, we found the following regression equation to predict the price $y$ based on the square footage $x$:
 \[\hat{y} = 0.099x + 160.8\]
 Use this equation to predict the price of homes with the following square footage values:
@@ -1047,8 +1047,8 @@ so the predicted price is $\boxed{\$606,300}$.
 Now, which of these is likely to be more reliable?  The key is that the first house falls within the range of sizes that are listed in our sample; this is called an \textbf{interpolation}.  On the other hand, our sample doesn't include any houses as large as the second one, so that represents an \textbf{extrapolation}.  In general, interpolations are more reliable, because the trend may be different outside the range for which we have data.  Maybe really large houses are more expensive than expected because they are built with top-quality materials.
 \end{example}
 
-\begin{try}
-Using the data for students test scores shown below, predict the final exam score for students who scored 60 and 80 on the third exam.
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/statistics--predicting-test-scores]
+Using the data for students' test scores shown below, predict the final exam score for students who scored 60 and 80 on the third exam.
 \begin{center}
 \begin{tabular}{c c}
 $x$ & $y$\\
@@ -1071,7 +1071,7 @@ $x$ & $y$\\
 
 \paragraph{Note:} Not every $x$ value that you can plug into the regression equation is a meaningful one.  For instance, you could try predicting the final exam score of a student who got a 90 on the third test (even though the third test scores can only go up to 80), or the price of a home with negative square footage, and each equation will dutifully give you a value.  Just note that that value is meaningless; you need to use common sense when making predictions.
 
-\begin{example}{NFL Quarterbacks}
+\begin{example}[https://www.youtube.com/watch?v=onVpQyVN4pA&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=22]{NFL Quarterbacks}
 The following table lists the heights (in inches) and weights (in pounds) of 10 NFL quarterbacks in the 2019 season.
 \begin{center}
 \begin{tabular}{l c c}
@@ -1173,7 +1173,7 @@ A QB of that height is predicted to weight 212 pounds, so since Drew Brees only 
 \end{enumerate}
 \end{example}
 
-\begin{try}
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/statistics--regression-with-blood-pressure-data]
 A blood pressure measurement consists of two numbers: the systolic pressure, which is the maximum pressure taken when the heart is contracting, and the diastolic pressure, which is the minimum pressure taken at the beginning of the heartbeat.  Blood pressures were measured (in millimeters of mercury, mmHg) for a sample of 16 adults.
 \begin{center}
 \begin{tabular}{l | c c c c c c c c c c c c c c c c}

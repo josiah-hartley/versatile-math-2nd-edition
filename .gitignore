@@ -1,0 +1,11 @@
+/Extras
+/Solution Manual
+*.dat
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.md
+
+!README.md

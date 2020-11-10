@@ -1,7 +1,7 @@
 \setcounter{ExampleCounter}{1}
 \begin{center}
 \includegraphics[width=0.8\textwidth]{Millionaire}\\
-\text{} \hfill {\color{gray}Image by Wikipedia user Idea SV is licensed under CC BY-SA 3.0}
+\text{} \hfill {\small\color{gray}Image by Wikipedia user Idea SV is licensed under CC BY-SA 3.0}
 \end{center}
 
 Who wants to be a millionaire?  More realistically, who \emph{doesn't} want to be a millionaire?  It may sound like an unattainable goal, but in this section, you'll learn how you can join the millionaire club by taking advantage of the power of compound interest.
@@ -20,7 +20,7 @@ This graph shows how much you can accumulate if you can save \$300 a month, assu
 
 That may sound like a lot to save, but this is about the amount that many people spend on a car payment.  What this means is that with relatively small sacrifices, such as driving used cars instead of new ones, you can someday see your retirement account cross the \$1,000,000 threshold.
 
-Let's dig into that chart a bit more.  Notice that if you wait until age 35 to start saving, you won't just save a \emph{bit} less than you would if you started saving earlier; you'll wind up with \emph{less than half}, just by waiting 10 years.  Maybe you can't afford to save \$300 a month right now, but you can afford \$100 a month: start there!
+Let's dig into that chart a bit more.  Notice that if you wait until age 35 to start saving, you won't just save a \emph{bit} less than you would if you started saving earlier; you'll wind up with \emph{less than half}, just by waiting 10 years.  Maybe you can't afford to save \$300 a month right now, but if you can afford \$100 a month, start there!
 
 Why is there such a dramatic difference?  It's all due to compound interest, and we learned in the last section that compound interest really flexes its muscles when you give it plenty of time.  Those 10 years between ages 25 and 35 are the most important years in the process, because they are the first years, and the money saved then has the most time to grow.
 
@@ -54,7 +54,7 @@ For our purposes, the basic process looks something like this: starting today, y
 
 Let's start with a simple example to illustrate how a savings annuity works.
 
-\begin{example}[https://www.youtube.com/watch?v=KOIRAWGh9vM]{Savings Annuity}
+\begin{example}[https://www.youtube.com/watch?v=KOIRAWGh9vM&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=25]{Savings Annuity}
 Suppose you deposit \$100 into a savings account at the end of each year.  If you earn 5\% interest compounded annually, how much will the account hold at the end of 3 years?  How much interest did the account earn?\\
 
 \marginnote{\bfseries Solution}
@@ -79,11 +79,11 @@ If regular deposits of $PMT$ are made $n$ times per year into an annuity paying 
 This formula looks complicated, but with a little practice, you'll be able to use it, for instance, to verify the numbers in the retirement discussion at the beginning of the section.
 
 By the way, we may also start by determining how much we want the account to hold at the end, and use that to calculate $PMT$.  To do that, we need to solve the formula above for $PMT$, which means multiplying both sides by $r/n$ and dividing both sides by the expression in brackets:
-\[PMT = \dfrac{F\left(\dfrac{r}{n}\right)}{\left[\left(1+\dfrac{r}{n}\right)^{nt}-1\right]}\]
+\[PMT = \dfrac{F\left(\dfrac{r}{n}\right)}{\left(1+\dfrac{r}{n}\right)^{nt}-1}\]
 You can choose to keep this formula handy as well, or you can simply do the algebra each time.  It helps to enter all the values and simplify as much as possible on the right hand side, and then simply divide $F$ by that simplified value.
 \pagebreak
 
-\begin{example}[https://www.youtube.com/watch?v=X1oXL3ZjcCU]{Traditional IRA}
+\begin{example}[https://www.youtube.com/watch?v=X1oXL3ZjcCU&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=26]{Traditional IRA}
 A traditional individual retirement account (IRA) is a retirement account in which the money you invest is tax-exempt (you can deduct your contributions on your income tax return) until you withdraw it.  Thus, taxes are deferred until you retire.  If you deposit \$250 each month into an IRA earning 7\% interest, how much will you have in the account after 35 years?
 
 \sol
@@ -107,7 +107,7 @@ Notice\marginnote{$(\$250)(12)(35) = \$105,000$} that you deposited \$250 every 
 
 %\paragraph{Note:} we rounded here to the nearest dollar, since the dollar amount is so large, making the cents less significant.  There's no rule about this, but simply a matter of preference.
 
-\begin{try}[http://izzomath.com/103text/finance/example4.2/story.html]
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/financial-mathematics--future-value-for-savings-annuity]
 If you deposit \$800 every year into a traditional IRA earning 4\% interest, how much will the account hold after 25 years?
 \end{try}
 
@@ -123,7 +123,7 @@ The main difference between the two types of IRA (individual retirement accounts
 
 Thus, when comparing the two, the question is: do you expect to pay higher taxes now, or when you are retired?  It's hard to know for sure, because your income may be higher or lower than it is now, and many of the deductions you'll take advantage of in the near term (like mortgage insurance, dependent expenses, or education costs) will not apply when you are retired.\\
 
-There are other qualitative differences, like the fact that a traditional IRA will require you to start withdrawing when you reach 70.5 years of age, but Roth IRAs don't have that restriction, making them a popular vessel for transferring wealth to inheritors.
+There are other qualitative differences, like the fact that a traditional IRA will require you to start withdrawing when you reach 70.5 years of age; Roth IRAs don't have that restriction, making them a popular vessel for transferring wealth to inheritors.
 
 \paragraph{Contribution Limits (2020)}
 The most you can contribute to either kind of IRA (or a combination of the two) in a single year is \$6,000 if you're younger than 50, or \$7,000 if you're 50 or older.
@@ -141,7 +141,7 @@ The main difference between the two types of IRA (individual retirement accounts
 
 Thus, when comparing the two, the question is: do you expect to pay higher taxes now, or when you are retired?  It's hard to know for sure, because your income may be higher or lower than it is now, and many of the deductions you'll take advantage of in the near term (like mortgage insurance, dependent expenses, or education costs) will not apply when you are retired.\\
 
-There are other qualitative differences, like the fact that a traditional IRA will require you to start withdrawing when you reach 70.5 years of age, but Roth IRAs don't have that restriction, making them a popular vessel for transferring wealth to inheritors.
+There are other qualitative differences, like the fact that a traditional IRA will require you to start withdrawing when you reach 70.5 years of age; Roth IRAs don't have that restriction, making them a popular vessel for transferring wealth to inheritors.
 
 \paragraph{Contribution Limits (2020)}
 The most you can contribute to either kind of IRA (or a combination of the two) in a single year is \$6,000 if you're younger than 50, or \$7,000 if you're 50 or older.
@@ -155,7 +155,7 @@ One final note: both kinds of IRA allow first-time homebuyers to withdraw up to 
 
 We've seen an example of calculating $F$ given $PMT$; let's switch things around and look for the payment amount if we know how much we want the account to hold.
 
-\begin{example}[https://www.youtube.com/watch?v=TWZhZoh9TG4]{How Much Should You Save?}
+\begin{example}[https://www.youtube.com/watch?v=TWZhZoh9TG4&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=27]{How Much Should You Save?}
 You want to have \$500,000 in your account when you retire in 35 years.  If your retirement account earns 5\% interest, how much should you deposit each month to reach your retirement goal?
 
 \sol
@@ -181,7 +181,7 @@ Having\marginnote{$(\$440)(12)(35) = \$184,846.20$} half a million dollars may s
 
 We could also have used the alternate form of the formula where $PMT$ is isolated, but this example illustrates how to simplify and solve for $PMT$ by using the same formula as before.  It's up to you which process you prefer: a bit more algebra, or keeping track of another formula.
 
-\begin{try}[http://izzomath.com/103text/finance/example4.4/story.html]
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/financial-mathematics--payment-for-savings-annuity]
 You want to have \$800,000 in your account when you retire in 40 years.  If your retirement account earns 6.7\% interest, how much should you deposit each month to reach your retirement goal?
 \end{try}
 
@@ -189,7 +189,7 @@ In case the discussion at the beginning of the section wasn't enough, let's look
 
 Suppose Jason and Emma graduate the same year and begin working in adjacent cubicles; they're each 23 years old, and they'll both work for 45 years.  Let's assume that both get a 7\% interest rate in their retirement accounts. 
 
-\begin{example}[https://www.youtube.com/watch?v=9hcZL9uCEoY]{Start Saving Early}
+\begin{example}[https://www.youtube.com/watch?v=9hcZL9uCEoY&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=28]{Start Saving Early}
 \begin{enumerate}[(1)]
 \item If Emma begins saving \$400 every month right away and does so for 45 years, how much will her account hold when she retires?\\
 
@@ -244,7 +244,7 @@ Notice that the formula is set up to solve for $P$ rather than $PMT$; this is mo
 \[PMT = \dfrac{P\left(\dfrac{r}{n}\right)}{1-\left(1+\dfrac{r}{n}\right)^{-nt}}\]
 Again, you could keep track of this formula as well, or simply solve for $PMT$ whenever needed.
 
-\begin{example}[https://www.youtube.com/watch?v=A2pKYPSXUbw]{Payout Annuity}
+\begin{example}[https://www.youtube.com/watch?v=A2pKYPSXUbw&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=30]{Payout Annuity}
 After retiring, you want to be able to take \$1000 every month from your retirement account for 20 years.  If the account earns 6\% interest, how much will you need in your account when you retire?
 
 \sol
@@ -267,7 +267,7 @@ P &= \dfrac{\$1000\left[1-\left(1+\dfrac{0.06}{12}\right)^{-(12)(20)}\right]}{\l
 You'll need to have approximately \$139,600 in your account when you retire.  Notice that you'll withdraw \$240,000 (\$1000 for 240 months).  You're able to pull out more than you have at retirement because you don't withdraw it all at once, but take it out little by little as you need it, allowing the remainder to earn interest before you take it out.  This difference represents \$100,400 in interest earned during those 20 years of retirement.
 \end{example}
 
-\begin{try}[http://izzomath.com/103text/finance/example4.6/story.html]
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/financial-mathematics--present-value-for-payout-annuity]
 After retiring, you want to be able to take \$1500 every month from your retirement account for 15 years.  If the account earns 4.5\% interest, how much will you need in your account when you retire?
 \end{try}
 
@@ -283,7 +283,7 @@ Try it on your calculator and make sure that you get 0.302096 as your answer.
 
 Finally, let's turn this around and ask the other question: given a fixed amount in our account, how much can we withdraw in regular payments?
 
-\begin{example}[https://www.youtube.com/watch?v=BsqVTSoWOm8]{Withdrawing from a Payout Annuity}
+\begin{example}[https://www.youtube.com/watch?v=BsqVTSoWOm8&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=29]{Withdrawing from a Payout Annuity}
 You expect to have \$500,000 in your IRA when you retire, and you want to be able to take monthly withdrawals for a total of 30 years.  If your account earns 8\% interest, how much will you be able to withdraw each month?
 
 \sol
@@ -307,7 +307,7 @@ This time we want to find $PMT$:
 You can plan to withdraw about \$3670 each month for 30 years.
 \end{example}
 
-\begin{try}[http://izzomath.com/103text/finance/example4.7/story.html]
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/financial-mathematics--payment-for-payout-annuity]
 A donor gives \$100,000 to a university, and specifies that it is to be used to give annual scholarships for the next 20 years.  If the university can earn 4\% interest, how much can they give in scholarships each year?
 \end{try}
 \vfill
@@ -315,7 +315,7 @@ A donor gives \$100,000 to a university, and specifies that it is to be used to 
 
 Let's put it all together, and try a full example in which we start with the desired monthly payout during retirement, and determine how to start saving now.  This is the kind of planning that you can do right now for yourself, using the tools we've discussed in this section.
 
-\begin{example}{Planning for Retirement}
+\begin{example}[https://www.youtube.com/watch?v=mvrekziv55I&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=31]{Planning for Retirement}
 Kevin is 30 years old, and he is preparing to begin saving for retirement.  He expects to retire at age 67, and for planning purposes, he assumes he'll live to age 95.  Based on cursory research, he expects that his investments can average a return of 7\% annually, and after retirement, he will move his money into more conservative investments returning 5\% annually.  In order to be able to withdraw \$3000 per month after retirement, how much should he plan to save each month?
 
 \sol
@@ -360,7 +360,7 @@ Using the savings annuity formula:
 By setting aside a little over \$250 each month into a retirement account, Kevin can build quite a decent nest egg, and ensure that he'll be able to withdraw \$3000 a month after he retires.
 \end{example}
 
-\begin{try}
+\begin{try}[http://hartleymath.com/versatilemath/tryit/\#/financial-mathematics--saving-for-retirement]
 Erika is 27 years old, and plans to retire at age 64.  If she can expect an 8\% return while she's saving, and a 6\% return while she withdraws, how much should she begin saving each month if she expects to live to age 92 and would like to receive \$3500 a month in retirement?
 \end{try}
 
@@ -383,7 +383,7 @@ The rest of the information in the menu is the same as before.  In almost every 
 
 We'll show one example for each kind of annuity; both will be repeated from earlier examples for comparison.
 
-\begin{example}{TVM Solver: Future Value for Savings Annuity}
+\begin{example}[https://www.youtube.com/watch?v=m9m20XU1v-U&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=32]{TVM Solver: Future Value for Savings Annuity}
 If you deposit \$250 each month into an IRA earning 7\% interest, how much will you have in the account after 35 years?
 
 \sol
@@ -398,7 +398,7 @@ To solve for the future value, move the cursor over the value for FV, and press 
 The final balance will be \$450,264 (verify that this matches what we found using the formula earlier).
 \end{example}
 
-\begin{example}{TVM Solver: Payment for Payout Annuity}
+\begin{example}[https://www.youtube.com/watch?v=QF27dvKPIJ8&list=PLfmpjsIzhztsZtnb7HnXrQ8SLoiOCIcAM&index=33]{TVM Solver: Payment for Payout Annuity}
 You expect to have \$500,000 in your IRA when you retire, and you want to be able to take monthly withdrawals for a total of 30 years.  If your account earns 8\% interest, how much will you be able to withdraw each month?
 
 \sol
@@ -406,7 +406,7 @@ Here's the setup (remember, set FV to 0 and work with PV and PMT):
 \begin{center}
 \includegraphics[width=1.8in]{TVMPayoutAnnuityPayment}
 \end{center}
-Remember that we use negative numbers to indicate money going out from us, and positive for money coming to us (if you forget to do this during setup, it doesn't cause any problems; just mentally reverse the signs).  After solving, you should see this:
+Remember that we use negative numbers to indicate money we spend or save, and positive for money we receive (if you forget to do this during setup, it doesn't cause any problems; just mentally reverse the signs).  After solving, you should see this:
 \begin{center}
 \includegraphics[width=1.8in]{TVMPayoutAnnuityPaymentSolved}
 \end{center}
@@ -425,7 +425,7 @@ Excel has built-in formulas to solve the same problems:
 \paragraph{Finding the future value for a savings annuity} \texttt{FV(rate,nper,pmt,[pv],[type])}
 \paragraph{Finding the present value for a payout annuity} \texttt{PV(rate,nper,pmt,[fv],[type])}
 
-In each formula, the items in brackets are optional, and we won't use them here (in case you're curious, the type is the same as the option at the bottom of the TVM solver to switch between beginning-of-month and end-of-month payments).\\
+In each formula, the items in brackets are optional, and we won't use them here (in case you're curious, the ``type'' is the same as the option at the bottom of the TVM solver to switch between beginning-of-month and end-of-month payments).\\
 
 \paragraph{Important note:} the rate used in these formulas is the \textbf{monthly} rate, or the given annual interest rate divide by 12.  Also, nper refers to the number of periods, which is $nt$ in our formulas.
 

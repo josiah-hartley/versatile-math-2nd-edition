@@ -83,7 +83,7 @@ Now, it turns out that there are a few equivalent ways to identify a tree.  Each
 \item $G$ is connected, and there are $n-1$ edges, where $n$ is the number of nodes (this one is easy to check too, since it just involves counting).
 \end{itemize}
 
-\begin{example}{Identifying Trees}
+\begin{example}[https://www.youtube.com/watch?v=NNRIIWfwauE&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=10]{Identifying Trees}
 Which of the following are trees?
 \begin{center}
 \begin{tabular}{c c c}
@@ -197,13 +197,13 @@ Which of the following are trees?
 Our conclusion is that \boxtext{(a) is the only tree}\ .
 \end{example}
 
-There\marginnote{\emph{for instance, trees can be used to describe games; computer chess programs are an example of an application of this}} are many, many applications of trees, but we will only discuss two of them: \textbf{binary search trees} and \textbf{spanning trees}.
+There\marginnote{\emph{for instance, trees can be used to describe games; chess programs do this, as one example}} are many, many applications of trees, but we will only discuss two of them: \textbf{binary search trees} and \textbf{spanning trees}.
 \pagebreak
 
 \subsection{Binary Search Trees}
 Searching through a list is a hard problem.  If you were handed a randomly sorted list of names and told to find a particular one, you'd have to simply read through every name, and you could expect on average to have to read half of the list before finding the name.  Think of how often you use a search function in your life, and it becomes obvious that we need searching to be as efficient as possible.\\
 
-One way to make searching more efficient is to sort the items.  Say, for example, the list of names you were given were ordered alphabetically; would that make your job easier?  Of course it would.  Say, for instance, you were looking for the name Kayla: you would know to look near the middle of the list, and if your eye fell on the M's, you'd know to go backward.  Similarly, if you started at the G's, you'd know to go forward.\\
+One way to make searching more efficient is to sort the items.  Say, for example, the list of names you were given was ordered alphabetically; would that make your job easier?  Of course it would.  Say, for instance, you were looking for the name Kayla: you would know to look near the middle of the list, and if your eye fell on the M's, you'd know to go backward.  Similarly, if you started at the G's, you'd know to go forward.\\
 
 This is the basic concept of a \emph{binary search tree}; the word \emph{binary} simply refers to two possibilities.  In the alphabetically ordered list, you have two options: go forward or go backward, so in that case, you're really doing a binary search.\\
 
@@ -254,7 +254,7 @@ Say you are searching for the name Jason.  Start at the top of the tree, and com
 Back to the search: we're heading down the left branch, looking for Jason.  The next name we encounter is Callista, and since Jason comes after that alphabetically, we take a turn to the right, which brings us to our result.  Notice that this only took two steps, and we found the right name out of a list of 9.  The efficiency of this method only gets more dramatic as the list gets bigger.
 \pagebreak
 
-\begin{example}{Building a Binary Search Tree}
+\begin{example}[https://www.youtube.com/watch?v=A31V6w6qtus&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=11]{Building a Binary Search Tree}
 Build a binary search tree for the following list of words, starting with the first word at the top of the tree:
 \begin{center}
 \emph{location, solution, promotion, decision, city, bread,\\ enthusiasm, writer, signature, criticism}
@@ -346,7 +346,7 @@ Build a binary search tree for the following list of words, starting with the fi
 \end{try}
 \pagebreak
 
-\begin{example}{Searching with a Binary Search Tree}
+\begin{example}[https://www.youtube.com/watch?v=O_zBszBFcTQ&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=12]{Searching with a Binary Search Tree}
 Using the binary tree created in the last example, shown below, search for the word \emph{criticism}.  How many steps (comparisons) are needed to find it?
 \begin{center}
 \begin{tikzpicture}[scale=0.6]
@@ -581,7 +581,7 @@ Spanning trees are valuable when we want to be efficient in our use of connectio
 Let's say the weight of each edge is the cost of the cable between those two nodes.  To reduce costs, we're going to build the minimum number of edges, so we're looking for a spanning tree.  However, some spanning trees are going to be cheaper than others, and we want to find the least expensive spanning tree possible.  There are a few ways to do this, but we'll use one called \textbf{Kruskal's algorithm}, which is pretty straightforward.
 
 \begin{formula}{Kruskal's Algorithm}
-To build a \textbf{minimal spanning tree} for a graph, start with the edge with the lowest weight.  Then choose the edge with the next lowest weight, and as long as adding that would not form a circuit, add it.  Continue doing this until you have a spanning tree (stop when you have added $n-1$ edges, where $n$ is the number of nodes.
+To build a \textbf{minimal spanning tree} for a graph, start with the edge with the lowest weight.  Then choose the edge with the next lowest weight, and as long as adding that edge would not form a circuit, add it.  Continue doing this until you have a spanning tree (stop as soon as all the nodes are included).
 \end{formula}
 
 Let's see this in action, using the graph we just saw.  The cheapest edge is the one connecting $c$ and $d$, so we'll start with that one (we'll color it red to keep track of it).
@@ -746,7 +746,7 @@ Finally, there are two edges with a weight of 5, but if we add both of them, cir
 \end{center}
 \pagebreak
 
-\begin{example}{Finding a Minimal Spanning Tree}
+\begin{example}[https://www.youtube.com/watch?v=BYTky8IhroE&list=PLfmpjsIzhztst_PxJXo574wshSwxU9Yg_&index=13]{Finding a Minimal Spanning Tree}
 The graph below shows a network of roads between towns in Nevada.  The roads shown on the graph are unpaved, and the weights represent the length of each road.  Which roads should be paved so that there is a path of paved roads between every pair of towns, and the total length of paved road is as short as possible?  In other words, find a minimal spanning tree for this graph.
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
@@ -888,6 +888,6 @@ We'll leave the details of the solution unwritten, but if you follow the process
 \end{center}}}
 \text{}\tryit2graph
 
-\begin{trynolabel}
+\begin{trynolabel}[http://hartleymath.com/versatilemath/tryit/\#/graph-theory--minimal-spanning-tree]
 Find a minimal spanning tree for the graph shown in the margin.
 \end{trynolabel}

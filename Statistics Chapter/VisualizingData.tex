@@ -52,7 +52,7 @@ It's unlikely that we can draw meaningful conclusions from a list of data like t
 Because of this, much of statistics is concerned with describing and interpreting data in ways that we can quickly grasp.  In this section, we'll see how to use visual displays to do this; graphs are good because we can gather a lot of information at a glance.  In the next section, we'll discuss the use of numerical summaries, which are not quite as user-friendly as pictures, but more precise, and equally instructive once you know how to read them.  By using a combination of both approaches, we can get a full picture of a dataset like the one above.
 
 \subsection{Types of Data}
-Before we start summarizing data, we need to recognize that there are different types of data that need to be treated differently.  As an example, notice that one variable recorded above is the team that each player plays for, which cannot be treated the same way as their height, for instance.
+Before we start summarizing data, we need to recognize that there are different types of data that need to be treated differently.  As an example, notice that one variable recorded above is the team that each player plays for, which cannot be treated the same way as their height.
 
 If we wanted to compare players' heights, we could find the average, among other things.  This doesn't make any sense with their teams; we can't calculate an average, nor would it mean anything if we could.  This brings us to our first distinction: numerical versus categorical data.
 
@@ -101,7 +101,7 @@ At this point, we're ready to start summarizing data with charts and graphs; for
 \subsection{Dot Plots}
 A dot plot is one of the simplest kinds of graphs, and it can be drawn for both numerical and categorical data.  We'll use the age of the NBA players as an example.
 
-\begin{example}{Dot Plot}
+\begin{example}[https://www.youtube.com/watch?v=w431d-NmOZU&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=6]{Dot Plot}
 Draw a dot plot to summarize the following data, the ages of 30 randomly chosen NBA players:
 \[22, 28, 20, 24, 26, 21, 27, 28, 31, 29, 24, 22, 21, 25, 22,\]
 \[25, 30, 29, 20, 22, 36, 24, 23, 36, 24, 29, 21, 21, 26, 23\]
@@ -360,7 +360,7 @@ If we add this column to the frequency table, we get the following:
 \end{tabular}
 \end{center}
 
-\begin{example}[https://www.youtube.com/watch?v=VQhKtct3nog]{Daily Commute}
+\begin{example}[https://www.youtube.com/watch?v=VQhKtct3nog&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=7]{Daily Commute}
 Nineteen people were asked how many miles, to the nearest mile, they commute to work each day. They responded as follows: \[2, 5, 7, 3, 2, 10, 18, 15, 20, 7, 10, 18, 5, 12, 13, 12, 4, 5, 10.\] This is summarized in the frequency table below:
 
 \begin{center}
@@ -404,7 +404,7 @@ False.  The frequency for 3 miles should be 1.  When building the table, the two
 
 We can also create frequency distributions for categorical data.
 
-\begin{example}{Categorical Frequency Distribution}
+\begin{example}[https://www.youtube.com/watch?v=kd5trlD4WXw&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=8]{Categorical Frequency Distribution}
 Create a frequency table for the NBA players' positions from the dataset at the beginning of this section, including a relative frequency column.
 
 \sol
@@ -427,7 +427,7 @@ Clearly, the most popular positions are in the middle of the list, shooting guar
 \vfill
 
 \subsection{Grouped Frequency Distributions}
-What if we wanted to build a frequency distribution for average points in the NBA dataset?  Since there is very little, if any, repetition in the values, the resulting table would have a lot of columns with 0's or 1's in them, and it wouldn't give us any sense of the grouping of the data.
+What if we wanted to build a frequency distribution for points per game in the NBA dataset?  Since there is very little, if any, repetition in the values, the resulting table would have a lot of columns with 0's or 1's in them, and it wouldn't give us any sense of the grouping of the data.
 
 Instead, we can create a \textbf{grouped frequency distribution}, which counts the frequency of specific \emph{ranges} instead of specific \emph{values}.
 
@@ -476,7 +476,7 @@ To find the appropriate class width to use, you can start by deciding on the num
 Round UP to the next whole number.
 \end{formula}
 
-\begin{example}{Grouped Frequency Distribution}
+\begin{example}[https://www.youtube.com/watch?v=gaRyRAMfSEM&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=9]{Grouped Frequency Distribution}
 Build a grouped frequency table for points per game for the NBA players dataset, using a class width of 5.
 
 \sol
@@ -511,13 +511,13 @@ We'll lump two of the types of graphs together, because they are very similar.  
 
 This is exactly what a histogram or bar chart does; it simply replaces the series of dots with a bar of corresponding height.  Generally, we'll start by building a frequency distribution, and then draw a bar for each row of the table.  Thus, a histogram/bar chart contains \emph{exactly} the same information as the corresponding frequency table; the only difference is how this information is expressed.  Histograms and bar charts are used because we'd often rather look at a picture of the grouping than read a list of numbers in a table and interpret them.
 
-\paragraph{What's the difference?} Okay then, what differentiates a histogram from a bar chart?  The difference is what kind of data we're summarizing: numerical or categorical.  Remember that we can draw a dot plot or frequency table for both types.  However, we when draw a histogram/bar chart, we make a (relatively small) distinction between them.
+\paragraph{What's the difference?} Okay then, what differentiates a histogram from a bar chart?  The difference is what kind of data we're summarizing: numerical or categorical.  Remember that we can draw a dot plot or frequency table for both types.  However, when we draw a histogram/bar chart, we make a (relatively small) distinction between them.
 
 Visually, the difference is subtle, but it's based on the difference in the way that we can think of these two types of data.  With numerical data, there's a natural transition from one category to the next (from the $0.0 - 4.9$ class to the $5.0 - 9.9$ class, for instance), so we draw the bars in an unbroken sequence, without gaps between them.  Categorical data, on the other hand, has no such smooth transition; there's a sharp break between categories (the Knicks and the Nets are completely distinct, with no blending from one to the other).  To visualize this, we draw the bars with gaps between them.
 
 Other than this, there is no fundamental distinction between histograms and bar charts.\\
 
-\begin{example}{Histogram}
+\begin{example}[https://www.youtube.com/watch?v=lGMR3d5CXRo&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=10]{Histogram}
 Build a histogram for points per game in the NBA dataset, using grouped classes with a class width of 5.
 
 \sol
@@ -576,7 +576,7 @@ Note that although we don't show it in this section, we could also draw a histog
 
 Let's do an example with categorical data.
 
-\begin{example}{Bar Chart}
+\begin{example}[https://www.youtube.com/watch?v=FDx4VeH02jc&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=11]{Bar Chart}
 Build a bar chart for the players' positions in the NBA dataset.
 
 \sol
@@ -629,10 +629,10 @@ Now, draw the bar chart (note the gaps between the bars):
 \subsection{Stem-and-Leaf Plots}
 There is one major downside to grouped frequency distributions: some of the data gets lost in the summary.  In other words, maybe in an example all we know is that there are 10 observations between 20 and 25, but we don't know exactly what all those observations are.  This is an example of the trade-off between clarity and precision: often, the more precise we are, the less clear our summary will be.
 
-To split the difference and display the data in a way that exhibits where it is clustered without losing any information about the data is to use a \textbf{stem-and-leaf} plot.  Here, the data is grouped by tens; each tens value is a stem, and all the data points that have that tens value are listed as the leaves.  We'll illustrate with an example.
+To split the difference and display the data in a way that exhibits where it is clustered without losing any information about the data, we can use a \textbf{stem-and-leaf} plot.  Here, the data is grouped by tens; each tens value is a stem, and all the data points that have that tens value are listed as the leaves.  We'll illustrate with an example.
 \pagebreak
 
-\begin{example}{Stem and Leaf Plot}
+\begin{example}[https://www.youtube.com/watch?v=cLs37HcHZB0&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=12]{Stem and Leaf Plot}
 Suppose you gathered data on how long it took you to get ready in the morning.  For 40 days, you measured the amount of time between when your alarm went off and when you left the house.  The results are below, rounded to the nearest minute:
 \begin{center}
 \begin{tabular}{c c c c c c c c c c}
@@ -835,7 +835,7 @@ Once we draw all the points, here is the final picture:
 Notice that yes, there is an overall trend toward higher scorers being paid more, but that is not an unyielding rule; for instance, the first player (Jayson Tatum) is the highest scorer in this smaller list, but he's not nearly the highest-paid player.  Clearly there are other factors at play (age, position, team, whether a player is still on his rookie contract, etc.).  This is often the case; scatterplots can hint at relationships, but there are often other unseen relationships at play.
 \pagebreak
 
-\begin{example}{Scatterplot: TV Price}
+\begin{example}[https://www.youtube.com/watch?v=jyYveWqfAMo&list=PLfmpjsIzhzttL_Uec2nCbDRcAcUF7NKG8&index=13]{Scatterplot: TV Price}
 The following table shows, for a sample of Samsung LCD TVs, their size and their price.  Construct a scatterplot for this data.
 \begin{center}
 \begin{tabular}{c c | c c}
