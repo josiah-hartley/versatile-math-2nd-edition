@@ -245,14 +245,14 @@
 
 \newenvironment{try}[1][]
 {
-\begin{tcolorbox}[enhanced,beforeafter skip=10pt,breakable,colframe=yellow!10,colback=yellow!10,drop lifted shadow,sharp corners=all]
+\begin{tcolorbox}[enhanced,beforeafter skip=10pt,breakable,colframe=yellow!10,colback=yellow!10,drop lifted shadow,sharp corners=all,hyperurl=#1]
 \marginnote{\href{#1}{\fontfamily{fvs}\selectfont \Large\color{black!70!orange}\textbf{TRY IT}}}
 }
 { \end{tcolorbox}}
 
 \newenvironment{trynolabel}[1][]
 {
-\begin{tcolorbox}[enhanced,beforeafter skip=10pt,breakable,colframe=yellow!10,colback=yellow!10,drop lifted shadow,sharp corners=all]
+\begin{tcolorbox}[enhanced,beforeafter skip=10pt,breakable,colframe=yellow!10,colback=yellow!10,drop lifted shadow,sharp corners=all,hyperurl=#1]
 }
 { \end{tcolorbox}}
 %%%%End Try It Definition
