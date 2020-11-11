@@ -260,9 +260,9 @@ This is important: it is much easier to calculate the probability of drawing two
 Since these two outcomes are mutually exclusive, the final answer will be the sum of these two.  To calculate each individual answer, we can use the same approach we used with the blue and brown example:
 \begin{align*}
 P(orange\ and\ yellow) &= P(orange,\ yellow) + P(yellow,\ orange)\\
-&= P(orange) \cdot P(yellow\ |\ orange) + P(yellow) \cdot P(orange\ |\ yellow)\\
-&= \dfrac{13}{106} \cdot \dfrac{18}{105} + \dfrac{18}{106} \cdot \dfrac{13}{105}\\
-&= \dfrac{234}{11,130} + \dfrac{234}{11,130}\\
+&= P(orange) \cdot P(yellow\ |\ orange)\\
+&\ \ + P(yellow) \cdot P(orange\ |\ yellow)\\
+&= \dfrac{13}{106} \cdot \dfrac{18}{105} + \dfrac{18}{106} \cdot \dfrac{13}{105} = \dfrac{234}{11,130} + \dfrac{234}{11,130}\\
 &= \boxed{\dfrac{468}{11,130} \approx 0.0420}
 \end{align*}
 Notice that the answer for each part was the same, so we could also have simply calculated the probability of one ordering, then doubled the answer.
